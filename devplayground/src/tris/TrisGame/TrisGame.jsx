@@ -10,7 +10,7 @@ export function TrisGame() {
       <p className={style.grid}>X O &nbsp;&nbsp;</p> */}
       <Trix />
       <div className={style.buttons}>
-        <TrisButton onClick={() => {}}>
+        {/* <TrisButton onClick={() => {}}>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"
@@ -19,7 +19,7 @@ export function TrisGame() {
             />
           </svg>
           New Game
-        </TrisButton>
+        </TrisButton> */}
         <TrisButton link="/tris">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path

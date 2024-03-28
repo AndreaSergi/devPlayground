@@ -99,6 +99,9 @@ export function Trix() {
       newBoard[row][col] = currentPlayer;
       setBoard(newBoard);
       setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
+      // if(currentPlayer==="X"){
+
+      // }
       checkWinner();
     }
   }
@@ -158,30 +161,39 @@ export function Trix() {
 
   return (
     <div className="trix">
-      <h1>Trix</h1>
+      <h1>TRIX</h1>
+     
+      <div className="scoreboard">
+       
 
-      {!winner && <p>Current player: {currentPlayer}</p>}
+        <p>Player X:{scoreX}</p>
+        <p>Player O: {scoreO}</p>
+
+        {/* <p><button onClick={resetScore}>Resetta il punteggio!</button></p> */}
+      </div>
+
+      <div className="upper-line">
+        {!winner && <p>Current player: {currentPlayer}</p>}
+      </div>
+
+      <div className="result">
       {winner && (
         <p>{winner === "Draw" ? "It's a draw!" : `Player ${winner} wins!`}</p>
       )}
-
-      <TrisButton onClick={initializeBoard}>Rematch</TrisButton>
+      </div>
+      
       {/* <button onClick={initializeBoard}>
         Rivincita
       </button> */}
 
       <div className="board">
-        <div className={theme === "light" ? "layer" : "layer dark"}> {renderBoard()}</div> 
+        <div className={theme === "light" ? "layer" : "layer dark"}> {renderBoard()}</div>
         {/* <div className="layer"> {renderBoard()}</div> */}
       </div>
 
-      <div className="scoreboard">
-        <h2>Punteggio</h2>
-
-        <p>Giocatore X: {scoreX}</p>
-        <p>Giocatore O: {scoreO}</p>
-
-        {/* <p><button onClick={resetScore}>Resetta il punteggio!</button></p> */}
+      <div className="rematch">
+        <TrisButton onClick={initializeBoard}>Rematch</TrisButton>
+        
       </div>
     </div>
   );
