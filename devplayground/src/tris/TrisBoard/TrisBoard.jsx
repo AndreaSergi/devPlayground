@@ -99,9 +99,6 @@ export function TrisBoard() {
       newBoard[row][col] = currentPlayer;
       setBoard(newBoard);
       setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
-      // if(currentPlayer==="X"){
-
-      // }
       checkWinner();
     }
   }
@@ -112,7 +109,10 @@ export function TrisBoard() {
     );
     return (
       <div
-        className={`cell ${isWinningCell ? "winning-cell" : ""}`}
+        className={`cell ${theme} 
+          ${isWinningCell ? "winning-cell" : ""}  
+          ${winner === null ? currentPlayer : ""}
+        `}
         key={`${row}-${col}`}
         onClick={() => handleCellClick(row, col)}
       >
