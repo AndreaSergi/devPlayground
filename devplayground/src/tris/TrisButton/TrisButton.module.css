@@ -1,10 +1,9 @@
 .button {
-  /* height: 30px; */
-  height: 25px;
+  width: 140px;
+  height: 20px;
   border: 1px solid var(--tris-button-border-color);
   border-radius: 15px;
   padding: 8px;
-  width: 200px;
   text-align: center;
   letter-spacing: 3px;
   text-indent: 3px;
