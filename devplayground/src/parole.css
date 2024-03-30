@@ -5,6 +5,13 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+@font-face {
+    font-family: 'BeonMedium';
+    src: url(./font/beon-webfont.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 .tastiera{
     display: flex;
@@ -76,8 +83,8 @@
 h1{
     color: white;
     font-weight: 600;
-    font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    font-family: 'BeonMedium';
 }
 
 .cell{
@@ -113,15 +120,20 @@ h1{
 
 
 .play-again {
-    height: 50px;
-    width: 180px;
-    font-size: 24px;
-    font-weight: 500;
-    border-radius: 6px;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius:15px;
+    padding: 15px 25px;
+    font-size: 40px;
+    font-family: 'BeonMedium';
+    cursor: pointer;
     background-color: black;
-    border: 3px solid white;
-    color: white;
-}
+    box-shadow:
+        0 0 7px #fd71b9,
+        0 0 5px #ffa4d3,
+        0 0 10px #fd71b9,
+        0 0 20px rgb(255, 0, 153);
+  }
 
 
 .correctButton{
@@ -132,3 +144,33 @@ h1{
 .correctButton:hover{
     background-color: rgb(0, 80, 0);
 }
+
+.neonTextTitle {
+    color: #fff;
+    text-shadow:
+      0 0 7px #138fd6,
+      0 0 10px #138fd6,
+      0 0 21px #138fd6,
+      0 0 42px rgb(17, 0, 255),
+      0 0 82px rgb(17, 0, 255),
+      0 0 92px rgb(17, 0, 255),
+      0 0 102px rgb(17, 0, 255),
+      0 0 151px rgb(17, 0, 255);
+  }
+
+.neonTextPlayAgain {
+    font-family: 'BeonMedium';
+    font-weight: 600;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fd71b9,
+      0 0 10px #fd71b9,
+      0 0 21px #fd71b9,
+      0 0 42px rgb(255, 0, 153),
+      0 0 82px rgb(255, 0, 153),
+      0 0 92px rgb(255, 0, 153),
+      0 0 102px rgb(255, 0, 153),
+      0 0 151px rgb(255, 0, 153);
+  }
+
+  /* Ho fatto qualche prova col neon (sia nel titolo, che nel bottone gioca ancora), fammi sapere */

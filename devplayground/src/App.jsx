@@ -14,7 +14,7 @@ export function App() {
     const [gameOver, setGameOver] = useState(false)
     const [oggettoOccorrenze, setOggettoOccorrenze] = useState({});
 
-    const titolo = "<h1> HELLO WORDL! </h1>"
+    const titolo = " H E L L O  ,  W O R D L ! "
 
     // Function to handle "invio" in Tastiera
     const handleInvio = (newLettereUguali, newIndiciUguali) => {
@@ -35,8 +35,8 @@ export function App() {
 
 
     return (
-        <div className="main-container vibur-regular">
-            <h1>{titolo}</h1>
+        <div className="main-container">
+            <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?
                 <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex} /> : <PlayAgain />
