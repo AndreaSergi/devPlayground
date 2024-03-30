@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./Trix.css";
-import { TrisButton } from "./TrisButton/TrisButton";
-import { TrisThemeContext } from "./TrisThemeContext/TrisThemeContext";
+import "./TrisBoard.css";
+import { TrisButton } from "../TrisButton/TrisButton";
+import { TrisThemeContext } from "../TrisThemeContext/TrisThemeContext";
 
 const BOARD_SIZE = 3;
 
-export function Trix() {
+export function TrisBoard() {
   const [board, setBoard] = useState(
     Array.from({ length: BOARD_SIZE }, () =>
       Array.from({ length: BOARD_SIZE }, () => null)

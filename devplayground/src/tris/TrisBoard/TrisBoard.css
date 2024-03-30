@@ -1,9 +1,10 @@
 /* App.css */
 
-@font-face {
+/* Martina: Commentato perché al momento non viene utilizzato */
+/* @font-face {
   font-family: "FontoshanHandwrite";
-  src: url("./FontoshanHandwrite.ttf") format("truetype");
-}
+  src: url("../FontoshanHandwrite.ttf") format("truetype");
+} */
 
 .layer {
   position: absolute;
@@ -11,15 +12,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./Tic-tac-toe.png);
-}
-/* Aggiunta classe, dedicata alla griglia bianca, per la versione dark */
-.layer.dark {
-  background-image: url(./Dark-tic-tac-toe.png);
+  background-image: url(../Tic-tac-toe.png);
 }
 
+/* Martina: Aggiunta classe, dedicata alla griglia bianca, per la versione dark */
+.layer.dark {
+  background-image: url(../Dark-tic-tac-toe.png);
+}
+
+/* Martina: Commentato perché viene utilizzato il background-color di 'tris.module.css' per la classe '.page'*/
 body {
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
   /* font-family: Arial, sans-serif; */
 }
 
