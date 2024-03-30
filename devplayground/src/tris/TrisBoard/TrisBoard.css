@@ -62,8 +62,8 @@ body {
   font-weight: bold;
   /* cursor: pointer; */
 }
-/* Martina: Ho aggiunto il cursore 'pencil' all'hover di ".cell" */
 
+/* Martina: Ho aggiunto il cursore 'pencil' all'hover di ".cell" */
 .cell:hover {
   /* border-radius: 50%;
   background-color: #aebef7; */

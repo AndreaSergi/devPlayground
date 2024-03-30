@@ -1,12 +1,12 @@
 .button {
-  width: 140px;
+  width: 150px;
   height: 20px;
   border: 1px solid var(--tris-button-border-color);
   border-radius: 15px;
   padding: 8px;
   text-align: center;
-  letter-spacing: 3px;
-  text-indent: 3px;
+  letter-spacing: 2px;
+  text-indent: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
