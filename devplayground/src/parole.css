@@ -173,4 +173,52 @@ h1{
       0 0 151px rgb(255, 0, 153);
   }
 
-  /* Ho fatto qualche prova col neon (sia nel titolo, che nel bottone gioca ancora), fammi sapere */
+  /* --------------------- RESPONSIVE ---------------------- */
+
+  @media screen and (max-width: 390px) {
+
+
+    .main-container{
+        width: 100vw;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        gap: 45px;
+        overflow-x: hidden;
+    }
+
+
+    .tastiera {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0px;
+    }
+
+
+    .tastiera .row:last-of-type > div:first-child button {
+        width: 46px;
+    }
+
+
+    .tastiera .row:last-of-type > div:last-child button {
+        width: 46px;
+    }
+
+    .button {
+        width: 30px;
+        border-radius: 6px;
+    }
+
+    .cell {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        margin-top: 30px;
+        font-size: 38px;
+    }
+
+
+
+  }
