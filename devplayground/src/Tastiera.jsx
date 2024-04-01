@@ -535,7 +535,7 @@ export function Tastiera({onInvio, rowIndex, setRowIndex}){
                         setArrayDiLetterePuzzolenti((prevArray) => [...prevArray, letteraChePuzza])
                         console.log("suca",letteraChePuzza)
                     }
-                }).filter((lettera)=>(lettera != null));
+                }).filter((lettera)=>!lettera);
 
                 console.log("NUOVO CONSOLLAZZO" ,nuoveLettereUguali)
                 
