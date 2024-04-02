@@ -65,44 +65,45 @@ function PingPongPVCOM() {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      // Aggiorna la posizione superiore della palla
       setTop((prevTop) => {
         let newTop = prevTop + verticalDirection;
         if (newTop >= altezzaCampo - 10 || newTop <= 0) {
-          newTop = prevTop;
           setVerticalDirection(-verticalDirection);
+          return prevTop; // Impedisce alla palla di muoversi oltre il campo
         }
         return newTop;
       });
-
+  
+      // Aggiorna la posizione sinistra della palla
       setLeft((prevLeft) => {
         let newLeft = prevLeft + horizontalDirection;
         if (newLeft >= larghezzaCampo - 20 || newLeft <= 0) {
-          newLeft = prevLeft;
           setHorizontalDirection(-horizontalDirection);
+          return prevLeft; // Impedisce alla palla di muoversi oltre il campo
         }
-
-        //FINE PARTITA
+  
+        // Controlla la condizione di fine partita
         if (newLeft <= 9) {
-          //console.log("fermare la pallina");
-          //console.log(score);
           setCheck(false);
           setVerticalDirection(0);
           setHorizontalDirection(0);
-
-          sessionStorage.setItem(key, {
+          sessionStorage.setItem(key, JSON.stringify({
             name: name,
             score: score,
             data: new Date(),
-          });
+          }));
           setKey(key + 1);
         }
+  
+        // Controlla la collisione con il paddle
         const ballPos = { x: newLeft, y: getTop };
         const paddleLeftPos = { x: 0, y: paddleLeftY };
         const paddleRightPos = { x: larghezzaCampo, y: paddleRightY };
         const paddleHeight = 70;
         const paddleWidth = 10;
         const ballSize = 15;
-
+  
         if (
           checkPaddleHit(
             ballPos,
@@ -120,27 +121,31 @@ function PingPongPVCOM() {
             true
           )
         ) {
-          newLeft = prevLeft;
           setHorizontalDirection(-horizontalDirection);
-        } else if (newLeft <= 0 || newLeft >= larghezzaCampo) {
-          newLeft = 50;
+          return prevLeft; // Impedisce alla palla di muoversi dopo la collisione
         }
+  
         return newLeft;
       });
-
+  
+      // Aggiorna la posizione Y del paddle destro
       setPaddleRightY((prevY) => {
         const deltaY = getTop - prevY - 35;
+        let newY = prevY;
         if (deltaY > 0) {
-          return Math.min(prevY + 10, altezzaCampo - 70);
+          newY = Math.min(prevY + 10, altezzaCampo - 70);
         } else if (deltaY < 0) {
-          return Math.max(prevY - 10, 0);
+          newY = Math.max(prevY - 10, 0);
         }
-        return prevY;
+        // Aggiungi un fattore di smoothing per ridurre il tremolio
+        const smoothingFactor = 0.1;
+        return prevY + smoothingFactor * (newY - prevY);
       });
     }, 25);
-
+  
     return () => clearInterval(interval);
   }, [getTop, verticalDirection, horizontalDirection]);
+  
 
   const styleMod = {
     top: `${getTop}px`,
