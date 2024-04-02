@@ -1,0 +1,76 @@
+*,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+
+  @font-face {
+    font-family: 'Amoneon';
+    src: url(./font/ttf/amoneon-amoneon-regular-400.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+  
+  .play-again {
+    font-size: 40px;
+  
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: hsl(317 100% 54%);
+    border: hsl(317 100% 54%) 5px solid;
+    padding: 10px 20px;
+    border-radius: 0.25em;
+  
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  
+    box-shadow: inset 0 0 0.5em 0 hsl(317 100% 54%), 0 0 0.5em 0 hsl(317 100% 54%);
+  
+    position: relative;
+  }
+  
+  .play-again::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: hsl(317 100% 54%);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+  
+  .play-again::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em hsl(317 100% 54%);
+    opacity: 0;
+    background-color: hsl(317 100% 54%);
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+  
+  .play-again:hover,
+  .play-again:focus {
+    color: hsl(323 21% 16%);
+    text-shadow: none;
+  }
+  
+  .play-again:hover::before,
+  .play-again:focus::before {
+    opacity: 1;
+  }
+  .play-again:hover::after,
+  .play-again:focus::after {
+    opacity: 1;
+  }
+  

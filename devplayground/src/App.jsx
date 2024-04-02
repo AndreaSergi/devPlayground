@@ -12,8 +12,14 @@ export function App() {
     const [rowIndex, setRowIndex] = useState(0)
     const [gameOver, setGameOver] = useState(false)
     const [oggettoOccorrenze, setOggettoOccorrenze] = useState({});
+    const [parolaGenerata, setParolaGenerata] = useState([])
+    
+    /* console.log('Parola generata:', parolaGenerata); */
+    console.log('Parola generata:', parolaGenerata && parolaGenerata[0] ? parolaGenerata[0].join('') : '');
 
-    const titolo = " H E L L O  ,  W O R D L ! "
+    const titolo = "W O R D I F Y"
+
+    
 
     // Function to handle "invio" in Tastiera
     const handleInvio = (newLettereUguali, newIndiciUguali) => {
@@ -21,7 +27,7 @@ export function App() {
         setLettereUguali(newLettereUguali)
         setIndiciUguali(newIndiciUguali)
         
-        console.log("asdfsdxg",indiciUguali)
+        console.log("Indici uguali???:",indiciUguali)
     
     };
 
@@ -32,13 +38,13 @@ export function App() {
 
     },[rowIndex, indiciUguali])
 
-
     return (
         <div className="main-container">
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?
-                <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex} /> : <PlayAgain />
+                <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
+                setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex}/>
             }
         </div>
     )

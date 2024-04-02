@@ -4,10 +4,24 @@
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+body{
+    height: 100vh;
+    /* border: 3px solid red; */
+    overflow: hidden;
+    background-color: black;
+    padding-top: 25px;
+}
 
 @font-face {
-    font-family: 'BeonMedium';
-    src: url(./font/beon-webfont.ttf);
+    font-family: 'Amoneon';
+    src: url(./font/ttf/amoneon-amoneon-regular-400.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Higher Monday';
+    src: url(./font/HigherMonday.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -63,11 +77,10 @@
 .main-grid{
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    overflow: hidden;
 }
-
-
-
-
 
 
 .main-container {
@@ -75,16 +88,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     background-color: black;
-    gap: 60px;
+   /*  border: 3px solid green; */
 }
 
 h1{
-    color: white;
-    font-weight: 600;
+    color: #eae8e8;
     font-size: 50px;
-    font-family: 'BeonMedium';
+    font-family: 'Amoneon';
 }
 
 .cell{
@@ -93,17 +104,18 @@ h1{
     align-items: center;
     border: 2px solid rgb(103, 104, 104);
     border-radius: 6px;
-    margin: 5px;
-    height: 62px;
-    width: 62px;
+    margin: 3px;
+    height: 70px;
+    width: 70px;
     font-weight: 600;
-    font-size: 24px;
-    color: white;
+    font-size: 40px;
+    color: #d2d2d2;
+    font-family: 'Amoneon';
 }
 
 .wordCellsContainer{
     display: flex;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .row{
@@ -119,22 +131,21 @@ h1{
 
 
 
-.play-again {
+/* .play-again {
     color: #fff;
     border: 3px solid #fff;
     border-radius:15px;
     padding: 15px 25px;
     font-size: 40px;
-    font-family: 'BeonMedium';
+    font-family: 'Amoneon';
     cursor: pointer;
-    background-color: black;
     box-shadow:
         0 0 7px #fd71b9,
         0 0 5px #ffa4d3,
         0 0 10px #fd71b9,
         0 0 20px rgb(255, 0, 153);
   }
-
+ */
 
 .correctButton{
     background-color: green;
@@ -145,23 +156,90 @@ h1{
     background-color: rgb(0, 80, 0);
 }
 
-.neonTextTitle {
-    color: #fff;
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #62fa62,
+        0 0 11px #62fa62,
+        0 0 19px #62fa62,
+        0 0 40px green,
+        0 0 80px green,
+        0 0 90px green,
+        0 0 100px green,
+        0 0 150px green;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
+  
+
+.correctIs{
+    color: white;
+    font-size: 35px;
+    margin-bottom: 50px;
+    font-family: 'Higher Monday';
+    font-weight: 600;
     text-shadow:
-      0 0 7px #138fd6,
-      0 0 10px #138fd6,
-      0 0 21px #138fd6,
-      0 0 42px rgb(17, 0, 255),
-      0 0 82px rgb(17, 0, 255),
-      0 0 92px rgb(17, 0, 255),
-      0 0 102px rgb(17, 0, 255),
-      0 0 151px rgb(17, 0, 255);
+        0 0 2px #ffff62,
+        0 0 4px #ffff62,
+        0 0 6px #ffff62,
+        0 0 2px #f7f95f,
+        0 0 10px #fbff00,
+        0 0 55px #fbff00,
+        0 0 70px #fbff00,
+        0 0 80px #fbff00;
+    
+}
+
+.correttaGameOver{
+    color: white;
+    font-size: 35px;
+    margin-bottom: 50px;
+    font-family: 'Amoneon';
+    font-weight: 600;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes pulsate {
+    100% {
+      /* Larger blur radius */
+      text-shadow:
+        0 0 4px #609bfa,
+        0 0 11px #609bfa,
+        0 0 19px #609bfa,
+        0 0 40px #0062ff,
+        0 0 80px #0062ff,
+        0 0 90px #0062ff,
+        0 0 100px #0062ff,
+        0 0 10px #0062ff;
+    }
+    0% {
+      /* Smaller blur radius */
+      text-shadow:
+        0 0 2px #609bfa,
+        0 0 4px #609bfa,
+        0 0 6px #609bfa,
+        0 0 2px #0062ff,
+        0 0 10px #0062ff,
+        0 0 55px #0062ff,
+        0 0 70px #0062ff,
+        0 0 80px #0062ff;
+    }
+  }
+
+.neonTextTitle {
+    animation: pulsate 2.5s infinite alternate;   
   }
 
 .neonTextPlayAgain {
-    font-family: 'BeonMedium';
+    font-family: 'Amoneon';
     font-weight: 600;
-    color: #fff;
+    color: #e8d7d7;
     text-shadow:
       0 0 7px #fd71b9,
       0 0 10px #fd71b9,
@@ -172,6 +250,20 @@ h1{
       0 0 102px rgb(255, 0, 153),
       0 0 151px rgb(255, 0, 153);
   }
+
+
+  .tastiera .row:last-of-type > div:first-child button {
+   /*  margin-right: 10px; */
+    border: 1px solid red;
+    width: 100px;
+}
+
+
+.tastiera .row:last-of-type > div:last-child button {
+    /* margin-left: 10px; */
+    border: 1px solid blue;
+    width: 100px;
+}
 
   /* --------------------- RESPONSIVE ---------------------- */
 
@@ -216,7 +308,7 @@ h1{
 
     h1 {
         margin-top: 30px;
-        font-size: 38px;
+        font-size: 36px;
     }
 
 
