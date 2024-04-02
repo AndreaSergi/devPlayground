@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, createContext, StrictMode } from "react";
+import React, { useState, useEffect, createContext, StrictMode, useRef } from "react";
 import { Link } from "react-router-dom";
 import { PingPong } from "./PingPong";
 import { Campo } from "./Campo";
@@ -7,6 +7,7 @@ import { Paddle } from "./Paddle";
 import { Ball } from "./Ball";
 import { SingleScore } from "./SingleScore";
 import "./pingpong.css";
+import AudioComponent from "./AudioComponent";
 
 function PingPongPVCOM() {
   const larghezzaCampo = 1175;
@@ -23,6 +24,14 @@ function PingPongPVCOM() {
   let [getCheck, setCheck] = useState(true); //state utilizzato per verificare la fine della partita
 
   let [key, setKey] = useState(0); // state utilizzato per le key relative al salvataggio dati al sassion storage
+
+  const audioRef = useRef();
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
 
   // Funzione per controllare se la pallina ha colpito un paddle
   const checkPaddleHit = (
@@ -54,8 +63,11 @@ function PingPongPVCOM() {
                 ballBottom >= paddleTop &&
                 ballTop <= paddleBottom;
   
+    
+    
     if (hit) {
       console.log(`La pallina ha colpito il ${isRightPaddle ? 'paddle destro' : 'paddle sinistro'}!`);
+      playAudio()
     }
   
     return hit;
@@ -212,8 +224,11 @@ function PingPongPVCOM() {
     console.log(`velocità ${verticalDirection}`);
     console.log(`minuti trascorsi ${moltiplicatore}`);
   }, [moltiplicatore]);
+
+
   return (
-    <div tabIndex={0} onKeyDown={handleKeyDown}>
+    <>
+      <div tabIndex={0} onKeyDown={handleKeyDown}>
       <SingleScore namePlayer={name} player={`${score}`} />
       <PingPong>
         <Campo
@@ -245,9 +260,14 @@ function PingPongPVCOM() {
             style={{ top: `${paddleRightY}px`, right: "0" }}
           />
           <Ball style={styleMod} />
+          <AudioComponent ref={audioRef} src="pingpong/songs/songPaddle.mp3" />
         </Campo>
       </PingPong>
+      
     </div>
+    
+    </>
+    
   );
 }
 
