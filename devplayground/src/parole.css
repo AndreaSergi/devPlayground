@@ -77,8 +77,8 @@ body{
 .main-grid{
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
-    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-top: 40px;
     overflow: hidden;
 }
 
@@ -94,7 +94,7 @@ body{
 
 h1{
     color: #eae8e8;
-    font-size: 50px;
+    font-size: 65px;
     font-family: 'Amoneon';
 }
 
@@ -102,14 +102,14 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(103, 104, 104);
+    border: 2px solid rgb(49, 49, 49);
     border-radius: 6px;
     margin: 3px;
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
     font-weight: 600;
     font-size: 40px;
-    color: #d2d2d2;
+    color: #bdbdbd;
     font-family: 'Amoneon';
 }
 
@@ -161,9 +161,9 @@ h1{
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
         text-shadow:
-        0 0 4px #62fa62,
-        0 0 11px #62fa62,
-        0 0 19px #62fa62,
+        0 0 4px green,
+        0 0 11px green,
+        0 0 19px green,
         0 0 40px green,
         0 0 80px green,
         0 0 90px green,
@@ -177,35 +177,52 @@ h1{
     }    
   }
   
+  .correctIsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
 
 .correctIs{
-    color: white;
     font-size: 35px;
-    margin-bottom: 50px;
     font-family: 'Higher Monday';
     font-weight: 600;
-    text-shadow:
-        0 0 2px #ffff62,
-        0 0 4px #ffff62,
-        0 0 6px #ffff62,
-        0 0 2px #f7f95f,
-        0 0 10px #fbff00,
-        0 0 55px #fbff00,
-        0 0 70px #fbff00,
-        0 0 80px #fbff00;
+    color: #fbfaef;
+    animation: pulsateYellow 2.5s infinite alternate;
     
 }
 
 .correttaGameOver{
-    color: white;
+    color: rgb(218, 248, 202);
     font-size: 35px;
     margin-bottom: 50px;
     font-family: 'Amoneon';
     font-weight: 600;
-    animation: flicker 1.5s infinite alternate;
+    animation: pulsateGreen 2.5s infinite alternate;  
 }
 
-@keyframes pulsate {
+.numeroTentativi{
+    font-size: 35px;
+    font-family: 'Higher Monday';
+    font-weight: 600;
+    color: rgb(220, 255, 224);
+    text-shadow:
+        0 0 9px #62fa62,
+        0 0 15px #62fa62,
+        0 0 25px #62fa62,
+        0 0 40px green,
+        0 0 80px green,
+        0 0 90px green,
+        0 0 100px green,
+        0 0 150px green;
+}
+
+@keyframes pulsateBlue {
     100% {
       /* Larger blur radius */
       text-shadow:
@@ -232,8 +249,94 @@ h1{
     }
   }
 
+  @keyframes pulsateYellow {
+    100% {
+      /* Larger blur radius */
+      text-shadow:
+        0 0 4px #d3bb04,
+        0 0 11px #d3bb04,
+        0 0 19px #d3bb04,
+        0 0 40px #d3bb04,
+        0 0 80px #d3bb04,
+        0 0 90px #d3bb04,
+        0 0 100px #d3bb04,
+        0 0 10px #d3bb04;
+    }
+    0% {
+      /* Smaller blur radius */
+      text-shadow:
+        0 0 2px #d3bb04,
+        0 0 4px #d3bb04,
+        0 0 6px #d3bb04,
+        0 0 2px #d3bb04,
+        0 0 10px #d3bb04,
+        0 0 55px #d3bb04,
+        0 0 70px #d3bb04,
+        0 0 80px #d3bb04;
+    }
+  }
+
+  @keyframes pulsateGreen {
+    100% {
+      /* Larger blur radius */
+      text-shadow:
+        0 0 4px #77ff79,
+        0 0 11px #77ff79,
+        0 0 19px #77ff79,
+        0 0 40px green,
+        0 0 80px green,
+        0 0 90px green,
+        0 0 100px green,
+        0 0 10px green;
+    }
+    0% {
+      /* Smaller blur radius */
+      text-shadow:
+        0 0 2px #77ff79,
+        0 0 4px #77ff79,
+        0 0 6px #77ff79,
+        0 0 2px green,
+        0 0 10px green,
+        0 0 55px green,
+        0 0 70px green,
+        0 0 80px green;
+    }
+  }
+
+
+
+  .gialla{
+    color: #fffdcf;
+    text-shadow:
+        0 0 4px #d3bb04,
+        0 0 4px #d3bb04,
+        0 0 6px #d3bb04,
+        0 0 8px #d3bb04,
+        0 0 20px #d3bb04,
+        0 0 20px #d3bb04,
+        0 0 30px #d3bb04,
+        0 0 40px #d3bb04;
+  }
+
+  .verde{
+    color: rgb(220, 255, 224);
+    text-shadow:
+        0 0 9px #62fa62,
+        0 0 15px #62fa62,
+        0 0 25px #62fa62,
+        0 0 40px green,
+        0 0 80px green,
+        0 0 90px green,
+        0 0 100px green,
+        0 0 150px green;
+  }
+
+  .black{
+    color: rgb(165, 165, 165);
+  }
+
 .neonTextTitle {
-    animation: pulsate 2.5s infinite alternate;   
+    animation: pulsateBlue 2.5s infinite alternate;   
   }
 
 .neonTextPlayAgain {

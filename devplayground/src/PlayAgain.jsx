@@ -9,7 +9,13 @@ export function PlayAgain({parolaGenerata, rowIndex}) {
     return (
         <>
             {parola && 
-                <div className="correctIs">La parola corretta e': <span className="correttaGameOver"> {parola.toUpperCase()} </span> <br /> Hai indovinato in {rowIndex} tentativi !</div>
+               <div className="correctIsContainer">
+                 <div className="correctIs">
+                    La parola corretta e':
+                    <span className="correttaGameOver"> {parola.toUpperCase()} </span>
+                    </div>
+                    <div className="correctIs">Hai indovinato in <span className="numeroTentativi">{rowIndex}</span> tentativi !</div>
+               </div>
             }
 
 

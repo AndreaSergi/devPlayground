@@ -10,13 +10,13 @@ useEffect(() => {
 
     if (lettereUguali && rowIndex === posizione + 1) {
         lettereUguali.forEach(indice => {
-            arrayMomentaneo[indice] = "#d3bb04";
+            arrayMomentaneo[indice] = "gialla";
         });
     }
 
     if (indiciUguali && rowIndex === posizione + 1) {
         indiciUguali.forEach(indice => {
-            arrayMomentaneo[indice] = "green";
+            arrayMomentaneo[indice] = "verde";
         });
     }
 
@@ -25,22 +25,12 @@ useEffect(() => {
 }, [lettereUguali]);
 
 
-  
-    
 
     return (
         <div className="wordCellsContainer">
 
             {[...Array(5)].map((value, index)=>{
-                return (<div key= {index} className="cell" style={{ color: '#d2d2d2',  textShadow:
-                `0 0 5px ${colors[index]},
-                0 0 10px ${colors[index]},
-                0 0 15px ${colors[index]},
-                0 0 20px ${colors[index]},
-                0 0 25px ${colors[index]},
-                0 0 30px ${colors[index]},
-                0 0 35px ${colors[index]},
-                0 0 60px ${colors[index]}` }}></div>)
+                return (<div key= {index} className={`cell ${colors[index]}`}></div>)
                 })
             }
         </div>
