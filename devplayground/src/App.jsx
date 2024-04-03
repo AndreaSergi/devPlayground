@@ -12,7 +12,8 @@ export function App() {
     const [rowIndex, setRowIndex] = useState(0)
     const [gameOver, setGameOver] = useState(false)
     const [oggettoOccorrenze, setOggettoOccorrenze] = useState({});
-    const [parolaGenerata, setParolaGenerata] = useState([])
+    const [parolaGenerata, setParolaGenerata] = useState([]);
+    const [indovinato, setIndovinato] = useState(false)
     
     /* console.log('Parola generata:', parolaGenerata); */
     console.log('Parola generata:', parolaGenerata && parolaGenerata[0] ? parolaGenerata[0].join('') : '');
@@ -38,13 +39,19 @@ export function App() {
 
     },[rowIndex, indiciUguali])
 
+    useEffect(() => {
+        if(indiciUguali.length == 5){
+            setIndovinato(true)
+        }
+    })
+
     return (
         <div className="main-container">
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?
                 <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
-                setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex}/>
+                setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex} indovinato={indovinato}/>
             }
         </div>
     )

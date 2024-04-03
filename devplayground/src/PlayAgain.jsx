@@ -1,10 +1,13 @@
-export function PlayAgain({parolaGenerata, rowIndex}) {
+import { useState } from "react";
+
+export function PlayAgain({parolaGenerata, rowIndex, indovinato}) {
     function refreshPage() { 
         window.location.reload(); 
     }
 
     // Check if parolaGenerata is not null or undefined before accessing it
     const parola = parolaGenerata ? parolaGenerata[0].join('') : '';
+    
 
     return (
         <>
@@ -14,7 +17,8 @@ export function PlayAgain({parolaGenerata, rowIndex}) {
                     La parola corretta e':
                     <span className="correttaGameOver"> {parola.toUpperCase()} </span>
                     </div>
-                    <div className="correctIs">Hai indovinato in <span className="numeroTentativi">{rowIndex}</span> tentativi !</div>
+                    {indovinato === true && <div className="correctIs">Hai indovinato in <span className="numeroTentativi">{rowIndex}</span> tentativi !</div>
+                    }
                </div>
             }
 
