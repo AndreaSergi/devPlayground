@@ -16,7 +16,7 @@ function PingPongPVCOM() {
   const [getTop, setTop] = useState(50);
   const [getLeft, setLeft] = useState(50);
   const [verticalDirection, setVerticalDirection] = useState(4); // Velocità verticale aumentata
-  const [horizontalDirection, setHorizontalDirection] = useState(4); // Velocità orizzontale aumentata
+  const [horizontalDirection, setHorizontalDirection] = useState(5); // Velocità orizzontale aumentata
   const [score, setScore] = useState(0);
   let [paddleLeftY, setPaddleLeftY] = useState(115); // Posizione iniziale paddle sinistro
   let [paddleRightY, setPaddleRightY] = useState(115); // Posizione iniziale paddle destro
