@@ -9,8 +9,8 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
     const [tentativo, setTentativo ] = useState("")
     const [arrayParole1, setArrayParole1] = useState([])
     const [parolaCorretta, setParolaCorretta] = useState('')
-    const [arrayDiLetterePuzzolenti, setArrayDiLetterePuzzolenti] = useState([])
-    const [arrayDiLettereGiuste, setArrayDiLettereGiuste] = useState([])
+    const [arrayDiLettereAssenti, setArrayDiLettereAssenti] = useState([])
+    const [arrayDiLettereVerdi, setArrayDiLettereVerdi] = useState([])
     
     const rows = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -168,8 +168,6 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
         "zanne", "zappa", "zebra", "zecca", "zeppa", "zeppo", "zinco", "zirlo", "zitti", "zolfo",
         "zolla", "zompo", "zonzo", "zoppo", "zozze", "zucca", "zuffa", "zuppa"   
     ]
-      
-
 
       useEffect(() => {
           const indiceParola = Math.floor(Math.random() * paroleItaliane5.length);
@@ -214,20 +212,14 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
                 const tentativoLowercase = tentativo.toLowerCase();
                 const tentativoArray = tentativoLowercase.split('');
                 
-
-                console.log("Tentativo corrente + parola corretta:",tentativo, parolaCorretta)
-                
                 const oggettoOccorrenze = provaTest(parolaCorretta, tentativoLowercase)
-
-
 
                 // Trova gli indici uguali
                 const nuoviIndiciUguali = tentativoArray.map((element, index) => {
                     if(parolaCorretta[index] === element){
-                        const letteraGiusta = element
-                        setArrayDiLettereGiuste(prevArray => [...prevArray, letteraGiusta])
-                        console.log("letteraGiusta", letteraGiusta)
-                        console.log("arrayletteraGiusta", arrayDiLettereGiuste)
+                        const letteraVerde = element
+                        setArrayDiLettereVerdi(prevArray => [...prevArray, letteraVerde])
+
                     if(oggettoOccorrenze[element] > 0){
                         oggettoOccorrenze[element] --
                         return index
@@ -239,23 +231,14 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
                 const nuoveLettereUguali = tentativoArray.map((element, index) => {
                     if(oggettoOccorrenze[element] > 0){
                         oggettoOccorrenze[element] --
-                        console.log("coloro di giallo", element)
                         return index
                     } else {
-                        const letteraChePuzza = element
-                        setArrayDiLetterePuzzolenti((prevArray) => [...prevArray, letteraChePuzza])
-                        console.log("suca",letteraChePuzza)
+                        const letteraAssente = element
+                        setArrayDiLettereAssenti((prevArray) => [...prevArray, letteraAssente])
                     }
                 }).filter((lettera)=>(lettera != null));
-
-                console.log("LETTERE UGUALI" ,nuoveLettereUguali)
-                
-                
                             
-
                 onInvio(nuoveLettereUguali, nuoviIndiciUguali, oggettoOccorrenze)
-                console.log(nuoviIndiciUguali)
-                console.log('Nuove lettere uguali:', nuoveLettereUguali)
 
                 setTentativo("");
 
@@ -264,8 +247,6 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
                 return null;
             }
         }
-  
-
 
     function handleDelete() {
         const wordCells = document.querySelectorAll('.wordCellsContainer')[rowIndex].children;
@@ -281,7 +262,6 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
     }
 
 
-
     return (
         <div className="tastiera">
             {rows.map((row, index) => (
@@ -294,8 +274,8 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
                             setTentativo={setTentativo}
                             setCellIndex={setCellIndex}
                             lettera={key}
-                            puzza={arrayDiLetterePuzzolenti.includes(key.toLowerCase())}
-                            giusta={arrayDiLettereGiuste.includes(key.toLowerCase())}
+                            assente={arrayDiLettereAssenti.includes(key.toLowerCase())}
+                            verde={arrayDiLettereVerdi.includes(key.toLowerCase())}
                             clickFunction={key === 'INVIO' ? handleInvio : (key === 'DEL' ? handleDelete : undefined)}
                         />
                     ))}

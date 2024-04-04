@@ -1,4 +1,4 @@
-export function InputButton({ lettera, cellIndex, setCellIndex, rowIndex, clickFunction, setTentativo, puzza, giusta}) {
+export function InputButton({ lettera, cellIndex, setCellIndex, rowIndex, clickFunction, setTentativo, assente, verde}) {
 
 
     const handleClick = () => {
@@ -21,7 +21,7 @@ export function InputButton({ lettera, cellIndex, setCellIndex, rowIndex, clickF
 
     return (
         <div>
-            <button className={`button  ${puzza? "disabledButton" : ""} ${giusta? "correctButton" : ""} `} onClick={handleClick} value={lettera}>{lettera}</button>
+            <button className={`button  ${assente? "disabledButton" : ""} ${verde? "correctButton" : ""} `} onClick={handleClick} value={lettera}>{lettera}</button>
         </div>
     );
 }
