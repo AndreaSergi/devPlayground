@@ -33,8 +33,10 @@ body{
 
 .tastiera{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-    width: 800px;
+    /* width: 800px; */
     flex-wrap: wrap;
     justify-content: center;
     overflow: hidden;
@@ -124,6 +126,8 @@ h1{
 
 .row{
     display: flex;
+    justify-content: center;
+    width: 90%;
 }
 
 
@@ -376,6 +380,11 @@ h1{
 
   @media screen and (max-width: 700px){
 
+    .main-container{
+        justify-content: center;
+        align-items: center;
+    }
+
     .button{
         width: 48px;
         height: 48px;
@@ -391,6 +400,10 @@ h1{
     }
 
   }
+
+
+
+
 
   @media screen and (max-width: 560px){
 
@@ -410,7 +423,11 @@ h1{
 
   }
 
-  @media screen and (max-width: 390px) {
+
+
+
+
+  @media screen and (max-width: 430px) {
     body{
         padding-top: 0;
     }
@@ -421,47 +438,54 @@ h1{
         justify-content: flex-start;
         height: 100vh;
         overflow-x: hidden;
-        padding-top: 30px;
+        padding-top: 2.5vh;
     }
 
 
     .tastiera {
         flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
-        margin-top: 60px;
+        margin-top: 7vh;
+        width: 100vw;
     }
 
 
     .tastiera .row:last-of-type > div:first-child button {
-        width: 46px;
+        width: 13vw;
     }
 
 
     .tastiera .row:last-of-type > div:last-child button {
-        width: 46px;
+        width: 13vw;
     }
 
     .button {
-        width: 30px;
+        width: 7.7vw;
+        height: 7.5vh;
         border-radius: 6px;
     }
 
     .cell {
-        width: 60px;
-        height: 60px;
+        width: 17vw;
+        height:8vh;
+        font-size: 32px;
     }
 
     h1 {
-        font-size: 50px;
+        font-size: 2.5rem;
     }
-
     .main-grid{
-        margin-top: 40px;
-        margin-bottom: 0;
+        align-items: center;
+        margin-top: 3.5vh;
+        margin-bottom: 20px;
+        width: 100vw;
+        height: 50vh;
     }
 
     .correctIs{
-        font-size: 30px;
+        margin-top: 2vh;
+        font-size: 1.6rem;
     }
 
   }
