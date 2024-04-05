@@ -8,11 +8,12 @@
   inset: 0;
   height: fit-content;
   margin: auto;
-  font-size: 20px;
+  /* font-size: 18px; */
 }
 
 .container p {
   padding: 8px 0;
+  font-size: 18px; 
 }
 
 .content {
