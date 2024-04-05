@@ -19,7 +19,7 @@ export function TrisMenu() {
     <div className={style.container}>
       <TrisLogo />
       <div className={style.buttons}>
-        <TrisButton onClick={() => {}}>3x3</TrisButton>
+        {/* <TrisButton onClick={() => {}}>3x3</TrisButton> */}
         <TrisButton link="/tris/game">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
