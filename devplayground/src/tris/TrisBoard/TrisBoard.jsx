@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import "./TrisBoard.css";
 import { TrisButton } from "../TrisButton/TrisButton";
 import { TrisThemeContext } from "../TrisThemeContext/TrisThemeContext";
+import bubblePopSound from "./bubble-pop.mp3";
+import winningSound from "./winning-sound.mp3";
 
 const BOARD_SIZE = 3;
 
@@ -18,6 +20,9 @@ export function TrisBoard() {
   const [scoreO, setScoreO] = useState(0);
 
   const theme = useContext(TrisThemeContext);
+
+  const bubblePopAudio = new Audio(bubblePopSound);
+  const winningAudio = new Audio(winningSound);
 
   function checkWinner() {
     // Check rows
@@ -100,6 +105,7 @@ export function TrisBoard() {
       setBoard(newBoard);
       setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
       checkWinner();
+      bubblePopAudio.play()
     }
   }
 
@@ -142,10 +148,13 @@ export function TrisBoard() {
 
   function checkWinnerAndAssignScore() {
     // Logica per controllare il vincitore rimane inalterata
-    if (winner === "X") {
-      setScoreX(scoreX + 1); // Assegna un punto a X
-    } else if (winner === "O") {
-      setScoreO(scoreO + 1); // Assegna un punto a O
+    if (winner === "X" || winner === "O") {
+      winningAudio.play();
+      if (winner === "X") {
+        setScoreX(scoreX + 1); // Assegna un punto a X
+      } else if (winner === "O") {
+        setScoreO(scoreO + 1); // Assegna un punto a O
+      }
     }
   }
 
@@ -161,17 +170,17 @@ export function TrisBoard() {
 
   return (
     <div className="trix">
-      <h1>TRIX</h1>
+      <h1 className="h1">T  R  I  X</h1>
 
       <div className="scoreboard">
-        <p>Player X:{scoreX}</p>
+        <p>Player X: {scoreX}</p>
         <p>Player O: {scoreO}</p>
 
         {/* <p><button onClick={resetScore}>Resetta il punteggio!</button></p> */}
       </div>
 
       <div className="upper-line">
-        {!winner && <p>Current player: {currentPlayer}</p>}
+        {!winner && <p>Current player: <a className="currentP">{currentPlayer}</a></p>}
       </div>
 
       <div className="result">
