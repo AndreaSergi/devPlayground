@@ -13,6 +13,7 @@
   width: 100%;
   height: 100%;
   background-image: url(../Tic-tac-toe.png);
+  background-size: contain;
 }
 
 /* Martina: Aggiunta classe, dedicata alla griglia bianca, per la versione dark */
@@ -140,4 +141,16 @@ p {
 
 .h1{
   font-size: 48px;
+}
+
+@media screen and (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  .cell {
+    width: 100px;
+    height: 100px;
+  }
 }
