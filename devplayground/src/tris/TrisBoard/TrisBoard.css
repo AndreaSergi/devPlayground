@@ -47,7 +47,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 150px);
   grid-template-rows: repeat(3, 150px);
-  margin: 30px 0;
+  margin: 50px 0;
 }
 
 .row {
