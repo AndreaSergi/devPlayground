@@ -40,6 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4px;
+  width: 1000px;
 }
 
 .board {
@@ -120,6 +121,7 @@ p {
   flex-direction: row;
   align-items: center;
   gap: 14px;
+  /* margin-bottom: 18px; */
 }
 
 .upper-line {
@@ -144,6 +146,10 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+  .trix {
+    width: 100%;
+  }
+
   .board {
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);

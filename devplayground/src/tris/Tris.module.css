@@ -29,8 +29,8 @@
   top: 24px;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .page {
     min-height: 85vh;
   }
-}
+} */
