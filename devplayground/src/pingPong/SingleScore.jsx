@@ -4,18 +4,19 @@ export function SingleScore({ player, namePlayer }) {
         padding: "10px",
         margin: "10px 0",
         borderRadius: "5px",
-        background: 'url("pingpong/img/backgroundPunteggio.png")',
-        color: "#ffd702",
+        backgroundColor:"rgba(255, 255, 255, 0.65)",
+        /*background: 'url("pingpong/img/backgroundPunteggio.png")',*/
+        color: "#ffffff",
         textAlign: "center",
         boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
         fontFamily: '"Lucida Console", Monaco, monospace',
-        border: "5px solid #dbb906",
+        border: "5px solid #ffffff",
         display: "flex",
         flexDirection: "horizontal",
         align: "center",
         justifyContent: "center",
         position: "relative",
-        zIndex: "20px"
+        zIndex: "20px",
       };
     
     

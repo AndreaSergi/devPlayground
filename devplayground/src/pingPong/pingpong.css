@@ -23,7 +23,8 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-image: url('pingpong/background.mp4');
+    border: 4px solid #ffffff;
+    border-radius: 8px;
 }
 
 .paddle {
