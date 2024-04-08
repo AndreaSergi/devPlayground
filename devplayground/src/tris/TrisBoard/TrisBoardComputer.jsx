@@ -210,7 +210,7 @@ export function TrisBoardComputer() {
       </div>
 
       <div className="upper-line">
-        {!winner && <p>Current player: {currentPlayer}</p>}
+        {!winner && <p>Current player: <a className="currentP">{currentPlayer}</a></p>}
       </div>
 
       <div className="result">
