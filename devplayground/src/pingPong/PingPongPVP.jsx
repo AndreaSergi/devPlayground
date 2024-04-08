@@ -8,6 +8,7 @@ import { Ball } from "./Ball";
 import { Punteggio } from "./Punteggio";
 import "./pingpong.css";
 import "./pop-up.css";
+import { Video } from "./Video";
 
 function PingPongPVP() {
   const [getTop, setTop] = useState(50);
@@ -167,6 +168,7 @@ function PingPongPVP() {
 
   return (
     <div>
+      <Video/>
       <Punteggio
         player={score.player}
         opponent={score.opponent}
