@@ -4,7 +4,9 @@ export function Video() {
         position: "absolute",
         top: "0px",
         left: "0px",
-        zIndex: "0px"
+        zIndex: "0px",
+        width: "100vw",
+        height: "100vh"
       }
 
     return(
