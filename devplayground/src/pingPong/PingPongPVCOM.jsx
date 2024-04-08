@@ -8,6 +8,7 @@ import { Ball } from "./Ball";
 import { SingleScore } from "./SingleScore";
 import "./pingpong.css";
 import AudioComponent from "./AudioComponent";
+import { Video } from "./Video";
 
 function PingPongPVCOM() {
   const larghezzaCampo = 1175;
@@ -226,14 +227,22 @@ function PingPongPVCOM() {
   }, [moltiplicatore]);
 
 
+  const styleCampo = {
+    width: `${larghezzaCampo}px`,
+    height: `${altezzaCampo}px`,
+  }
+
+  
   return (
     <>
+      <Video />
       <div tabIndex={0} onKeyDown={handleKeyDown}>
       <SingleScore namePlayer={name} player={`${score}`} />
       <PingPong>
         <Campo
-          style={{ width: `${larghezzaCampo}px`, height: `${altezzaCampo}px` }}
+          style={styleCampo}
         >
+          
           {!getCheck && (
             <div className="pop-up">
               <h2>Game Over!</h2>

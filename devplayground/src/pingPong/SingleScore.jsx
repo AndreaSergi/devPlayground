@@ -13,7 +13,9 @@ export function SingleScore({ player, namePlayer }) {
         display: "flex",
         flexDirection: "horizontal",
         align: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        position: "relative",
+        zIndex: "20px"
       };
     
     

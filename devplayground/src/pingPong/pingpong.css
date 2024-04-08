@@ -16,14 +16,14 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #2a5298;
+    
 }
 
 .campo {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: #13772e;
+    background-image: url('pingpong/background.mp4');
 }
 
 .paddle {
