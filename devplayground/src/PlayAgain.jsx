@@ -15,7 +15,7 @@ export function PlayAgain({parolaGenerata, rowIndex, indovinato}) {
                <div className="correctIsContainer">
                  <div className="correctIs">
                     La parola corretta e':
-                    <span className="correttaGameOver"> {parola.toUpperCase()} </span>
+                    <span id="correttaGameOver"> {parola.toUpperCase()} </span>
                     </div>
                     {indovinato === true && <div className="correctIs">Hai indovinato in <span className="numeroTentativi">{rowIndex}</span> tentativi !</div>
                     }

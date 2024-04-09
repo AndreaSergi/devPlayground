@@ -1,9 +1,52 @@
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+@font-face {
+    font-family: 'Amoneon';
+    src: url(./font/amoneon-amoneon-regular-400.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Higher Monday';
+    src: url(./font/HigherMonday.ttf);
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+/* @font-face {
+  font-family: 'Amoneon';
+  src: local('Amoneon'), local('Amoneon'),
+    url('/font/amoneon-amoneon-regular-400.ttf') format('truetype');
+
+
+  font-weight: normal;
+  font-style: normal;
+
+  
+  
+}
+
+@font-face {
+  font-family: 'Higher Monday';
+  src: local('Higher Monday'), local('Higher Monday'),
+    url('/font/HigherMonday.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+} */
+
+
+
+
+
 body{
     height: 100vh;
     /* border: 3px solid red; */
@@ -16,19 +59,6 @@ body{
     overflow-y: hidden;
 }
 
-@font-face {
-    font-family: 'Amoneon';
-    src: url(./font/ttf/amoneon-amoneon-regular-400.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Higher Monday';
-    src: url(./font/HigherMonday.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 .tastiera{
@@ -197,15 +227,15 @@ h1{
   }
 
 .correctIs{
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Higher Monday';
-    font-weight: 600;
+    font-weight: 400;
     color: #fbfaef;
     animation: pulsateYellow 2.5s infinite alternate;
     
 }
 
-.correttaGameOver{
+#correttaGameOver{
     color: rgb(218, 248, 202);
     font-size: 35px;
     margin-bottom: 50px;
@@ -229,6 +259,56 @@ h1{
         0 0 100px green,
         0 0 150px green;
 }
+
+@keyframes turningOnYellow {
+    0%, 8%,18%{
+      text-shadow: none;
+    }
+
+    /* 60% {
+      text-shadow: 0 0 50px #eee561;
+    } */
+
+
+    1%, 12%,22% {
+      text-shadow:
+        0 0 4px #d3bb04,
+        0 0 4px #d3bb04,
+        0 0 6px #d3bb04,
+        0 0 8px #d3bb04,
+        0 0 20px #d3bb04,
+        0 0 20px #d3bb04,
+        0 0 30px #d3bb04,
+        0 0 40px #d3bb04;
+    }
+  }
+
+  @keyframes turningOnGreen {
+    0%, 8%,18%{
+      text-shadow: none;
+    }
+
+    /* 60% {
+      text-shadow: 0 0 50px #eee561;
+    } */
+
+
+    1%, 12%,22% {
+      text-shadow:
+        0 0 9px #62fa62,
+        0 0 15px #62fa62,
+        0 0 25px #62fa62,
+        0 0 40px green,
+        0 0 80px green,
+        0 0 90px green,
+        0 0 100px green,
+        0 0 150px green;
+    }
+  }
+  
+  
+  
+  
 
 @keyframes pulsateBlue {
     100% {
@@ -315,6 +395,7 @@ h1{
 
   .gialla{
     color: #fffdcf;
+    animation: turningOnYellow 1.5s ease-in-out forwards;
     text-shadow:
         0 0 4px #d3bb04,
         0 0 4px #d3bb04,
@@ -328,6 +409,7 @@ h1{
 
   .verde{
     color: rgb(220, 255, 224);
+    animation: turningOnGreen 1.5s ease-in-out forwards;
     text-shadow:
         0 0 9px #62fa62,
         0 0 15px #62fa62,
@@ -365,14 +447,14 @@ h1{
 
   .tastiera .row:last-of-type > div:first-child button {
    /*  margin-right: 10px; */
-    border: 1px solid red;
+    border: 1px solid;
     width: 100px;
 }
 
 
 .tastiera .row:last-of-type > div:last-child button {
     /* margin-left: 10px; */
-    border: 1px solid blue;
+    border: 1px solid;
     width: 100px;
 }
 
