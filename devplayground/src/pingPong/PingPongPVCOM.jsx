@@ -1,5 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, createContext, StrictMode, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  createContext,
+  StrictMode,
+  useRef
+} from "react";
 import { Link } from "react-router-dom";
 import { PingPong } from "./PingPong";
 import { Campo } from "./Campo";
@@ -24,7 +30,8 @@ function PingPongPVCOM() {
 
   let [getCheck, setCheck] = useState(true); //state utilizzato per verificare la fine della partita
 
-  let [key, setKey] = useState(0); // state utilizzato per le key relative al salvataggio dati al sassion storage
+  let [key, setKey] = useState(0);
+  const [border, setBorder] = useState("#ffffff");
 
   const audioRef = useRef();
 
@@ -47,47 +54,48 @@ function PingPongPVCOM() {
     const ballRight = ballPos.x + ballSize;
     const ballTop = ballPos.y;
     const ballBottom = ballPos.y + ballSize;
-  
+
     let paddleLeft = paddlePos.x;
     let paddleRight = paddlePos.x + paddleWidth;
     const paddleTop = paddlePos.y;
     const paddleBottom = paddlePos.y + paddleHeight;
-  
+
     // Se è il paddle destro, aggiusta la posizione per il controllo della collisione
     if (isRightPaddle) {
       paddleLeft -= paddleWidth; // Sposta il paddleLeft indietro della larghezza del paddle
       paddleRight -= paddleWidth; // Sposta il paddleRight indietro della larghezza del paddle
     }
-  
-    const hit = ballRight >= paddleLeft &&
-                ballLeft <= paddleRight &&
-                ballBottom >= paddleTop &&
-                ballTop <= paddleBottom;
-  
-    
-    
+
+    const hit =
+      ballRight >= paddleLeft &&
+      ballLeft <= paddleRight &&
+      ballBottom >= paddleTop &&
+      ballTop <= paddleBottom;
+
     if (hit) {
-      console.log(`La pallina ha colpito il ${isRightPaddle ? 'paddle destro' : 'paddle sinistro'}!`);
-      playAudio()
+      console.log(
+        `La pallina ha colpito il ${
+          isRightPaddle ? "paddle destro" : "paddle sinistro"
+        }!`
+      );
+      playAudio();
     }
-  
+
     return hit;
   };
-  
-  
 
   useEffect(() => {
     const interval = setInterval(() => {
       // Aggiorna la posizione superiore della palla
       setTop((prevTop) => {
         let newTop = prevTop + verticalDirection;
-        if (newTop >= altezzaCampo - 10 || newTop <= 0) {
+        if (newTop >= altezzaCampo - 15 || newTop <= 0) {
           setVerticalDirection(-verticalDirection);
           return prevTop; // Impedisce alla palla di muoversi oltre il campo
         }
         return newTop;
       });
-  
+
       // Aggiorna la posizione sinistra della palla
       setLeft((prevLeft) => {
         let newLeft = prevLeft + horizontalDirection;
@@ -95,20 +103,25 @@ function PingPongPVCOM() {
           setHorizontalDirection(-horizontalDirection);
           return prevLeft; // Impedisce alla palla di muoversi oltre il campo
         }
-  
+        console.log(`new left: ${newLeft}`);
+
         // Controlla la condizione di fine partita
-        if (newLeft <= 9) {
+        if (newLeft <= 7) {
+          setBorder("#626262");
           setCheck(false);
           setVerticalDirection(0);
           setHorizontalDirection(0);
-          sessionStorage.setItem(key, JSON.stringify({
-            name: name,
-            score: score,
-            data: new Date(),
-          }));
+          sessionStorage.setItem(
+            key,
+            JSON.stringify({
+              name: name,
+              score: score,
+              data: new Date()
+            })
+          );
           setKey(key + 1);
         }
-  
+
         // Controlla la collisione con il paddle
         const ballPos = { x: newLeft, y: getTop };
         const paddleLeftPos = { x: 0, y: paddleLeftY };
@@ -116,7 +129,7 @@ function PingPongPVCOM() {
         const paddleHeight = 70;
         const paddleWidth = 10;
         const ballSize = 15;
-  
+
         if (
           checkPaddleHit(
             ballPos,
@@ -137,10 +150,10 @@ function PingPongPVCOM() {
           setHorizontalDirection(-horizontalDirection);
           return prevLeft; // Impedisce alla palla di muoversi dopo la collisione
         }
-  
+
         return newLeft;
       });
-  
+
       // Aggiorna la posizione Y del paddle destro
       setPaddleRightY((prevY) => {
         const deltaY = getTop - prevY - 35;
@@ -155,14 +168,13 @@ function PingPongPVCOM() {
         return prevY + smoothingFactor * (newY - prevY);
       });
     }, 25);
-  
+
     return () => clearInterval(interval);
   }, [getTop, verticalDirection, horizontalDirection]);
-  
 
   const styleMod = {
     top: `${getTop}px`,
-    left: `${getLeft}px`,
+    left: `${getLeft}px`
   };
 
   // Funzione per controllare il padlle
@@ -226,57 +238,58 @@ function PingPongPVCOM() {
     console.log(`minuti trascorsi ${moltiplicatore}`);
   }, [moltiplicatore]);
 
-
   const styleCampo = {
     width: `${larghezzaCampo}px`,
-    height: `${altezzaCampo}px`,
-  }
+    height: `${altezzaCampo}px`
+  };
 
-  
   return (
     <>
       <Video />
       <div tabIndex={0} onKeyDown={handleKeyDown}>
-      <SingleScore namePlayer={name} player={`${score}`} />
-      <PingPong>
-        <Campo
-          style={styleCampo}
-        >
-          
-          {!getCheck && (
-            <div className="pop-up">
-              <h2>Game Over!</h2>
-              <h3>Il tuo punteggio: {score}</h3>
-              <Link to="/">
-                <button className="btn-pop-up">Menù Principale</button>
-              </Link>
-              <button
-                className="btn-pop-up"
-                onClick={() => {
-                  window.location.reload();
-                }}
-              >
-                Nuova partita
-              </button>
-            </div>
-          )}
-          <Paddle
-            position="left"
-            style={{ top: `${paddleLeftY}px`, left: "0" }}
-          />
-          <Paddle
-            position="right"
-            style={{ top: `${paddleRightY}px`, right: "0" }}
-          />
-          <Ball style={styleMod} />
-          <AudioComponent ref={audioRef} src="pingpong/songs/songPaddle.mp3" />
-        </Campo>
-      </PingPong>
-      
-    </div>
-    
+        <SingleScore
+          namePlayer={name}
+          player={`${score}`}
+          borderColor={border}
+        />
+        <PingPong>
+          <Campo style={styleCampo} borderColor={border}>
+            {!getCheck && (
+              <div className="pop-up">
+                <h2>Game Over!</h2>
+                <h3>Il tuo punteggio: {score}</h3>
+                <Link to="/">
+                  <button className="btn-pop-up">Menù Principale</button>
+                </Link>
+                <button
+                  className="btn-pop-up"
+                  onClick={() => {
+                    window.location.reload();
+                  }}
+                >
+                  Nuova partita
+                </button>
+              </div>
+            )}
+            <Paddle
+              borderColor={border}
+              position="left"
+              style={{ top: `${paddleLeftY}px`, left: "0" }}
+            />
+            <Paddle
+              borderColor={border}
+              position="right"
+              style={{ top: `${paddleRightY}px`, right: "0" }}
+            />
+            <Ball style={styleMod} />
+            <AudioComponent
+              ref={audioRef}
+              src="pingpong/songs/songPaddle.mp3"
+            />
+          </Campo>
+        </PingPong>
+      </div>
     </>
-    
   );
 }
 

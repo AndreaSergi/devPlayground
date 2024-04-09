@@ -1,6 +1,12 @@
 /* eslint-disable react/prop-types */
-export function Campo({ children, style }) {
+export function Campo({ children, style, borderColor }) {
+    const bordo = {
+        ...style,
+        border: "4px solid",
+        borderColor: borderColor
+    };
+
     return (
-        <div style={style} className="campo">{children}</div>
+        <div style={bordo} className="campo">{children}</div>
     )
 }

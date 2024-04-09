@@ -1,8 +1,14 @@
 
-export function Paddle({ position , style }) {  
+export function Paddle({ position , style, borderColor }) {  
 
+    const border = {
+        ...style,
+        backgroundColor: borderColor
+        
+    }
+    
 
     return (
-         <div className={`paddle ${position} `} style={style}></div>
+         <div className={`paddle ${position} `} style={border}></div>
     )
 }
