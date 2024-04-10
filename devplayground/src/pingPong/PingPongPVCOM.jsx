@@ -17,8 +17,9 @@ import AudioComponent from "./AudioComponent";
 import { Video } from "./Video";
 
 function PingPongPVCOM() {
-  const larghezzaCampo = 1175;
-  const altezzaCampo = 575;
+  const dim = useRef(null);
+  let [larghezzaCampo, setLarghezzaCampo] = useState(1175);
+  let [altezzaCampo, setAltezzaCampo] = useState(575);
   const name = "Giocatore";
   const [getTop, setTop] = useState(50);
   const [getLeft, setLeft] = useState(50);
@@ -35,11 +36,27 @@ function PingPongPVCOM() {
 
   const audioRef = useRef();
 
+  const dimensione = document.body;
+  let larghezza = dimensione.clientWidth;
+  let altezza = dimensione.clientHeight;
+  useEffect(() => {
+
+    console.log(larghezza + " X " + altezza);
+
+    setLarghezzaCampo((larghezza - (larghezza * 0.2)));
+    setAltezzaCampo(larghezza/2);
+
+    console.log("campo : " +larghezzaCampo + " x " + altezzaCampo);
+
+  }, [larghezza, altezza])
+
   const playAudio = () => {
     if (audioRef.current) {
       audioRef.current.play();
     }
   };
+
+
 
   // Funzione per controllare se la pallina ha colpito un paddle
   const checkPaddleHit = (
@@ -74,8 +91,7 @@ function PingPongPVCOM() {
 
     if (hit) {
       console.log(
-        `La pallina ha colpito il ${
-          isRightPaddle ? "paddle destro" : "paddle sinistro"
+        `La pallina ha colpito il ${isRightPaddle ? "paddle destro" : "paddle sinistro"
         }!`
       );
       playAudio();
@@ -103,7 +119,7 @@ function PingPongPVCOM() {
           setHorizontalDirection(-horizontalDirection);
           return prevLeft; // Impedisce alla palla di muoversi oltre il campo
         }
-        console.log(`new left: ${newLeft}`);
+        //console.log(`new left: ${newLeft}`);
 
         // Controlla la condizione di fine partita
         if (newLeft <= 7) {
@@ -159,7 +175,7 @@ function PingPongPVCOM() {
         const deltaY = getTop - prevY - 35;
         let newY = prevY;
         if (deltaY > 0) {
-          newY = Math.min(prevY + 10, altezzaCampo - 70);
+          newY = Math.min(prevY + 10, altezzaCampo - 74); //default 70
         } else if (deltaY < 0) {
           newY = Math.max(prevY - 10, 0);
         }
@@ -181,11 +197,12 @@ function PingPongPVCOM() {
   const handleKeyDown = (event) => {
     if (event.key === "ArrowUp") {
       setPaddleLeftY((paddleLeftY) => Math.max(paddleLeftY - 10, 0));
+      
     } else if (event.key === "ArrowDown") {
-      setPaddleLeftY((paddleLeftY) =>
-        Math.min(paddleLeftY + 10, altezzaCampo - 70)
-      );
+      setPaddleLeftY((paddleLeftY) => Math.min(paddleLeftY + 10, altezzaCampo)); //default 70
+      
     }
+    
   };
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -193,6 +210,10 @@ function PingPongPVCOM() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  useEffect(()=>{
+    console.log("paddle" + paddleLeftY);
+  },[paddleLeftY])
 
   // SCORE FUNCTION
   const [moltiplicatore, setMoltiplicatore] = useState(1);
@@ -243,10 +264,15 @@ function PingPongPVCOM() {
     height: `${altezzaCampo}px`
   };
 
+  const dimPopUp = {
+    width: `${larghezzaCampo - (larghezzaCampo * 0.50)}px`,
+    height: `${altezzaCampo - (altezzaCampo * 0.50)}px`
+  }
+
   return (
-    <>
+    <div ref={dim}>
       <Video />
-      <div tabIndex={0} onKeyDown={handleKeyDown}>
+      <div tabIndex={0} onKeyDown={handleKeyDown} >
         <SingleScore
           namePlayer={name}
           player={`${score}`}
@@ -255,7 +281,7 @@ function PingPongPVCOM() {
         <PingPong>
           <Campo style={styleCampo} borderColor={border}>
             {!getCheck && (
-              <div className="pop-up">
+              <div style={dimPopUp} className="pop-up">
                 <h2>Game Over!</h2>
                 <h3>Il tuo punteggio: {score}</h3>
                 <Link to="/">
@@ -289,7 +315,7 @@ function PingPongPVCOM() {
           </Campo>
         </PingPong>
       </div>
-    </>
+    </div>
   );
 }
 
