@@ -1,0 +1,42 @@
+.navbar {
+    position: relative;
+    width: 100vw;
+    background: #000000;
+    color: white;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-sticky {
+    position: fixed;
+    top: 0;
+    background-color: #ff0000;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    margin: 0 15px;
+  }
+  
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      flex-direction: column;
+    }
+  
+    .nav-item {
+      margin: 10px 0;
+    }
+  }
+  
