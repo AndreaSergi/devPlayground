@@ -18,8 +18,20 @@ import { Video } from "./Video";
 
 function PingPongPVCOM() {
   const dim = useRef(null);
-  let [larghezzaCampo, setLarghezzaCampo] = useState(1175);
-  let [altezzaCampo, setAltezzaCampo] = useState(575);
+
+  const [larghezzaCampo, setLarghezzaCampo] = useState(1175);
+  const [altezzaCampo, setAltezzaCampo] = useState(575);
+  
+  const [styleCampo, setStyleCampo] = useState({
+    width: `${larghezzaCampo}px`,
+    height: `${altezzaCampo}px`
+  });
+
+  const dimPopUp = {
+    width: `${larghezzaCampo - (larghezzaCampo * 0.50)}px`,
+    height: `${altezzaCampo - (altezzaCampo * 0.50)}px`
+  }
+
   const name = "Giocatore";
   const [getTop, setTop] = useState(50);
   const [getLeft, setLeft] = useState(50);
@@ -41,14 +53,22 @@ function PingPongPVCOM() {
   let altezza = dimensione.clientHeight;
   useEffect(() => {
 
-    console.log(larghezza + " X " + altezza);
+    console.log("body: " + larghezza + " X " + altezza);
 
-    setLarghezzaCampo((larghezza - (larghezza * 0.2)));
-    setAltezzaCampo(larghezza/2);
-
-    console.log("campo : " +larghezzaCampo + " x " + altezzaCampo);
+    setLarghezzaCampo(larghezza * 0.8);
+    setAltezzaCampo(altezza *0.8);
 
   }, [larghezza, altezza])
+
+  useEffect(() => {
+    console.log("campo : " + larghezzaCampo + " x " + altezzaCampo);
+
+    setStyleCampo({
+      width: `${larghezzaCampo}px`,
+      height: `${altezzaCampo}px`
+    });
+
+  }, [larghezzaCampo, altezzaCampo])
 
   const playAudio = () => {
     if (audioRef.current) {
@@ -197,23 +217,23 @@ function PingPongPVCOM() {
   const handleKeyDown = (event) => {
     if (event.key === "ArrowUp") {
       setPaddleLeftY((paddleLeftY) => Math.max(paddleLeftY - 10, 0));
-      
+
     } else if (event.key === "ArrowDown") {
-      setPaddleLeftY((paddleLeftY) => Math.min(paddleLeftY + 10, altezzaCampo)); //default 70
-      
+      setPaddleLeftY((paddleLeftY) => Math.min(paddleLeftY + 10, altezzaCampo - 74)); //default 70
+
     }
-    
+
   };
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [larghezzaCampo,altezzaCampo]);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("paddle" + paddleLeftY);
-  },[paddleLeftY])
+  }, [paddleLeftY])
 
   // SCORE FUNCTION
   const [moltiplicatore, setMoltiplicatore] = useState(1);
@@ -258,16 +278,6 @@ function PingPongPVCOM() {
     console.log(`velocità ${verticalDirection}`);
     console.log(`minuti trascorsi ${moltiplicatore}`);
   }, [moltiplicatore]);
-
-  const styleCampo = {
-    width: `${larghezzaCampo}px`,
-    height: `${altezzaCampo}px`
-  };
-
-  const dimPopUp = {
-    width: `${larghezzaCampo - (larghezzaCampo * 0.50)}px`,
-    height: `${altezzaCampo - (altezzaCampo * 0.50)}px`
-  }
 
   return (
     <div ref={dim}>
