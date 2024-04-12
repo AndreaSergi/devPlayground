@@ -1,6 +1,5 @@
 import './App.css'
-import { Navbar } from './Navbar'
-import { Navbar1 } from './Navbar1'
+import { MobileNavbar } from './navbar/Mobilenavbar'
 
 function App() {
   const contenuto = {
@@ -10,8 +9,7 @@ function App() {
   return (
     <div>
       
-      {/*<Navbar />*/}
-      <Navbar1 />
+      <MobileNavbar />
       <div style={contenuto}></div>
     </div>
     
