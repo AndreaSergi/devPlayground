@@ -7,8 +7,10 @@
   display: flex;
   flex-direction: column;
   font-size: 16px;
+  
 
 }
+
 
 .footer-upper {
   display: flex;
@@ -21,8 +23,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
-  flex: 1;
+  width: 30%;
+  flex: 2;
+  
 }
 
 .footer-left {
@@ -31,6 +34,8 @@
   justify-content: center;
   align-items: center;
   flex: 2;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .footer-left ul {
@@ -44,7 +49,7 @@
 }
 
 .footer-right {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,37 +60,37 @@
 }
 
 .footer-social {
-
   display: flex;
   align-items: center;
 }
 
 .footer-social svg {
-  width: 24px;
+  width: 28px;
   /* Modifica la dimensione delle icone social a tuo piacimento */
-  height: 24px;
+  height: 28px;
   margin-left: 10px;
+  fill: #fff;
   /* Aggiunge uno spazio tra le icone social */
 }
 
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
+  
 }
 
-.footer-bottom hr {
+hr {
   border-color: #fff;
   margin-bottom: 10px;
 }
 
 a {
   text-decoration: none; /* Rimuove il sottolineato di default */
-  color: #fff; /* Colore del testo dei link */
+  color: #fff; 
   transition: 0.4s;
   
 }
 
 a:hover {
-  
   font-size: 24px;
 }
