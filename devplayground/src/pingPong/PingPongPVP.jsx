@@ -18,8 +18,18 @@ function PingPongPVP() {
   const [score, setScore] = useState({ player: 0, opponent: 0 });
   let [paddleLeftY, setPaddleLeftY] = useState(115);
   let [paddleRightY, setPaddleRightY] = useState(115);
-  const larghezzaCampo = 900;
-  const altezzaCampo = 450;
+  const [larghezzaCampo, setLarghezzaCampo] = useState(1175);
+  const [altezzaCampo, setAltezzaCampo] = useState(575);
+  const [border, setBorder] = useState("#ffffff");
+  const [styleCampo, setStyleCampo] = useState({
+    width: `${larghezzaCampo}px`,
+    height: `${altezzaCampo}px`
+  });
+
+  const dimPopUp = {
+    width: `${larghezzaCampo - (larghezzaCampo * 0.50)}px`,
+    height: `${altezzaCampo - (altezzaCampo * 0.50)}px`
+  }
   const nameGiocatore1 = "Giocatore1";
   const nameGiocatore2 = "Giocatore2";
 
@@ -28,6 +38,31 @@ function PingPongPVP() {
   let [getCheck, setCheck] = useState(true); //state utilizzato per frezzare la partita
 
   let [checkEndGame, setCheckEndGame] = useState(false); //state utilizzato per verificare la fine della partita
+
+
+
+  const dimensione = document.body;
+  let larghezza = dimensione.clientWidth;
+  let altezza = dimensione.clientHeight;
+  useEffect(() => {
+
+    console.log("body: " + larghezza + " X " + altezza);
+
+    setLarghezzaCampo(larghezza * 0.8);
+    setAltezzaCampo(altezza * 0.8);
+
+  }, [larghezza, altezza])
+
+  useEffect(() => {
+    console.log("campo : " + larghezzaCampo + " x " + altezzaCampo);
+
+    setStyleCampo({
+      width: `${larghezzaCampo}px`,
+      height: `${altezzaCampo}px`
+    });
+
+  }, [larghezzaCampo, altezzaCampo])
+
 
   // Funzione per controllare se la pallina ha colpito un paddle
   const checkPaddleHit = (
@@ -62,14 +97,14 @@ function PingPongPVP() {
         setPaddleLeftY((paddleLeftY) => Math.max(paddleLeftY - 10, 0));
       } else if (event.key === "s") {
         setPaddleLeftY((paddleLeftY) =>
-          Math.min(paddleLeftY + 10, altezzaCampo - 70)
+          Math.min(paddleLeftY + 10, altezzaCampo - 74)
         );
       }
       if (event.key === "ArrowUp") {
         setPaddleRightY((paddleRightY) => Math.max(paddleRightY - 10, 0));
       } else if (event.key === "ArrowDown") {
         setPaddleRightY((paddleRightY) =>
-          Math.min(paddleRightY + 10, altezzaCampo - 70)
+          Math.min(paddleRightY + 10, altezzaCampo - 74)
         );
       }
     };
@@ -79,7 +114,7 @@ function PingPongPVP() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [larghezzaCampo, altezzaCampo]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -168,7 +203,7 @@ function PingPongPVP() {
 
   return (
     <div>
-      <Video/>
+      <Video />
       <Punteggio
         player={score.player}
         opponent={score.opponent}
@@ -177,11 +212,12 @@ function PingPongPVP() {
       />
       <PingPong>
         <Campo
-          style={{ width: `${larghezzaCampo}px`, height: `${altezzaCampo}px` }}
+          /*style={{ width: `${larghezzaCampo}px`, height: `${altezzaCampo}px` }}*/
+          style={styleCampo} borderColor={border}
         >
           {/* pop-up assegnazione punteggio */}
           {!getCheck && !checkEndGame && (
-            <div className="pop-up">
+            <div style={dimPopUp} className="pop-up">
               <h2>Punto assegnato a: {goal} !</h2>
               <h3>
                 Punteggio attuale: {score.player} - {score.opponent}
@@ -198,7 +234,7 @@ function PingPongPVP() {
           )}
           {/* pop-up fine partita */}
           {checkEndGame && (
-            <div className="pop-up">
+            <div style={dimPopUp} className="pop-up">
               <h2>Game Over!</h2>
               <h3>Vince : {goal}</h3>
               <button
@@ -217,10 +253,12 @@ function PingPongPVP() {
             </div>
           )}
           <Paddle
+            borderColor={border}
             position="left"
             style={{ top: `${paddleLeftY}px`, left: "0" }}
           />
           <Paddle
+            borderColor={border}
             position="right"
             style={{ top: `${paddleRightY}px`, right: "0" }}
           />

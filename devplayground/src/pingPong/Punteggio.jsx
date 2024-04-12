@@ -4,7 +4,7 @@ export function Punteggio({ player, opponent, namePlayer1, namePlayer2 }) {
     padding: "10px",
         margin: "10px 0",
         borderRadius: "5px",
-        backgroundColor:"rgba(255, 255, 255, 0.65)",
+        backgroundColor:"rgba(255, 255, 255, 0.10)",
         /*background: 'url("pingpong/img/backgroundPunteggio.png")',*/
         color: "#ffffff",
         textAlign: "center",
