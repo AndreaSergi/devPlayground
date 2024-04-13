@@ -1,17 +1,11 @@
 .container {
   display: flex;
-  gap: 200px;
-}
-
-.img {
-  border: 1px solid white;
-  border-radius: 8px;
-  width: 250px;
-  height: 250px;
+  gap: 80px;
 }
 
 .title {
   font-weight: 1000;
+  letter-spacing: 6px;
 }
 
 .description {
