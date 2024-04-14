@@ -1,0 +1,42 @@
+.mainWallpaper {
+    width: 100%;
+    height: 800px;
+}
+
+.title{
+    margin-top: 300px;
+    font-size: 60px;
+    color: red;
+    text-align: center;
+    position: fixed;
+}
+
+.site-header{
+    background-image: url("PROVAPROVISSIMA.png");
+    background-size: cover;
+    background-position: bottom;
+    min-height: 80vh;
+    position: relative;
+}
+
+.site-header-mask{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+    -webkit-mask: url("maschera.png");
+    mask: url("maschera.png");
+    mask-position: bottom;
+    mask-size: cover;
+}
+
+
+.corpo{
+    color: white;
+    background-color: black;
+}
+
+.image-logo{
+    height: 50px;
+    width: 40px;
+}
