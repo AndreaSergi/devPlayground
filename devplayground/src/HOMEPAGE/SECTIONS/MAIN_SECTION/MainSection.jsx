@@ -1,3 +1,4 @@
+
 export function MainSection(){
 
 
@@ -9,8 +10,27 @@ export function MainSection(){
 
                 <div className="site-header-mask">
 
-                    <h1 className="title modak-regular rubberBand"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1>
-                    {/* <img className="image-logo" src="/devplayground/src/HOMEPAGE/SECTIONS/MAIN_SECTION/Cattura-removebg-preview.png" alt="" /> */}
+                   {/*   <h1 id="animated" className="title modak-regular"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1>  */}
+                   <h1 className='title modak-regular waveTextAnimated'>
+                        <span className="segno">&lt;</span>
+                        <span className="dev">d</span>
+                        <span className="dev">e</span>
+                        <span className="dev">v</span>
+                        <span>P</span>    
+                        <span>l</span>
+                        <span>a</span>
+                        <span>y</span>
+                        <span>g</span>
+                        <span>r</span>    
+                        <span>o</span>    
+                        <span>u</span>
+                        <span>n</span>
+                        <span>d</span>
+                        <span className="segno">/</span>
+                        <span className="segno">&gt;</span>    
+                    </h1>
+
+                
             
                 </div>
                 
