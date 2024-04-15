@@ -10,17 +10,13 @@ export function TrixDetail() {
       <div className={style.title}>TRIX</div>
       <div className={style.description}>
         <pre>
-        The game takes place on a grid made up of 3x3 squares.
-        <p>Player 1's symbol is X and his opponent's is O.</p>
+        TRIX is a classic and fun game played on a 3x3 grid, <br />
+        where players take turns placing 'X' and 'O'.
+        <p>The aim is to be the first to get three symbols in a row, <br /> 
+          either horizontally, vertically, or diagonally.</p>
         <p>
-          Be the first to place 3 or 4 symbols in a row <br />
-          (horizontally, vertically or diagonally) 
-          to win.
-        </p>
-        <p>
-          The game ends when all the boxes have been filled <br />
-          or when someone gets
-          three of a kind.
+        The game ends when all squares are filled, <br />
+        either with a winner or a draw.
         </p>
         </pre>
       </div>
