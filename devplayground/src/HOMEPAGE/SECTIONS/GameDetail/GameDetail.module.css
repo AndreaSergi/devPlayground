@@ -1,30 +1,40 @@
-.modakRegular {
-  font-family: "Modak", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .container {
   display: flex;
-  justify-content: space-evenly;
-  background-color: black;
-  color: white;
-  gap: 120px;
+  width: 100%;
+  max-width: 1268px;
+  margin: 0 auto;
+  gap: 20px;
   padding: 84px 0;
+}
+
+.img {
+  width: 450px;
 }
 
 .img img {
   border-radius: 12px;
+  width: 450px;
+  height: 300px;
+}
+
+.info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 .title {
-  align-content: center;
-  font-weight: bold;
+  flex-basis: 40%;
   letter-spacing: 6px;
   font-size: 28px;
 }
 
 .description {
-  align-content: center;
+  flex-basis: 60%;
   font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.description p {
+  padding-bottom: 30px;
 }
