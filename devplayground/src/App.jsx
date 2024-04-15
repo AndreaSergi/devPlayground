@@ -7,10 +7,11 @@ import { Footer } from './Footer/Footer'
 function App() {
 
   return (
+    
     <section>
         <MobileNavbar/>
         <Homepage/>
-      * <Footer/>
+        <Footer/>
     </section>
   )
 }
