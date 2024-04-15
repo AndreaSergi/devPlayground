@@ -8,30 +8,7 @@ export function Homepage() {
       <MainSection />
       <TrixDetail
         img={TrixGif}
-        title={"TRIX"}
-        description={
-          <div>
-            <p>
-              Be the first to get three symbols in a row, <br />
-              either horizontally, vertically, or diagonally.
-            </p>
-            <br />
-            <p>
-              TRIX is a classic and fun game played on a 3x3 grid, <br />
-              where players take turns placing 'X' and 'O'.
-            </p>
-            <br />
-            <p>
-              The game ends when all squares are filled, <br />
-              either with a winner or a draw.
-            </p>
-          </div>
-        }
-      />
-
-      <TrixDetail
-        img={TrixGif}
-        title={"TRIX"}
+        title={"Ping Pong"}
         description={
           <div>
             <p>
@@ -46,8 +23,31 @@ export function Homepage() {
             </p>
             <br />
             <p>
-              You will improve your skills until<br />
+              You will improve your skills until
+              <br />
               you become a Ping Pong champion.
+            </p>
+          </div>
+        }
+      />
+      <TrixDetail
+        img={TrixGif}
+        title={"Trix"}
+        description={
+          <div>
+            <p>
+              Be the first to get three symbols in a row, <br />
+              either horizontally, vertically, or diagonally.
+            </p>
+            <br />
+            <p>
+              Trix is a classic and fun game played on a 3x3 grid, <br />
+              where players take turns placing 'X' and 'O'.
+            </p>
+            <br />
+            <p>
+              The game ends when all squares are filled, <br />
+              either with a winner or a draw.
             </p>
           </div>
         }
@@ -55,11 +55,11 @@ export function Homepage() {
 
       <TrixDetail
         img={TrixGif}
-        title={"TRIX"}
+        title={"Wordify"}
         description={
           <div>
             <p>
-              Find the right word with WORDIFY, <br />
+              Find the right word with Wordify, <br />
               the captivating word puzzle game you can play <br />
               on your PC or mobile device.
             </p>
