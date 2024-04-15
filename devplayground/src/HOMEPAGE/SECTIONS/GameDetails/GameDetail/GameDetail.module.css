@@ -1,10 +1,11 @@
 .container {
   display: flex;
+  align-items: center;
   width: 100%;
   max-width: 1268px;
   margin: 0 auto;
   gap: 20px;
-  padding: 84px 0;
+  padding: 84px 10px;
 }
 
 .img {
@@ -24,18 +25,40 @@
 }
 
 .title {
-  flex-basis: 40%;
+  flex-basis: 45%;
   letter-spacing: 6px;
   font-size: 28px;
   text-align: center;
 }
 
 .description {
-  flex-basis: 60%;
+  flex-basis: 55%;
   font-size: 20px;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .description p {
-  padding-bottom: 30px;
+  padding: 15px 0;
+}
+
+.buttonContainer {
+  text-align: right;
+}
+
+.button {
+  font-size: 20px;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 6px;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.button:hover {
+  background-color: white;
+  /* rimuovere quando si aggiunge il link */
+  cursor: pointer;
+  color: black;
 }

@@ -8,6 +8,8 @@ export function GameDetails() {
       <GameDetail
         img={TrixGif}
         title={"Ping Pong"}
+        // sostituire "#" con il link del gioco
+        link="#"
         description={
           <div>
             <p>
@@ -28,6 +30,8 @@ export function GameDetails() {
       <GameDetail
         img={TrixGif}
         title={"Trix"}
+        // sostituire "#" con il link del gioco
+        link="#"
         description={
           <div>
             <p>
@@ -49,6 +53,8 @@ export function GameDetails() {
       <GameDetail
         img={TrixGif}
         title={"Wordify"}
+        // sostituire "#" con il link del gioco
+        link="#"
         description={
           <div>
             <p>
