@@ -7,7 +7,7 @@ export function Footer() {
 
             <div className='footer-upper'>
 
-                <img className='footer-logo' src="src\assets\Footer\footer_media\as.png" alt="" />
+                <img className='footer-logo' src="src\Footer\footer_media\as.png" />
 
                 <div className="footer-left">
                     <ul>
