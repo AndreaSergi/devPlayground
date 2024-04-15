@@ -11,22 +11,39 @@ export function MobileNavbar() {
   // Aggiungi uno stato per il percorso dell'immagine
   const [imageSrc, setImageSrc] = useState('navbar/ic_login_light.svg'); // Imposta il percorso iniziale dell'immagine
 
-  
-  
-
   useEffect(() => {
-    const handleScroll = () => {
-      const navbarElement = document.querySelector('.sticky-top');
-      const navbarHeight = navbarElement.offsetHeight;
-      const scrolled = window.scrollY > 550;
-      setIsScrolled(scrolled);
-      // Aggiorna il percorso dell'immagine in base allo scroll
-      setImageSrc(scrolled ? 'navbar/ic_login.svg' : 'navbar/ic_login_light.svg');
-    };
+
+  const handleScroll = () => {
+    const navbarElement = document.querySelector('.sticky-top');
+    const heroElement = document.querySelector('.appContainer');
+    const heroHeight = heroElement.offsetHeight;
+    const scrolled = window.scrollY > heroHeight;
+    setIsScrolled(scrolled);
+    setImageSrc(scrolled ? 'navbar/ic_login.svg' : 'navbar/ic_login_light.svg');
+  };
   
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const debouncedHandleScroll = debounce(handleScroll, 100);
+
+  window.addEventListener('scroll', debouncedHandleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', debouncedHandleScroll);
+  };
+
+}, []);
+
+
+// Helper function
+function debounce(fn, delay) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn();
+    }, delay);
+  }
+}
+
 
   return (
     <Navbar variant="dark" expanded={expanded} expand="md" className={`sticky-top ${isScrolled ? 'fixed-navbar' : ''}`}>
