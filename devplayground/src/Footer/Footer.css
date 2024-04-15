@@ -1,0 +1,97 @@
+.footer {
+  background-color: #333;
+  /* sfondo dark */
+  color: #fff;
+  /* font color bianco */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  width: 100%;
+  
+
+}
+
+
+.footer-upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  flex: 2;
+  
+}
+
+.footer-left {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footer-left ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-left ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+
+  /* Questo farà espandere il div per occupare lo spazio rimanente */
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social svg {
+  width: 28px;
+  /* Modifica la dimensione delle icone social a tuo piacimento */
+  height: 28px;
+  margin-left: 10px;
+  fill: #fff;
+  /* Aggiunge uno spazio tra le icone social */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  
+}
+
+hr {
+  border-color: #fff;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none; /* Rimuove il sottolineato di default */
+  color: #fff; 
+  transition: 0.4s;
+  
+}
+
+a:hover {
+  font-size: 24px;
+}
