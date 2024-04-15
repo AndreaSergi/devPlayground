@@ -17,8 +17,8 @@
 
 .waveTextAnimated span {
     display: inline-block;
-    -webkit-animation: wave-text 4s ease-in-out infinite;
-            animation: wave-text 4s ease-in-out infinite;
+    -webkit-animation: wave-text 3s ease-in-out infinite;
+            animation: wave-text 3s ease-in-out infinite;
   }
 
   .waveTextAnimated span:nth-of-type(1) {

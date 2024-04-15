@@ -7,6 +7,7 @@ import './HOMEPAGE/SECTIONS/MAIN_SECTION/MainSection.css'
 import './navbar/Navbar.css'
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
