@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import './App.css'
-import './HOMEPAGE/SECTIONS/MAIN SECTION/MainSection.css'
+import './HOMEPAGE/SECTIONS/MAIN_SECTION/MainSection.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
