@@ -1,0 +1,33 @@
+.navbar-mobile {
+  height: 56px
+}
+
+.sticky-top {
+  background-color: rgba(0, 0, 0, 1) !important;
+  position: relative;
+}
+
+nav, .btn-secondary {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  background-color: transparent !important; /* Sostituisci con il tuo colore preferito e l'opacità desiderata */
+  z-index: 1000; /* Assicurati che la navbar sia sopra gli altri elementi */
+}
+
+.fixed-navbar a {
+  color: black;
+}
+
+.fixed-navbar button {
+  background-color: transparent;
+  border-color: #000;
+  color: black;
+}
