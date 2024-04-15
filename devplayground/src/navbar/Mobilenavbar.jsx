@@ -11,11 +11,14 @@ export function MobileNavbar() {
   // Aggiungi uno stato per il percorso dell'immagine
   const [imageSrc, setImageSrc] = useState('navbar/ic_login_light.svg'); // Imposta il percorso iniziale dell'immagine
 
+  
+  
+
   useEffect(() => {
     const handleScroll = () => {
       const navbarElement = document.querySelector('.sticky-top');
       const navbarHeight = navbarElement.offsetHeight;
-      const scrolled = window.scrollY > navbarHeight;
+      const scrolled = window.scrollY > 550;
       setIsScrolled(scrolled);
       // Aggiorna il percorso dell'immagine in base allo scroll
       setImageSrc(scrolled ? 'navbar/ic_login.svg' : 'navbar/ic_login_light.svg');
