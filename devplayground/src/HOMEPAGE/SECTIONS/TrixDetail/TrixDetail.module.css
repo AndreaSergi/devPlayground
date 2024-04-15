@@ -1,5 +1,14 @@
+.modakRegular {
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .container {
   display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  color: white;
   gap: 120px;
 }
 
@@ -11,7 +20,7 @@
   align-content: center;
   font-weight: bold;
   letter-spacing: 6px;
-  font-size: 20px;
+  font-size: 36px;
 }
 
 .description {
