@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css';
+import 'react-bootstrap/dist/react-bootstrap';
+import './Navbar.css'
 
 export function MobileNavbar() {
   const [expanded, setExpanded] = useState(false);
