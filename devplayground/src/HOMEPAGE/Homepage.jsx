@@ -1,12 +1,12 @@
 import { MainSection } from "./SECTIONS/MAIN_SECTION/MainSection";
-import { TrixDetail } from "./SECTIONS/TrixDetail/TrixDetail";
-import TrixGif from "./SECTIONS/TrixDetail/trix.gif";
+import { GameDetail } from "./SECTIONS/GameDetail/GameDetail";
+import TrixGif from "./SECTIONS/GameDetail/trix.gif";
 
 export function Homepage() {
   return (
     <>
       <MainSection />
-      <TrixDetail
+      <GameDetail
         img={TrixGif}
         title={"Ping Pong"}
         description={
@@ -30,7 +30,7 @@ export function Homepage() {
           </div>
         }
       />
-      <TrixDetail
+      <GameDetail
         img={TrixGif}
         title={"Trix"}
         description={
@@ -53,7 +53,7 @@ export function Homepage() {
         }
       />
 
-      <TrixDetail
+      <GameDetail
         img={TrixGif}
         title={"Wordify"}
         description={

@@ -1,6 +1,6 @@
-import style from "./TrixDetail.module.css";
+import style from "./GameDetail.module.css";
 
-export function TrixDetail({ img, title, description }) {
+export function GameDetail({ img, title, description }) {
   return (
       <div className={style.container}>
         <div className={style.img}>
