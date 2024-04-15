@@ -1,12 +1,14 @@
 import style from "./GameDetails.module.css";
 import { GameDetail } from "./GameDetail/GameDetail";
 import TrixGif from "./GameDetail/trix.gif";
+import PingPongGif from "./GameDetail/pingPong.gif";
+import WordifyGif from "./GameDetail/wordify.gif";
 
 export function GameDetails() {
   return (
     <div className={style.container}>
       <GameDetail
-        img={TrixGif}
+        img={PingPongGif}
         title={"Ping Pong"}
         // sostituire "#" con il link del gioco
         link="#"
@@ -43,15 +45,15 @@ export function GameDetails() {
               take turns placing 'X' and 'O'.
             </p>
             <p>
-              The game ends when all squares are filled, either with a winner or
-              a draw.
+              The game is available on PC and mobile and it ends when all squares are filled, 
+              either with a winner or a draw.
             </p>
           </div>
         }
       />
 
       <GameDetail
-        img={TrixGif}
+        img={WordifyGif}
         title={"Wordify"}
         // sostituire "#" con il link del gioco
         link="#"
