@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   border-top: 1px solid #8d8585;
+
   
 }
 
@@ -73,8 +74,9 @@
 
 .footer-bottom {
   
-  width: 80%;
+  width: 100%;
   font-size: 16px;
+  text-align: center;
   
 }
 

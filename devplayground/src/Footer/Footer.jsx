@@ -43,10 +43,13 @@ export function Footer() {
 
 
             <div className="footer-bottom">
-                <hr />
+            <hr />
                 <span>Copyright 2024 | </span>
                 <span>Privacy Policy | Terms & Conditions</span>
+                
             </div>
+            
+    
         </footer>
     );
 }
