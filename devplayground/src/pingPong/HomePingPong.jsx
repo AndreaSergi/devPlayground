@@ -11,10 +11,10 @@ export function HomePingPong() {
   return (
     <div className="containerPingPong">
       <img style={styleLogo} src="/pingpong/img/ic.svg" />
-      <Link to="/pvcpu">
+      <Link to="/pingpong/pvcpu">
         <Button className="pvcom" text="Player VS CPU" />
       </Link>
-      <Link to="/pvp">
+      <Link to="/pingpong/pvp">
         <Button className="pvp" text="Player VS Player" />
       </Link>
     </div>

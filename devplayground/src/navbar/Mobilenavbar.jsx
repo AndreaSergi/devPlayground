@@ -49,7 +49,7 @@ function debounce(fn, delay) {
   return (
     <Navbar variant="dark" expanded={expanded} expand="md" className={`sticky-top ${isScrolled ? 'fixed-navbar' : ''}`}>
       <Container>
-        <Navbar.Brand href="#home">{logo}</Navbar.Brand>
+        <Navbar.Brand href="/">{logo}</Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => setExpanded(expanded ? false : true)}

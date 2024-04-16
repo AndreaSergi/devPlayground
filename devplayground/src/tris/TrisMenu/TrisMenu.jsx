@@ -19,7 +19,7 @@ export function TrisMenu() {
     <div className={style.container}>
       <TrisLogo />
       <div className={style.buttons}>
-        <TrisButton link="/tris/TrisBoardComputer">
+        <TrisButton link="/trix/pvcpu">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"
@@ -42,7 +42,7 @@ export function TrisMenu() {
             />
           </svg>
         </TrisButton>
-        <TrisButton link="/tris/game">
+        <TrisButton link="/trix/pvp">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"
