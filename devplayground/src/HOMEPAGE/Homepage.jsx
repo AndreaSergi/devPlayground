@@ -1,16 +1,11 @@
 import { MainSection } from "./SECTIONS/MAIN_SECTION/MainSection";
-import { TrixDetail } from "./SECTIONS/TrixDetail/TrixDetail";
+import { GameDetails } from "./SECTIONS/GameDetails/GameDetails";
 
-export function Homepage(){
-
-
-
-    return(
+export function Homepage() {
+  return (
     <>
-        <MainSection/>
-        <TrixDetail/>
-        <TrixDetail/>
-        <TrixDetail/>
+      <MainSection />
+      <GameDetails />
     </>
-)
+  );
 }
