@@ -65,7 +65,7 @@
 
 .footer-bottom {
   display: flex;
- 
+  border-top: 1px solid #8d8585;
   justify-content: center;
   width: 100%;
   font-size: 16px;
