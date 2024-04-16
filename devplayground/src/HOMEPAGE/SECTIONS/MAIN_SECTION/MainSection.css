@@ -86,6 +86,20 @@
             animation-delay: 3s;
   }
 
+
+.total-title{
+  position: relative;
+  font: 14vw;
+  -webkit-text-stroke: 0.3vw #444444;
+}
+
+.total-title::before {
+  content: attr(data-text);
+}
+
+
+
+
   @-webkit-keyframes wave-text {
     00% {
       transform: translateY(0em);

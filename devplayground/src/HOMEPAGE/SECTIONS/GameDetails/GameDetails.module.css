@@ -1,4 +1,9 @@
 .container {
   background-color: black;
-  color: white;
+  color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+}
+
+.rosso {
+  border: 1px solid red;
 }

@@ -7,6 +7,9 @@ import WordifyGif from "./GameDetail/wordify.gif";
 export function GameDetails() {
   return (
     <div className={style.container}>
+      
+      <img className="rosso" src="./pngwing.png" alt="" />
+
       <GameDetail
         img={PingPongGif}
         title={"Ping Pong"}
