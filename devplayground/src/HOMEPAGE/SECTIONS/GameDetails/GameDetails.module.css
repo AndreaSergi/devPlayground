@@ -4,6 +4,13 @@
   margin-bottom: 50px;
 }
 
+.chevron {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
 .rosso {
-  border: 1px solid red;
+  height: 150px;
+  width: 150px;
 }

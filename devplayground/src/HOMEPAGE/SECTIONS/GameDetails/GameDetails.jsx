@@ -1,4 +1,5 @@
 import style from "./GameDetails.module.css";
+import whiteChevron from "../GameDetails/whiteChevron.png";
 import { GameDetail } from "./GameDetail/GameDetail";
 import TrixGif from "./GameDetail/trix.gif";
 import PingPongGif from "./GameDetail/pingPong.gif";
@@ -7,9 +8,9 @@ import WordifyGif from "./GameDetail/wordify.gif";
 export function GameDetails() {
   return (
     <div className={style.container}>
-      
-      <img className="rosso" src="./pngwing.png" alt="" />
-
+      <div className={style.chevron}>
+        <img className={style.rosso} src={whiteChevron} alt="chevron" />
+      </div>
       <GameDetail
         img={PingPongGif}
         title={"Ping Pong"}
@@ -48,8 +49,8 @@ export function GameDetails() {
               take turns placing 'X' and 'O'.
             </p>
             <p>
-              The game is available on PC and mobile and it ends when all squares are filled, 
-              either with a winner or a draw.
+              The game is available on PC and mobile and it ends when all
+              squares are filled, either with a winner or a draw.
             </p>
           </div>
         }

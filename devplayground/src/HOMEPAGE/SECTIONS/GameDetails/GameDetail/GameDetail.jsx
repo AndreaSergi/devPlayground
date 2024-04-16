@@ -7,7 +7,8 @@ export function GameDetail({ img, title, description, link }) {
         <img src={img} alt="Game Detail Gif" />
       </div>
       <div className={style.info}>
-        <div className={`${style.title} modak-regular`}>{title}</div>
+        {/* <div className={`${style.title} modak-regular`}>{title}</div> */}
+        <div className={style.title}>{title}</div>
         <div className={style.description}>
           <div>{description}</div>
           <div className={style.buttonContainer}>
