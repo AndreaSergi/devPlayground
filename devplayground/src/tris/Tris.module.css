@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "FontoshanHandwrite";
+  src: url("./FontoshanHandwrite.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  /* overflow: hidden; */
+}
+
+.page {
+  background-color: var(--tris-background-color);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Genos";
+  color: var(--tris-text-color);
+}
+
+.themeButton {
+  position: fixed;
+  right: 24px;
+  top: 24px;
+}
+
+/* @media screen and (max-width: 600px) {
+  .page {
+    min-height: 85vh;
+  }
+} */
