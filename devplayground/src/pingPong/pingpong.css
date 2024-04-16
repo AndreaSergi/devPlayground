@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(1, 1, 1, 1);
+}
+
+
+
+.pingpong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+}
+
+.paddle {
+    position: absolute;
+    width: 10px;
+    height: 70px;
+    
+}
+
+ .paddle.left {
+    top: 40px; 
+    left: 0;
+} 
+
+ .paddle.right {
+     top: 40px; 
+    right: 0;
+} 
+
+.ball {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}

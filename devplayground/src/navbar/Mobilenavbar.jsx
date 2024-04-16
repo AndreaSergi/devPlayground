@@ -19,7 +19,7 @@ export function MobileNavbar() {
     const heroHeight = heroElement.offsetHeight;
     const navbarHeight = navbarElement.offsetHeight;
     const scrolled = window.scrollY > navbarHeight;
-    setIsScrolled(scrolled);
+    //setIsScrolled(scrolled);
     setImageSrc(scrolled ? 'navbar/ic_login.svg' : 'navbar/ic_login_light.svg');
   };
   
