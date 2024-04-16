@@ -11,7 +11,7 @@ export function MainSection(){
                 <div className="site-header-mask">
 
                    {/*   <h1 id="animated" className="title modak-regular"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1>  */}
-                   {/* <h1 className='title modak-regular waveTextAnimated'>
+                   <h1 className='title modak-regular waveTextAnimated'>
                         <span className="segno">&lt;</span>
                         <span className="dev">d</span>
                         <span className="dev">e</span>
@@ -28,10 +28,11 @@ export function MainSection(){
                         <span>d</span>
                         <span className="segno">/</span>
                         <span className="segno">&gt;</span>    
-                    </h1> */}
+                    </h1>
+{/* 
+                    <h1 data-text="<devPlayground/>" className="total-title"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1> */}
 
-                    <h1 data-text="<devPlayground/>" className="total-title"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1>
-
+                    
                 
             
                 </div>
