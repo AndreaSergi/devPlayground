@@ -45,13 +45,16 @@ export function Wordify() {
     })
 
     return (
-        <div className="main-container">
-            <h1 className="neonTextTitle">{titolo}</h1>
-            <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
-            {!gameOver ?
-                <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
-                setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex} indovinato={indovinato}/>
-            }
+        <div className="parent-container">
+            <div className="main-container">
+                <h1 className="neonTextTitle">{titolo}</h1>
+                <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
+                {!gameOver ?
+                    <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
+                    setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex} indovinato={indovinato}/>
+                }
+            </div>
+
         </div>
     )
 }
