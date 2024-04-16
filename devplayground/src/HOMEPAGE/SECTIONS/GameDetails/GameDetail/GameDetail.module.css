@@ -9,17 +9,22 @@
   animation: fade linear both;
   animation-timeline: view();
   animation-range: entry 50% cover 50%;
+  box-sizing: content-box;
+}
+
+.container * {
+  box-sizing: content-box;
 }
 
 .img {
-  width: 450px;
+  width: 500px;
 }
 
 
 .img img {
   border-radius: 12px;
   width: 500px;
-  height: 350px;
+  height: 333px;
 }
 
 .info {
@@ -39,16 +44,22 @@
 
 .description {
   flex-basis: 55%;
-  /* font-size: 20px; */
   font-family: 'Courier New', Courier, monospace;
 }
 
 .description p {
   padding: 15px 0;
+  font-size: 20px;
+  margin: auto;
+  font-weight: normal;
 }
 
 .buttonContainer {
   text-align: right;
+}
+
+.buttonContainer a {
+  color: white;
 }
 
 .button {
@@ -109,11 +120,11 @@
   
   .description {
     flex-basis: auto;
-    font-size: 16px;
   }
 
   .description p {
     padding: 10px 0;
+    font-size: 16px;
   }
 }
 
