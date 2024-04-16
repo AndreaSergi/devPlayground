@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import {InputButton} from "./InputButton"
-import { RowGrid } from './RowGrid';
-import {ParoleGrid} from './ParoleGrid'
 
 
 export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){

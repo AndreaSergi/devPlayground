@@ -1,4 +1,4 @@
-import { RowGrid } from "./RowGrid";
+import { RowGrid } from "./RowGrid" 
 
 export function ParoleGrid({ lettereUguali, rowIndex, indiciUguali}){
 

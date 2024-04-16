@@ -1,10 +1,9 @@
 import { ParoleGrid } from "./ParoleGrid";
 import { PlayAgain } from "./PlayAgain";
-import { RowGrid } from "./RowGrid";
 import { Tastiera } from "./Tastiera";
 import { useEffect, useState} from "react";
 
-export function App() {
+export function Wordify() {
     
 
     const [lettereUguali, setLettereUguali] = useState([]);
