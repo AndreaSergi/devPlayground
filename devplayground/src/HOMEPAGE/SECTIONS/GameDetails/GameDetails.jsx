@@ -60,7 +60,7 @@ export function GameDetails() {
         img={WordifyGif}
         title={"Wordify"}
         // sostituire "#" con il link del gioco
-        link="#"
+        link="/wordify"
         description={
           <div>
             <p>
