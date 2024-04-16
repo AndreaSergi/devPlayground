@@ -3,6 +3,16 @@
   margin: 0;
   padding: 0;
 }
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  padding-top: 25px;
+/*   overflow-x: hidden;
+  overflow-y: hidden; */
+}
 
 @font-face {
     font-family: 'Amoneon';
@@ -47,9 +57,7 @@
 
 
 
-body{
-    height: 100vh;
-    /* border: 3px solid red; */
+/* body{
     background-color: black;
     padding-top: 25px;
     display: flex;
@@ -58,15 +66,13 @@ body{
     overflow-x: hidden;
     overflow-y: hidden;
 }
+ */
 
 
-
-.tastiera{
+.tastiera {
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    /* width: 800px; */
     flex-wrap: wrap;
     justify-content: center;
     overflow: hidden;
@@ -119,14 +125,7 @@ body{
 }
 
 
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: black;
-   /*  border: 3px solid green; */
-}
+
 
 h1{
     color: #eae8e8;
@@ -156,8 +155,13 @@ h1{
 
 .row{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     width: 90%;
+}
+
+.row>*{
+  display: contents;
 }
 
 

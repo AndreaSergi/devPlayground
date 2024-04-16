@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import {InputButton} from "./InputButton"
+import './button.css'
+import './parole.css'
 
 
 export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){

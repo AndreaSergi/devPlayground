@@ -2,6 +2,8 @@ import { ParoleGrid } from "./ParoleGrid";
 import { PlayAgain } from "./PlayAgain";
 import { Tastiera } from "./Tastiera";
 import { useEffect, useState} from "react";
+import './button.css'
+import './parole.css'
 
 export function Wordify() {
     
@@ -49,7 +51,7 @@ export function Wordify() {
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?
-                <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
+                <Tastiera className="tastiera" onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
                 setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex} indovinato={indovinato}/>
             }
         </div>

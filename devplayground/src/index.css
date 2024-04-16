@@ -5,10 +5,11 @@
 }
 
 body{
+  display: flex;
+  flex-direction: column;
  overflow-y: auto;
   overflow-x: hidden;
   width: 100vw;
-  background-size: 100vw;
   background-color: inherit;
   background-color: black;
 }
