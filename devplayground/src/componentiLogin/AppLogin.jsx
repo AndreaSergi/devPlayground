@@ -41,12 +41,10 @@ const router = createBrowserRouter([
 ]);
 
 
-function App() {
+export function AppLogin() {
   return (
     <>
       <RouterProvider router={router} />
     </>
   )
 }
-
-export default App
