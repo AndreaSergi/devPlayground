@@ -2,6 +2,10 @@
   height: 56px
 }
 
+.navbar {
+  border-bottom: 1px solid #8d8585;
+}
+
 .sticky-top {
   background-color: black !important;
   position: relative;
