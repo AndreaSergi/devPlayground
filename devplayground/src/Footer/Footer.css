@@ -101,8 +101,8 @@ hr {
   }
 }
 
-@media screen and (max-width:400px) {
-
+@media screen and (max-width:600px) {
+  
   .footer-bottom{
     font-size: 8px;
   }
@@ -113,5 +113,6 @@ hr {
 
   .footer-upper {
     flex-direction: column;
+    margin-bottom: 16px;
   }
 }
