@@ -8,7 +8,7 @@ export function Href() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/pingpong" element={<Home />} />
         <Route path="/pvcpu" element={<PingPongPVCOM />} />
         <Route path="/pvp" element={<PingPongPVP />} />
         

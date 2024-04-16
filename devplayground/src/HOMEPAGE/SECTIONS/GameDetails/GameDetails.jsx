@@ -15,7 +15,7 @@ export function GameDetails() {
         img={PingPongGif}
         title={"Ping Pong"}
         // sostituire "#" con il link del gioco
-        link="#"
+        link="/pingpong"
         description={
           <div>
             <p>
@@ -37,7 +37,7 @@ export function GameDetails() {
         img={TrixGif}
         title={"Trix"}
         // sostituire "#" con il link del gioco
-        link="#"
+        link="/trix"
         description={
           <div>
             <p>

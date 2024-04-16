@@ -7,7 +7,7 @@ import { TrisBoardComputer } from "./TrisBoard/TrisBoardComputer";
 export function HrefTrix() {
   return (
     <Routes>
-      <Route path="/" element={<Link to="/tris">Tris</Link>} />
+      <Route path="/trix" element={<Link to="/tris">Tris</Link>} />
       <Route path="tris" element={<Tris />}>
         <Route index element={<TrisMenu />} />
         <Route path="TrisBoardComputer" element={<TrisBoardComputer />} />
