@@ -19,7 +19,7 @@
 
 .footer-upper {
   
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -102,13 +102,17 @@ hr {
 }
 
 @media screen and (max-width:600px) {
+
+  .footer-logo{
+    width: 40%;
+  }
   
   .footer-bottom{
     font-size: 8px;
   }
   .footer-social svg{
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
   }
 
   .footer-upper {
