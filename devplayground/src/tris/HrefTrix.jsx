@@ -1,10 +1,10 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Tris } from "./tris/Tris";
-import { TrisMenu } from "./tris/TrisMenu/TrisMenu";
-import { TrisBoard } from "./tris/TrisBoard/TrisBoard";
-import { TrisBoardComputer } from "./tris/TrisBoard/TrisBoardComputer";
+import { Tris } from "./Tris";
+import { TrisMenu } from "./TrisMenu/TrisMenu";
+import { TrisBoard } from "./TrisBoard/TrisBoard";
+import { TrisBoardComputer } from "./TrisBoard/TrisBoardComputer";
 
-export function App() {
+export function HrefTrix() {
   return (
     <Routes>
       <Route path="/" element={<Link to="/tris">Tris</Link>} />
