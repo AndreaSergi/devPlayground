@@ -56,9 +56,9 @@ function debounce(fn, delay) {
         />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            {/* <Nav.Link href="#home">Home</Nav.Link> */}
             <Nav.Link href="#features">Games</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
+            {/* <Nav.Link href="#pricing">About</Nav.Link> */}
           </Nav>
           <Nav>
             <Button variant="secondary">
