@@ -2,13 +2,15 @@ import React, { useRef, useEffect } from 'react';
 
 export function Video() {
   const styleVideo = {
-    border: "1px solid #1c5ac4d5",
+    
     position: "absolute",
     top: "0px",
     left: "0px",
     zIndex: "0px",
     width: "100vw",
-    height: "100vh"
+    height: "88vh",
+    marginTop: "200px",
+    
   };
 
   // Crea una ref per il video
@@ -23,7 +25,7 @@ export function Video() {
 
   return(
     <video ref={videoRef} style={styleVideo} autoPlay muted loop>
-      <source src="pingpong/background.mp4" type="video/mp4" />
+      <source src="../public/pingpong/background.mp4" type="video/mp4" />
     </video>
   );
 }

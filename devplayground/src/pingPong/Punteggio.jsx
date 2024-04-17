@@ -45,10 +45,10 @@ export function Punteggio({ player, opponent, namePlayer1, namePlayer2 }) {
           <h2>{namePlayer1}</h2>
           <h3>{player}</h3>
         </div>
-        <img style={avatar} src="pingpong/img/avatar1.png" alt="avatar giocatore1" />
+        <img style={avatar} src="../public/pingpong/img/avatar1.png" alt="avatar giocatore1" />
       </div>
       <div style={dx}>
-        <img style={avatar} src="pingpong/img/avatar2.png" alt="avatar giocatore2" />
+        <img style={avatar} src="../public/pingpong/img/avatar2.png" alt="avatar giocatore2" />
         <div style={{marginLeft: "30px"}}>
           <h2>{namePlayer2}</h2>
           <h3>{opponent}</h3>

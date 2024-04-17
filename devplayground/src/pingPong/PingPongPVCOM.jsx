@@ -55,17 +55,21 @@ function PingPongPVCOM() {
 
     console.log("body: " + larghezza + " X " + altezza);
 
+    
+
     setLarghezzaCampo(larghezza * 0.8);
-    setAltezzaCampo(altezza *0.8);
+    console.log(`larghezza misurata: ${larghezza}`)
+    console.log(`calcolo altezza: ${((larghezza * 9) / 16)}`)
+    setAltezzaCampo((larghezza * 9) / 16);
 
   }, [larghezza, altezza])
 
   useEffect(() => {
-    console.log("campo : " + larghezzaCampo + " x " + altezzaCampo);
+    console.log("campo 2 use effect: " + larghezzaCampo + " x " + altezzaCampo);
 
     setStyleCampo({
       width: `${larghezzaCampo}px`,
-      height: `${altezzaCampo}px`
+      height: `${altezzaCampo}px`,
     });
 
   }, [larghezzaCampo, altezzaCampo])
@@ -281,7 +285,7 @@ function PingPongPVCOM() {
 
   return (
     <div ref={dim}>
-      <Video />
+      <Video/>
       <div tabIndex={0} onKeyDown={handleKeyDown} >
         <SingleScore
           namePlayer={name}
@@ -320,7 +324,7 @@ function PingPongPVCOM() {
             <Ball style={styleMod} />
             <AudioComponent
               ref={audioRef}
-              src="pingpong/songs/songPaddle.mp3"
+              src="../public/pingpong/songs/songPaddle.mp3"
             />
           </Campo>
         </PingPong>

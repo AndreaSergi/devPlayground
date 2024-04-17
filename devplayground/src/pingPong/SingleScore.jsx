@@ -39,7 +39,7 @@ export function SingleScore({ player, namePlayer, borderColor }) {
       return (
         <div style={scoreStyle}>
           <div style={score}>
-            <img style={avatar} src="pingpong/img/avatar1.png" alt="avatar pc" />
+            <img style={avatar} src="../public/pingpong/img/avatar1.png" alt="avatar pc" />
             <div style={{marginLeft: "30px"}}>
               <h2 style={textScore}>{namePlayer}</h2>
               <h3 style={textScore}>{player}</h3>

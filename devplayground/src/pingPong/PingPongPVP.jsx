@@ -49,7 +49,9 @@ function PingPongPVP() {
     console.log("body: " + larghezza + " X " + altezza);
 
     setLarghezzaCampo(larghezza * 0.8);
-    setAltezzaCampo(altezza * 0.8);
+    console.log(`larghezza misurata: ${larghezza}`)
+    console.log(`calcolo altezza: ${((larghezza * 9) / 16)}`)
+    setAltezzaCampo(((larghezza * 9) / 16) - 200);
 
   }, [larghezza, altezza])
 
