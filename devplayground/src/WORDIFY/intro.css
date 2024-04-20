@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Amoneon';
+    src: url(./font/amoneon-amoneon-regular-400.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.introMainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+@keyframes fadeIn {
+    0%, 50%, 80% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+@keyframes filterChange {
+    0%   { filter: brightness(0); }
+    50%   { filter: brightness(0); }
+    100% { filter: brightness(1); }
+}
+
+.introImg {
+    position: absolute;
+    animation: filterChange 2s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+}
+
+.introTitle{
+    position: absolute;
+    font-family: 'Amoneon';
+    font-weight: 400;
+    font-size: 200px;
+    animation: fadeIn 2s ease-in-out, pulsateBlue 4s 2s ease-in-out infinite;
+    color: #b6b6b6;
+}
+
+
+
+    
+    @keyframes pulsateBlue {
+    
+        20%,50%,100% {
+            color: #e2edff;
+          /* Larger blur radius */
+          text-shadow:
+            0 0 10px #bad2f8,
+            0 0 15px #aac8f8,
+            0 0 25px #609bfa,
+            0 0 50px #0062ff,
+            0 0 70px #0062ff,
+            0 0 90px #0062ff,
+            0 0 100px #0062ff,
+            0 0 110px #0062ff;
+        }
+        0% {
+            color: #e2edff;
+          /* Smaller blur radius */
+          text-shadow:
+            0 0 7px #dce9ff,
+            0 0 10px #a9cafe,
+            0 0 20px #609bfa,
+            0 0 40px #0062ff,
+            0 0 60px #0062ff,
+            0 0 80px #0062ff,
+            0 0 90px #0062ff,
+            0 0 100px #0062ff;
+        }
+      }
+
+
+
+.introBrokenLetter{
+    /* text-shadow:
+        0 0 4px #fd71b9,
+        0 0 11px #fd71b9,
+        0 0 19px #fd71b9,
+        0 0 40px #ff0099,
+        0 0 80px #ff0099,
+        0 0 90px #ff0099,
+        0 0 100px #ff0099,
+        0 0 150px #ff0099; */
+   animation: flicker 2s ease-in-out infinite;
+}
+
+
+
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #d3bb04,
+        0 0 11px #d3bb04,
+        0 0 19px #d3bb04,
+        0 0 40px #d3bb04,
+        0 0 80px #d3bb04,
+        0 0 90px #d3bb04,
+        0 0 100px #d3bb04,
+        0 0 150px #d3bb04;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
