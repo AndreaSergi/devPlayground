@@ -1,3 +1,4 @@
+import { Intro } from "./Intro";
 import { ParoleGrid } from "./ParoleGrid";
 import { PlayAgain } from "./PlayAgain";
 import { Tastiera } from "./Tastiera";
@@ -45,13 +46,16 @@ export function Wordify() {
     })
 
     return (
-        <div className="main-container">
+        <>
+        <Intro/>
+        {/* <div className="main-container">
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?
                 <Tastiera onInvio={handleInvio} rowIndex = {rowIndex} setRowIndex = {setRowIndex}
                 setParolaGenerata={setParolaGenerata}/> : <PlayAgain parolaGenerata={parolaGenerata} rowIndex={rowIndex} indovinato={indovinato}/>
             }
-        </div>
+        </div> */}
+        </>
     )
 }
