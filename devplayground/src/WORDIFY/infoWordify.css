@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wordifyPopupButton{
+    height: 150px;
+    width: 150px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+.wordifyPopup{
+    border: 1px solid red;
+    height: 200px;
+    width: 200px;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    background-color: aqua;
+}
+
+
+.closeWordifyPopup{
+    text-align: center;
+    background-color: pink;
+}
+
+.openWordifyPopup{
+    text-align: center;
+    background-color: pink;
+    font-size: 30px;
+}
+
+.wordifyPopup:target a[href='wordifyPopup']{
+    display: block;
+}
+
+.wordifyPopup:target{
+    display: block;
+}
