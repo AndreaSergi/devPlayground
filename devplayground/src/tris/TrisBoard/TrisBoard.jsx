@@ -115,7 +115,7 @@ export function TrisBoard() {
     );
     return (
       <div
-        className={`cell ${theme} 
+        className={`trix-cell ${theme} 
           ${isWinningCell ? "winning-cell" : ""}  
           ${winner === null ? currentPlayer : ""}
         `}
@@ -129,7 +129,7 @@ export function TrisBoard() {
 
   function renderBoard() {
     return board.map((row, rowIndex) => (
-      <div className="row" key={rowIndex}>
+      <div className="trix-row" key={rowIndex}>
         {row.map((cell, colIndex) => renderCell(rowIndex, colIndex))}
       </div>
     ));
@@ -170,7 +170,7 @@ export function TrisBoard() {
 
   return (
     <div className="trix">
-      <h1 className="h1">T  R  I  X</h1>
+      <p className="h1">T  R  I  X</p>
 
       <div className="scoreboard">
         <p>Player X: {scoreX}</p>

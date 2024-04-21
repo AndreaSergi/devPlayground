@@ -23,6 +23,10 @@
   color: var(--tris-text-color);
 }
 
+.page * {
+  box-sizing: content-box;
+}
+
 .themeButton {
   position: fixed;
   right: 24px;
