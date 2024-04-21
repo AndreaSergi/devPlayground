@@ -70,14 +70,15 @@
  */
 
 
-.tastiera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow: hidden;
+ .tastiera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  /* width: 800px; */
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .parolaCorretta{
@@ -155,7 +156,6 @@ h1{
 
 .keyboardRow{
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     width: 90%;
