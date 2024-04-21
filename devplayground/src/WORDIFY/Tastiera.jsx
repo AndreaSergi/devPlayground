@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {InputButton} from "./InputButton"
-import './button.css'
-import './parole.css'
+import './wordifyButton.css'
+import './wordify.css'
 
 
 export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
@@ -265,7 +265,7 @@ export function Tastiera({onInvio, rowIndex, setRowIndex, setParolaGenerata}){
     return (
         <div className="tastiera">
             {rows.map((row, index) => (
-                <div className="row" key={index}>
+                <div className="keyboardRow" key={index}>
                     {row.map((key, keyIndex) => (
                         <InputButton
                             key={keyIndex}

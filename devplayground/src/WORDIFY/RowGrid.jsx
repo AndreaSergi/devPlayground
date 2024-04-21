@@ -30,7 +30,7 @@ useEffect(() => {
         <div className="wordCellsContainer">
 
             {[...Array(5)].map((value, index)=>{
-                return (<div key= {index} className={`cell ${colors[index]}`}></div>)
+                return (<div key= {index} className={`gridCell ${colors[index]}`}></div>)
                 })
             }
         </div>

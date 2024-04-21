@@ -2,8 +2,9 @@ import { ParoleGrid } from "./ParoleGrid";
 import { PlayAgain } from "./PlayAgain";
 import { Tastiera } from "./Tastiera";
 import { useEffect, useState} from "react";
-import './button.css'
-import './parole.css'
+import './wordifyButton.css'
+import './wordify.css'
+import { HomeLogo } from "../HOMEPAGE/HomeLogo";
 
 export function Wordify() {
     
@@ -48,6 +49,7 @@ export function Wordify() {
 
     return (
         <div className="main-container">
+            <HomeLogo/>
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?

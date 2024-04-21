@@ -15,7 +15,6 @@ import { TrisBoard } from "./tris/TrisBoard/TrisBoard";
 function App() {
   return (
     <>
-      <MobileNavbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="wordify" element={<Wordify />} />
@@ -31,7 +30,6 @@ function App() {
           <Route path="pvp" element={<TrisBoard />} />
         </Route>
       </Routes>
-      <Footer />
     </>
   );
 }
