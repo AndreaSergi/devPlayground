@@ -11,13 +11,15 @@ import { Tris } from "./tris/Tris";
 import { TrisMenu } from "./tris/TrisMenu/TrisMenu";
 import { TrisBoardComputer } from "./tris/TrisBoard/TrisBoardComputer";
 import { TrisBoard } from "./tris/TrisBoard/TrisBoard";
+import { WordifyIntro } from "./WORDIFY/WordifyIntro";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="wordify" element={<Wordify />} />
+        <Route path="HomeWordify" element={<WordifyIntro />} />
+        <Route path="HomeWordify/wordify" element={<Wordify />} />
         <Route path="pingpong" element={<HomePingPong />} />
         <Route path="pingpong/pvcpu" element={<PingPongPVCOM />} />
         <Route path="pingpong/pvp" element={<PingPongPVP />} />

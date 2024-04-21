@@ -11,6 +11,7 @@
   background-color: black;
   padding-top: 25px;
   padding-bottom: 50px;
+  position: inherit;
 /*   overflow-x: hidden;
   overflow-y: hidden; */
 }
@@ -420,7 +421,7 @@ h1{
       0 0 7px #fd71b9,
       0 0 10px #fd71b9,
       0 0 21px #fd71b9,
-      0 0 42px rgb(255, 0, 153),
+      0 0 42px #ff0099,
       0 0 82px rgb(255, 0, 153),
       0 0 92px rgb(255, 0, 153),
       0 0 102px rgb(255, 0, 153),
