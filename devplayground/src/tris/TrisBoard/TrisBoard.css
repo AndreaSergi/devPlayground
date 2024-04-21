@@ -139,6 +139,7 @@ p {
 
 .currentP{
   color: blue;
+  text-decoration: none;
 }
 
 .h1{
