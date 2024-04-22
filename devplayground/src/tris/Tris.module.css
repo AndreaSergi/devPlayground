@@ -33,6 +33,16 @@
   top: 24px;
 }
 
+.homeLogoTrix {
+  position: fixed;
+  left: 24px;
+  top: 24px;
+}
+
+.homeLogoTrixLight {
+  filter: invert(1);
+}
+
 /* @media screen and (max-width: 600px) {
   .page {
     min-height: 85vh;
