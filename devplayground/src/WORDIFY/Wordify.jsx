@@ -52,7 +52,7 @@ export function Wordify() {
     return (
         <div className="main-container">
             <InfoWordify/>
-            <HomeLogo/>
+            <HomeLogo nomeClassePersonalizzata={"homeLogoWordify"}/>
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>
             {!gameOver ?
