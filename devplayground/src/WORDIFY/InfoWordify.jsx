@@ -11,7 +11,6 @@ export function InfoWordify() {
         <p className='rulesWordify'>Hai 6 tentativi a disposizione per indovinare una parola italiana casuale di cinque lettere.</p>
         <p className='rulesWordify'>Quando premi invio, lettere della parola che hai inserito si illumineranno di giallo se sono presenti nella parola da indovinare, ma si trovano nella posizione sbagliata, di verde se sono presenti e sono nella posizione corretta, mentre non si illumineranno se non sono presenti.</p>
         <p className='rulesWordify'>
-        Buona fortuna!
         </p>
       </div>
     </div>

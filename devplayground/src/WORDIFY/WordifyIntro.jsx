@@ -1,6 +1,7 @@
 import { HomeLogo } from '../HOMEPAGE/HomeLogo';
 import { InfoWordify } from './InfoWordify';
 import './wordifyIntro.css'
+import './wordify.css'
 import { Link} from "react-router-dom";
 
 export function WordifyIntro() {
@@ -16,7 +17,7 @@ export function WordifyIntro() {
             </Link>
 
             <InfoWordify/>
-            <HomeLogo/>
+            <HomeLogo nomeClassePersonalizzata={"homeLogoWordify"}/>
         </div>
        
     )

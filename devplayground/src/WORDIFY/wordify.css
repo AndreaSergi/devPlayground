@@ -30,6 +30,12 @@
 }
 
 
+.homeLogoWordify{
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 45%;
+}
+
  .tastiera {
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ import { Footer } from "../Footer/Footer";
 export function Homepage() {
   return (
     <>
-    <MobileNavbar/>
+      <MobileNavbar/>
       <MainSection />
       <GameDetails />
       <Footer/>
