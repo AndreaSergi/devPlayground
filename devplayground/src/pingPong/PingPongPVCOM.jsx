@@ -21,16 +21,16 @@ function PingPongPVCOM() {
 
   const [larghezzaCampo, setLarghezzaCampo] = useState(1175);
   const [altezzaCampo, setAltezzaCampo] = useState(575);
-  
+
   const [styleCampo, setStyleCampo] = useState({
     width: `${larghezzaCampo}px`,
     height: `${altezzaCampo}px`
   });
 
   const dimPopUp = {
-    width: `${larghezzaCampo - (larghezzaCampo * 0.50)}px`,
-    height: `${altezzaCampo - (altezzaCampo * 0.50)}px`
-  }
+    width: `${larghezzaCampo - larghezzaCampo * 0.5}px`,
+    height: `${altezzaCampo - altezzaCampo * 0.5}px`
+  };
 
   const name = "Giocatore";
   const [getTop, setTop] = useState(50);
@@ -51,32 +51,33 @@ function PingPongPVCOM() {
   const dimensione = document.body;
   let larghezza = dimensione.clientWidth;
   let altezza = dimensione.clientHeight;
-  useEffect(() => {
+  useEffect(
+    () => {
+      console.log("body: " + larghezza + " X " + altezza);
 
-    console.log("body: " + larghezza + " X " + altezza);
+      setLarghezzaCampo(larghezza * 0.8);
+      setAltezzaCampo(altezza * 0.8);
+    },
+    [larghezza, altezza]
+  );
 
-    setLarghezzaCampo(larghezza * 0.8);
-    setAltezzaCampo(altezza *0.8);
+  useEffect(
+    () => {
+      console.log("campo : " + larghezzaCampo + " x " + altezzaCampo);
 
-  }, [larghezza, altezza])
-
-  useEffect(() => {
-    console.log("campo : " + larghezzaCampo + " x " + altezzaCampo);
-
-    setStyleCampo({
-      width: `${larghezzaCampo}px`,
-      height: `${altezzaCampo}px`
-    });
-
-  }, [larghezzaCampo, altezzaCampo])
+      setStyleCampo({
+        width: `${larghezzaCampo}px`,
+        height: `${altezzaCampo}px`
+      });
+    },
+    [larghezzaCampo, altezzaCampo]
+  );
 
   const playAudio = () => {
     if (audioRef.current) {
       audioRef.current.play();
     }
   };
-
-
 
   // Funzione per controllare se la pallina ha colpito un paddle
   const checkPaddleHit = (
@@ -111,8 +112,9 @@ function PingPongPVCOM() {
 
     if (hit) {
       console.log(
-        `La pallina ha colpito il ${isRightPaddle ? "paddle destro" : "paddle sinistro"
-        }!`
+        `La pallina ha colpito il ${isRightPaddle
+          ? "paddle destro"
+          : "paddle sinistro"}!`
       );
       playAudio();
     }
@@ -120,93 +122,96 @@ function PingPongPVCOM() {
     return hit;
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Aggiorna la posizione superiore della palla
-      setTop((prevTop) => {
-        let newTop = prevTop + verticalDirection;
-        if (newTop >= altezzaCampo - 15 || newTop <= 0) {
-          setVerticalDirection(-verticalDirection);
-          return prevTop; // Impedisce alla palla di muoversi oltre il campo
-        }
-        return newTop;
-      });
+  useEffect(
+    () => {
+      const interval = setInterval(() => {
+        // Aggiorna la posizione superiore della palla
+        setTop(prevTop => {
+          let newTop = prevTop + verticalDirection;
+          if (newTop >= altezzaCampo - 15 || newTop <= 0) {
+            setVerticalDirection(-verticalDirection);
+            return prevTop; // Impedisce alla palla di muoversi oltre il campo
+          }
+          return newTop;
+        });
 
-      // Aggiorna la posizione sinistra della palla
-      setLeft((prevLeft) => {
-        let newLeft = prevLeft + horizontalDirection;
-        if (newLeft >= larghezzaCampo - 20 || newLeft <= 0) {
-          setHorizontalDirection(-horizontalDirection);
-          return prevLeft; // Impedisce alla palla di muoversi oltre il campo
-        }
-        //console.log(`new left: ${newLeft}`);
+        // Aggiorna la posizione sinistra della palla
+        setLeft(prevLeft => {
+          let newLeft = prevLeft + horizontalDirection;
+          if (newLeft >= larghezzaCampo - 20 || newLeft <= 0) {
+            setHorizontalDirection(-horizontalDirection);
+            return prevLeft; // Impedisce alla palla di muoversi oltre il campo
+          }
+          //console.log(`new left: ${newLeft}`);
 
-        // Controlla la condizione di fine partita
-        if (newLeft <= 7) {
-          setBorder("#626262");
-          setCheck(false);
-          setVerticalDirection(0);
-          setHorizontalDirection(0);
-          sessionStorage.setItem(
-            key,
-            JSON.stringify({
-              name: name,
-              score: score,
-              data: new Date()
-            })
-          );
-          setKey(key + 1);
-        }
+          // Controlla la condizione di fine partita
+          if (newLeft <= 7) {
+            setBorder("#626262");
+            setCheck(false);
+            setVerticalDirection(0);
+            setHorizontalDirection(0);
+            sessionStorage.setItem(
+              key,
+              JSON.stringify({
+                name: name,
+                score: score,
+                data: new Date()
+              })
+            );
+            setKey(key + 1);
+          }
 
-        // Controlla la collisione con il paddle
-        const ballPos = { x: newLeft, y: getTop };
-        const paddleLeftPos = { x: 0, y: paddleLeftY };
-        const paddleRightPos = { x: larghezzaCampo, y: paddleRightY };
-        const paddleHeight = 70;
-        const paddleWidth = 10;
-        const ballSize = 15;
+          // Controlla la collisione con il paddle
+          const ballPos = { x: newLeft, y: getTop };
+          const paddleLeftPos = { x: 0, y: paddleLeftY };
+          const paddleRightPos = { x: larghezzaCampo, y: paddleRightY };
+          const paddleHeight = 70;
+          const paddleWidth = 10;
+          const ballSize = 15;
 
-        if (
-          checkPaddleHit(
-            ballPos,
-            paddleLeftPos,
-            paddleHeight,
-            paddleWidth,
-            ballSize
-          ) ||
-          checkPaddleHit(
-            ballPos,
-            paddleRightPos,
-            paddleHeight,
-            paddleWidth,
-            ballSize,
-            true
-          )
-        ) {
-          setHorizontalDirection(-horizontalDirection);
-          return prevLeft; // Impedisce alla palla di muoversi dopo la collisione
-        }
+          if (
+            checkPaddleHit(
+              ballPos,
+              paddleLeftPos,
+              paddleHeight,
+              paddleWidth,
+              ballSize
+            ) ||
+            checkPaddleHit(
+              ballPos,
+              paddleRightPos,
+              paddleHeight,
+              paddleWidth,
+              ballSize,
+              true
+            )
+          ) {
+            setHorizontalDirection(-horizontalDirection);
+            return prevLeft; // Impedisce alla palla di muoversi dopo la collisione
+          }
 
-        return newLeft;
-      });
+          return newLeft;
+        });
 
-      // Aggiorna la posizione Y del paddle destro
-      setPaddleRightY((prevY) => {
-        const deltaY = getTop - prevY - 35;
-        let newY = prevY;
-        if (deltaY > 0) {
-          newY = Math.min(prevY + 10, altezzaCampo - 74); //default 70
-        } else if (deltaY < 0) {
-          newY = Math.max(prevY - 10, 0);
-        }
-        // Aggiungi un fattore di smoothing per ridurre il tremolio
-        const smoothingFactor = 0.5;
-        return prevY + smoothingFactor * (newY - prevY);
-      });
-    }, 25);
+        // Aggiorna la posizione Y del paddle destro
+        setPaddleRightY(prevY => {
+          const deltaY = getTop - prevY - 35;
+          let newY = prevY;
+          if (deltaY > 0) {
+            newY = Math.min(prevY + 10, altezzaCampo - 74); //default 70
+          } else if (deltaY < 0) {
+            newY = Math.max(prevY - 10, 0);
+          }
+          // Aggiungi un fattore di smoothing per ridurre il tremolio
+          const smoothingFactor = 0.5;
+          return prevY + smoothingFactor * (newY - prevY);
+        });
+      }, 25);
 
-    return () => clearInterval(interval);
-  }, [getTop, verticalDirection, horizontalDirection]);
+      return () => clearInterval(interval);
+    },
+    [getTop, verticalDirection, horizontalDirection]
+  );
 
   const styleMod = {
     top: `${getTop}px`,
@@ -214,26 +219,31 @@ function PingPongPVCOM() {
   };
 
   // Funzione per controllare il padlle
-  const handleKeyDown = (event) => {
+  const handleKeyDown = event => {
     if (event.key === "ArrowUp") {
-      setPaddleLeftY((paddleLeftY) => Math.max(paddleLeftY - 10, 0));
-
+      setPaddleLeftY(paddleLeftY => Math.max(paddleLeftY - 10, 0));
     } else if (event.key === "ArrowDown") {
-      setPaddleLeftY((paddleLeftY) => Math.min(paddleLeftY + 10, altezzaCampo - 74)); //default 70
-
+      setPaddleLeftY(paddleLeftY =>
+        Math.min(paddleLeftY + 10, altezzaCampo - 74)
+      ); //default 70
     }
-
   };
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [larghezzaCampo,altezzaCampo]);
+  useEffect(
+    () => {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    },
+    [larghezzaCampo, altezzaCampo]
+  );
 
-  useEffect(() => {
-    console.log("paddle" + paddleLeftY);
-  }, [paddleLeftY])
+  useEffect(
+    () => {
+      console.log("paddle" + paddleLeftY);
+    },
+    [paddleLeftY]
+  );
 
   // SCORE FUNCTION
   const [moltiplicatore, setMoltiplicatore] = useState(1);
@@ -259,30 +269,33 @@ function PingPongPVCOM() {
     clearInterval(id2);
   }, 1000);
 
-  useEffect(() => {
-    if (moltiplicatore <= 3) {
-      if (horizontalDirection > 0) {
-        setHorizontalDirection(horizontalDirection + moltiplicatore);
+  useEffect(
+    () => {
+      if (moltiplicatore <= 3) {
+        if (horizontalDirection > 0) {
+          setHorizontalDirection(horizontalDirection + moltiplicatore);
+        } else {
+          setHorizontalDirection(horizontalDirection - moltiplicatore);
+        }
+        if (verticalDirection > 0) {
+          setVerticalDirection(verticalDirection + moltiplicatore);
+        } else {
+          setVerticalDirection(verticalDirection - moltiplicatore);
+        }
       } else {
-        setHorizontalDirection(horizontalDirection - moltiplicatore);
+        console.log("velocità massima raggiunta");
       }
-      if (verticalDirection > 0) {
-        setVerticalDirection(verticalDirection + moltiplicatore);
-      } else {
-        setVerticalDirection(verticalDirection - moltiplicatore);
-      }
-    } else {
-      console.log("velocità massima raggiunta");
-    }
 
-    console.log(`velocità ${verticalDirection}`);
-    console.log(`minuti trascorsi ${moltiplicatore}`);
-  }, [moltiplicatore]);
+      console.log(`velocità ${verticalDirection}`);
+      console.log(`minuti trascorsi ${moltiplicatore}`);
+    },
+    [moltiplicatore]
+  );
 
   return (
     <div ref={dim}>
       <Video />
-      <div tabIndex={0} onKeyDown={handleKeyDown} >
+      <div tabIndex={0} onKeyDown={handleKeyDown}>
         <SingleScore
           namePlayer={name}
           player={`${score}`}
@@ -290,23 +303,28 @@ function PingPongPVCOM() {
         />
         <PingPong>
           <Campo style={styleCampo} borderColor={border}>
-            {!getCheck && (
+            {!getCheck &&
               <div style={dimPopUp} className="pop-upPingPong">
                 <h2>Game Over!</h2>
-                <h3>Il tuo punteggio: {score}</h3>
-                <Link to="/">
-                  <button className="btn-pop-upPingPong">Menù Principale</button>
-                </Link>
-                <button
-                  className="btn-pop-upPingPong"
-                  onClick={() => {
-                    window.location.reload();
-                  }}
-                >
-                  Nuova partita
-                </button>
-              </div>
-            )}
+                <h3>
+                  Il tuo punteggio: {score}
+                </h3>
+                <div className="btns-pop-upPingPong">
+                  <Link to="/">
+                    <button className="btn-pop-upPingPong">
+                      Menù Principale
+                    </button>
+                  </Link>
+                  <button
+                    className="btn-pop-upPingPong"
+                    onClick={() => {
+                      window.location.reload();
+                    }}
+                  >
+                    Nuova partita
+                  </button>
+                </div>
+              </div>}
             <Paddle
               borderColor={border}
               position="left"

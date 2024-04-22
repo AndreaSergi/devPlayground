@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-export function Button({text, className}) {
+export function Button({text, className, style}) {
     return(
-        <button className={className}>{text}</button>
+        <button style={style} className={className}>{text}</button>
     )
 }
