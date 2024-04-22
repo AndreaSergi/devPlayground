@@ -36,13 +36,16 @@ body{
   background: rgba(116, 116, 116, 0);
 }
 
-.homeLogo{
-  width: 100px;/* 
-  height: 70px; */
+.linkHomeLogo{
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
+}
+
+.homeLogo{
+  width: 100px;
+  height: 80px;
 }
 
 

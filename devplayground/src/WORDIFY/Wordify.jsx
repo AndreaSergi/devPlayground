@@ -4,6 +4,7 @@ import { Tastiera } from "./Tastiera";
 import { useEffect, useState} from "react";
 import './wordifyButton.css'
 import './wordify.css'
+import '../index.css'
 import { HomeLogo } from "../HOMEPAGE/HomeLogo";
 import { InfoWordify } from "./InfoWordify";
 
