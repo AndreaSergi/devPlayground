@@ -2,60 +2,83 @@
 export function Punteggio({ player, opponent, namePlayer1, namePlayer2 }) {
   const scoreStyle = {
     padding: "10px",
-        margin: "10px 0",
-        borderRadius: "5px",
-        backgroundColor:"rgba(255, 255, 255, 0.10)",
-        /*background: 'url("pingpong/img/backgroundPunteggio.png")',*/
-        color: "#ffffff",
-        textAlign: "center",
-        boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-        fontFamily: '"Lucida Console", Monaco, monospace',
-        border: "5px solid #ffffff",
-        display: "flex",
-        flexDirection: "horizontal",
-        align: "center",
-        justifyContent: "center",
-        position: "relative",
-        zIndex: "20px",
+    margin: "10px 0",
+    borderRadius: "5px",
+    backgroundColor: "rgba(255, 255, 255, 0.10)",
+    /*background: 'url("pingpong/img/backgroundPunteggio.png")',*/
+    color: "#ffffff",
+    textAlign: "center",
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+    fontFamily: '"Lucida Console", Monaco, monospace',
+    border: "5px solid #ffffff",
+    display: "flex",
+    flexDirection: "horizontal",
+    align: "center",
+    justifyContent: "space-around",
+    position: "relative",
+    zIndex: "20px",
+    gap: "16px",
+    width: "100%",
   };
 
   const sx = {
-    marginRight: "10%",
     display: "flex",
+    justifyContent: "center",
     flexDirection: "horizontal",
-  }
+    width: "100%",
+  };
   const dx = {
-    marginLeft: "10%",
     display: "flex",
+    justifyContent: "center",
     flexDirection: "horizontal",
-  }
+    width: "100%",
+  };
 
   let avatar = {
     width: "50px",
     height: "50px",
     borderRadius: "100%",
     marginTop: "5px"
-  }
+  };
+
+  const mainPunteggioPingPong = {
+    width: "90vw",
+  };
 
   return (
-    <>
+    <div style={mainPunteggioPingPong}>
       <div style={scoreStyle}>
-      <div style={sx}>
-        <div style={{marginRight: "30px"}}>
-          <h2>{namePlayer1}</h2>
-          <h3>{player}</h3>
+        <div style={sx}>
+          <div style={{ marginRight: "30px" }}>
+            <h2>
+              {namePlayer1}
+            </h2>
+            <h3>
+              {player}
+            </h3>
+          </div>
+          <img
+            style={avatar}
+            src="pingpong/img/avatar1.png"
+            alt="avatar giocatore1"
+          />
         </div>
-        <img style={avatar} src="pingpong/img/avatar1.png" alt="avatar giocatore1" />
-      </div>
-      <div style={dx}>
-        <img style={avatar} src="pingpong/img/avatar2.png" alt="avatar giocatore2" />
-        <div style={{marginLeft: "30px"}}>
-          <h2>{namePlayer2}</h2>
-          <h3>{opponent}</h3>
+        <div style={dx}>
+          <img
+            style={avatar}
+            src="pingpong/img/avatar2.png"
+            alt="avatar giocatore2"
+          />
+          <div style={{ marginLeft: "30px" }}>
+            <h2>
+              {namePlayer2}
+            </h2>
+            <h3>
+              {opponent}
+            </h3>
+          </div>
         </div>
       </div>
     </div>
-    </>
-    
   );
 }

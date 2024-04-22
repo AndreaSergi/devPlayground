@@ -58,7 +58,7 @@ function PingPongPVCOM() {
       setLarghezzaCampo(larghezza * 0.8);
       setAltezzaCampo(altezza * 0.8);
     },
-    [larghezza, altezza]
+    [larghezza]
   );
 
   useEffect(

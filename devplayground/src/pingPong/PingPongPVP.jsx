@@ -51,7 +51,7 @@ function PingPongPVP() {
     setLarghezzaCampo(larghezza * 0.8);
     setAltezzaCampo(altezza * 0.8);
 
-  }, [larghezza, altezza])
+  }, [larghezza])
 
   useEffect(() => {
     console.log("campo : " + larghezzaCampo + " x " + altezzaCampo);
