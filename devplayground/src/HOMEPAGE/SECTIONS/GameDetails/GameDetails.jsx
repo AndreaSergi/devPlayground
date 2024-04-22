@@ -9,7 +9,7 @@ export function GameDetails() {
   return (
     <div className={style.container}>
       <div className={style.chevron}>
-        <img className={style.rosso} src={whiteChevron} alt="chevron" />
+        <img className={style.chevronDownForMore} src={whiteChevron} alt="chevron" />
       </div>
       <GameDetail
         img={PingPongGif}

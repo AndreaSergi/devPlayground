@@ -9,8 +9,7 @@
   align-items: center;
   flex-direction: column;
   background-color: black;
-  padding-top: 25px;
-  padding-bottom: 50px;
+  margin-top: 25px;
   position: inherit;
 }
 
@@ -262,7 +261,7 @@ h1{
     100% {
       /* Larger blur radius */
       text-shadow:
-        0 0 4px #609bfa,
+        0 0 40px #609bfa,
         0 0 11px #609bfa,
         0 0 19px #609bfa,
         0 0 40px #0062ff,
@@ -274,8 +273,8 @@ h1{
     0% {
       /* Smaller blur radius */
       text-shadow:
-        0 0 2px #609bfa,
-        0 0 4px #609bfa,
+        0 0 8px #609bfa,
+        0 0 12px #609bfa,
         0 0 6px #609bfa,
         0 0 2px #0062ff,
         0 0 10px #0062ff,
@@ -397,6 +396,7 @@ h1{
    /*  margin-right: 10px; */
     border: 1px solid;
     width: 100px;
+    border: 1px solid white;
 }
 
 
@@ -404,6 +404,7 @@ h1{
 
     border: 1px solid;
     width: 100px;
+    border: 1px solid white;
 }
 
   /* --------------------- RESPONSIVE ---------------------- */
@@ -481,6 +482,7 @@ h1{
 
     .tastiera .keyboardRow:last-of-type > div:first-child button {
         width: 13vw;
+        
     }
 
 

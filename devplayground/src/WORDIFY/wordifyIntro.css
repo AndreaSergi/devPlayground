@@ -65,7 +65,7 @@
   font-weight: 400;
   font-size: 200px;
   font-size: 10.5vw;
-  animation: fadeIn 2s ease-in-out, pulsateBlue 4s 2s ease-in-out infinite;
+  animation: fadeIn 2s ease-in-out, pulsateBlueIntro 4s 2s ease-in-out infinite;
   color: #b6b6b6;
 }
 
@@ -98,7 +98,7 @@
   animation: fadeIn 4s ease-in-out;
 }
 
-@keyframes pulsateBlue {
+@keyframes pulsateBlueIntro {
   20%,
   50%,
   100% {
