@@ -21,7 +21,7 @@ export function InputButton({ lettera, cellIndex, setCellIndex, rowIndex, clickF
 
     return (
         <div>
-            <button className={`button  ${assente? "disabledButton" : ""} ${verde? "correctButton" : ""} `} onClick={handleClick} value={lettera}>{lettera}</button>
+            <button className={`keyboardButton  ${assente? "disabledButton" : ""} ${verde? "correctButton" : ""} `} onClick={handleClick} value={lettera}>{lettera}</button>
         </div>
     );
 }

@@ -5,6 +5,7 @@ import { useEffect, useState} from "react";
 import './wordifyButton.css'
 import './wordify.css'
 import { HomeLogo } from "../HOMEPAGE/HomeLogo";
+import { InfoWordify } from "./InfoWordify";
 
 export function Wordify() {
     
@@ -49,6 +50,7 @@ export function Wordify() {
 
     return (
         <div className="main-container">
+            <InfoWordify/>
             <HomeLogo/>
             <h1 className="neonTextTitle">{titolo}</h1>
             <ParoleGrid indiciUguali = {indiciUguali} lettereUguali={lettereUguali} rowIndex = {rowIndex} occorenze = {oggettoOccorrenze}/>

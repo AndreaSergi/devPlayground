@@ -1,5 +1,9 @@
+import { Link } from "react-router-dom";
+
 export function HomeLogo(){
     return(
-        <img className="homeLogo" src="./src/4.PNG" alt="" />
+        <Link to="/">
+        <img className="homeLogo" src="./src/HOMEPAGE/logoDevPlayground.png" alt="" />
+        </Link>
     )
 }

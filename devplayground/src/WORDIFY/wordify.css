@@ -12,8 +12,6 @@
   padding-top: 25px;
   padding-bottom: 50px;
   position: inherit;
-/*   overflow-x: hidden;
-  overflow-y: hidden; */
 }
 
 @font-face {
@@ -32,51 +30,11 @@
 }
 
 
-/* @font-face {
-  font-family: 'Amoneon';
-  src: local('Amoneon'), local('Amoneon'),
-    url('/font/amoneon-amoneon-regular-400.ttf') format('truetype');
-
-
-  font-weight: normal;
-  font-style: normal;
-
-  
-  
-}
-
-@font-face {
-  font-family: 'Higher Monday';
-  src: local('Higher Monday'), local('Higher Monday'),
-    url('/font/HigherMonday.ttf') format('truetype');
-
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-} */
-
-
-
-
-
-/* body{
-    background-color: black;
-    padding-top: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
- */
-
-
  .tastiera {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  /* width: 800px; */
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
@@ -103,7 +61,7 @@
 
 }
 
-.button{
+.keyboardButton{
     height: 58px;
     width: 58px;
     background-color: rgb(72, 73, 75);
@@ -115,7 +73,7 @@
     font-weight: 600;
     margin: 4px;
 }
-.button:hover{
+.keyboardButton:hover{
     cursor: pointer;
     background-color: rgb(77, 77, 77);
     color: white;
@@ -451,7 +409,7 @@ h1{
         align-items: center;
     }
 
-    .button{
+    .keyboardButton{
         width: 48px;
         height: 48px;
     }
@@ -470,7 +428,7 @@ h1{
 
   @media screen and (max-width: 560px){
 
-    .button{
+    .keyboardButton{
         width: 40px;
         height: 48px;
     }
@@ -502,6 +460,7 @@ h1{
         height: 100vh;
         overflow-x: hidden;
         padding-top: 2.5vh;
+        padding-bottom: 0;
     }
 
 
@@ -523,7 +482,7 @@ h1{
         width: 13vw;
     }
 
-    .button {
+    .keyboardButton {
         width: 7.7vw;
         height: 7.5vh;
         border-radius: 6px;
