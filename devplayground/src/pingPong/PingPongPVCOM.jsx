@@ -291,14 +291,14 @@ function PingPongPVCOM() {
         <PingPong>
           <Campo style={styleCampo} borderColor={border}>
             {!getCheck && (
-              <div style={dimPopUp} className="pop-up">
+              <div style={dimPopUp} className="pop-upPingPong">
                 <h2>Game Over!</h2>
                 <h3>Il tuo punteggio: {score}</h3>
                 <Link to="/">
-                  <button className="btn-pop-up">Menù Principale</button>
+                  <button className="btn-pop-upPingPong">Menù Principale</button>
                 </Link>
                 <button
-                  className="btn-pop-up"
+                  className="btn-pop-upPingPong"
                   onClick={() => {
                     window.location.reload();
                   }}

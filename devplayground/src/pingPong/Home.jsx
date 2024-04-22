@@ -11,7 +11,7 @@ export function Home() {
   }
 
   return (
-    <div className="container">
+    <div className="containerPingPong">
       <img style={styleLogo} src="/pingpong/img/ic.svg"/>
       <Link to="/pvcpu">
         <Button className="pvcom" text="Player VS CPU" />

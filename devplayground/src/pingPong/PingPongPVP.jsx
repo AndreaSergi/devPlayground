@@ -217,7 +217,7 @@ function PingPongPVP() {
         >
           {/* pop-up assegnazione punteggio */}
           {!getCheck && !checkEndGame && (
-            <div style={dimPopUp} className="pop-up">
+            <div style={dimPopUp} className="pop-upPingPong">
               <h2>Punto assegnato a: {goal} !</h2>
               <h3>
                 Punteggio attuale: {score.player} - {score.opponent}
@@ -226,7 +226,7 @@ function PingPongPVP() {
                 onClick={() => {
                   setCheck(true);
                 }}
-                className="btn-pop-up"
+                className="btn-pop-upPingPong"
               >
                 Continua
               </button>
@@ -234,7 +234,7 @@ function PingPongPVP() {
           )}
           {/* pop-up fine partita */}
           {checkEndGame && (
-            <div style={dimPopUp} className="pop-up">
+            <div style={dimPopUp} className="pop-upPingPong">
               <h2>Game Over!</h2>
               <h3>Vince : {goal}</h3>
               <button
@@ -243,12 +243,12 @@ function PingPongPVP() {
                   setScore({ player: 0, opponent: 0 });
                   setCheckEndGame(false);
                 }}
-                className="btn-pop-up"
+                className="btn-pop-upPingPong"
               >
                 Rivincita
               </button>
               <Link to="/">
-                <button className="btn-pop-up">Menù Principale</button>
+                <button className="btn-pop-upPingPong">Menù Principale</button>
               </Link>
             </div>
           )}

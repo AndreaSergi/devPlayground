@@ -1,4 +1,4 @@
-.pop-up{
+.pop-upPingPong{
     position: absolute;
 
     top: 125px;
@@ -19,11 +19,11 @@
     align-self: center;
 }
 
-.pop-up h2, h3 {
+.pop-upPingPong h2, h3 {
     text-shadow: 1px 1px #000;
 }
 
-.btn-pop-up{
+.btn-pop-upPingPong{
     background-color: #ffffff;
     color: #292929;
     font-weight: bold;
