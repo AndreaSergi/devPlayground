@@ -9,6 +9,7 @@ import { Punteggio } from "./Punteggio";
 import "./pingpong.css";
 import "./pop-up.css";
 import { Video } from "./Video";
+import {HomeLogo} from "../HOMEPAGE/HomeLogo";
 
 function PingPongPVP() {
   const [getTop, setTop] = useState(50);
@@ -205,6 +206,9 @@ function PingPongPVP() {
 
   return (
     <div>
+      <div style={{position:"absolute" , top:"124px" , left :"16px"}}>
+        <HomeLogo/>
+      </div>
       <Video />
       <Punteggio
         player={score.player}
@@ -249,7 +253,7 @@ function PingPongPVP() {
               >
                 Rivincita
               </button>
-              <Link to="/">
+              <Link to="/pingpong">
                 <button className="btn-pop-upPingPong">Menù Principale</button>
               </Link>
             </div>

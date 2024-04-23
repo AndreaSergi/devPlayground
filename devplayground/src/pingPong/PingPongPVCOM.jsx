@@ -16,6 +16,7 @@ import "./pingpong.css";
 import AudioComponent from "./AudioComponent";
 import { Video } from "./Video";
 import { Button } from "./Button";
+import {HomeLogo} from "../HOMEPAGE/HomeLogo";
 
 function PingPongPVCOM() {
   const dim = useRef(null);
@@ -281,6 +282,10 @@ function PingPongPVCOM() {
 
   return (
     <div ref={dim}>
+      <div style={{position:"absolute" , top:"124px" , left :"16px"}}>
+        <HomeLogo/>
+      </div>
+      
       <Video/>
       <div tabIndex={0} onKeyDown={handleKeyDown} >
         <SingleScore
@@ -294,7 +299,7 @@ function PingPongPVCOM() {
               <div style={dimPopUp} className="pop-upPingPong">
                 <h2>Game Over!</h2>
                 <h3>Il tuo punteggio: {score}</h3>
-                <Link to="/">
+                <Link to="/pingpong">
                   <Button className="btn-pop-upPingPong" text="Menù Principale"/>
                   
                 </Link>
