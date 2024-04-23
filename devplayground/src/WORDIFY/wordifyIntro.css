@@ -163,6 +163,73 @@
 
 @media screen and (max-width: 1145px) {
  
+  .introTitle{
+    top: 30%;
+    font-weight: 800;
+    font-size: 12vw;
+  }
+ 
+  .wordifyLink{
+    top: 55%;
+  }
+
+  .playWordify{
+    width: 50vw;
+    height: 13vh;
+    font-size: 10vw;
+  } 
+}
+
+@media screen and (max-width: 800px) {
+ 
+
+  .introTitle{
+    top: 30%;
+    font-weight: 800;
+    font-size: 12vw;
+  }
+ 
+  .wordifyLink{
+    top: 55%;
+  }
+
+  .playWordify{
+    width: 30vw;
+    height: 8vh;
+    font-size: 6vw;
+  } 
+}
+
+
+@media screen and (max-width: 500px) {
+
+  .introTitle{
+    top: 30%;
+    font-weight: 800;
+    font-size: 12vw;
+  }
+ 
+  .wordifyLink{
+    top: 60%;
+  }
+
+  .playWordify{
+    width: 30vw;
+    height: 8vh;
+    font-size: 6vw;
+    border-radius: 15px;
+  } 
+
+  .introImg{
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
+
+}
+
+
+@media screen and (max-width: 300px) {
+ 
 
   .playWordify{
     

@@ -15,6 +15,8 @@ import { SingleScore } from "./SingleScore";
 import "./pingpong.css";
 import AudioComponent from "./AudioComponent";
 import { Video } from "./Video";
+import { Button } from "./Button";
+import {HomeLogo} from "../HOMEPAGE/HomeLogo";
 
 function PingPongPVCOM() {
   const dim = useRef(null);
@@ -52,20 +54,14 @@ function PingPongPVCOM() {
   let larghezza = dimensione.clientWidth;
   let altezza = dimensione.clientHeight;
   useEffect(() => {
-
-    console.log("body: " + larghezza + " X " + altezza);
-
-    
-
-    setLarghezzaCampo(larghezza * 0.8);
-    console.log(`larghezza misurata: ${larghezza}`)
-    console.log(`calcolo altezza: ${((larghezza * 9) / 16)}`)
-    setAltezzaCampo((larghezza * 9) / 16);
+    console.log("altezza: " + altezza);
+    setLarghezzaCampo(larghezza * 0.78);
+    setAltezzaCampo(larghezza * 0.4);
 
   }, [larghezza, altezza])
 
   useEffect(() => {
-    console.log("campo 2 use effect: " + larghezzaCampo + " x " + altezzaCampo);
+    
 
     setStyleCampo({
       width: `${larghezzaCampo}px`,
@@ -114,11 +110,12 @@ function PingPongPVCOM() {
       ballTop <= paddleBottom;
 
     if (hit) {
-      console.log(
-        `La pallina ha colpito il ${isRightPaddle ? "paddle destro" : "paddle sinistro"
-        }!`
-      );
-      playAudio();
+      if (isRightPaddle) {
+        playAudio();
+      } else {
+        playAudio();
+      }
+      
     }
 
     return hit;
@@ -285,6 +282,10 @@ function PingPongPVCOM() {
 
   return (
     <div ref={dim}>
+      <div style={{position:"absolute" , top:"124px" , left :"16px"}}>
+        <HomeLogo/>
+      </div>
+      
       <Video/>
       <div tabIndex={0} onKeyDown={handleKeyDown} >
         <SingleScore
@@ -295,20 +296,17 @@ function PingPongPVCOM() {
         <PingPong>
           <Campo style={styleCampo} borderColor={border}>
             {!getCheck && (
-              <div style={dimPopUp} className="pop-up">
+              <div style={dimPopUp} className="pop-upPingPong">
                 <h2>Game Over!</h2>
                 <h3>Il tuo punteggio: {score}</h3>
-                <Link to="/">
-                  <button className="btn-pop-up">Menù Principale</button>
+                <Link to="/pingpong">
+                  <Button className="btn-pop-upPingPong" text="Menù Principale"/>
+                  
                 </Link>
-                <button
-                  className="btn-pop-up"
-                  onClick={() => {
+                <Button className="btn-pop-upPingPong" text="Nuova partita" onClick={() => {
                     window.location.reload();
-                  }}
-                >
-                  Nuova partita
-                </button>
+                  }}/>
+                
               </div>
             )}
             <Paddle

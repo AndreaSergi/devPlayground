@@ -9,6 +9,7 @@ import { Punteggio } from "./Punteggio";
 import "./pingpong.css";
 import "./pop-up.css";
 import { Video } from "./Video";
+import {HomeLogo} from "../HOMEPAGE/HomeLogo";
 
 function PingPongPVP() {
   const [getTop, setTop] = useState(50);
@@ -46,12 +47,12 @@ function PingPongPVP() {
   let altezza = dimensione.clientHeight;
   useEffect(() => {
 
-    console.log("body: " + larghezza + " X " + altezza);
+    console.log("altezza: " + altezza);
 
     setLarghezzaCampo(larghezza * 0.8);
     console.log(`larghezza misurata: ${larghezza}`)
     console.log(`calcolo altezza: ${((larghezza * 9) / 16)}`)
-    setAltezzaCampo(((larghezza * 9) / 16) - 200);
+    setAltezzaCampo(((larghezza * 6) / 16));
 
   }, [larghezza, altezza])
 
@@ -205,6 +206,9 @@ function PingPongPVP() {
 
   return (
     <div>
+      <div style={{position:"absolute" , top:"124px" , left :"16px"}}>
+        <HomeLogo/>
+      </div>
       <Video />
       <Punteggio
         player={score.player}
@@ -219,8 +223,8 @@ function PingPongPVP() {
         >
           {/* pop-up assegnazione punteggio */}
           {!getCheck && !checkEndGame && (
-            <div style={dimPopUp} className="pop-up">
-              <h2>Punto assegnato a: {goal} !</h2>
+            <div style={dimPopUp} className="pop-upPingPong">
+              <h2>Vince {goal} !</h2>
               <h3>
                 Punteggio attuale: {score.player} - {score.opponent}
               </h3>
@@ -228,7 +232,7 @@ function PingPongPVP() {
                 onClick={() => {
                   setCheck(true);
                 }}
-                className="btn-pop-up"
+                className="btn-pop-upPingPong"
               >
                 Continua
               </button>
@@ -236,21 +240,21 @@ function PingPongPVP() {
           )}
           {/* pop-up fine partita */}
           {checkEndGame && (
-            <div style={dimPopUp} className="pop-up">
+            <div style={dimPopUp} className="pop-upPingPong">
               <h2>Game Over!</h2>
-              <h3>Vince : {goal}</h3>
+              <h3>Vince {goal}</h3>
               <button
                 onClick={() => {
                   setCheck(true);
                   setScore({ player: 0, opponent: 0 });
                   setCheckEndGame(false);
                 }}
-                className="btn-pop-up"
+                className="btn-pop-upPingPong"
               >
                 Rivincita
               </button>
-              <Link to="/">
-                <button className="btn-pop-up">Menù Principale</button>
+              <Link to="/pingpong">
+                <button className="btn-pop-upPingPong">Menù Principale</button>
               </Link>
             </div>
           )}
