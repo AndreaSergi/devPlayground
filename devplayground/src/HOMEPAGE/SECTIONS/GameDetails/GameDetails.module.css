@@ -4,13 +4,29 @@
   margin-bottom: 50px;
 }
 
-.chevron {
+.chevronHMPG {
   display: flex;
   justify-content: center;
-  padding: 40px;
+  position: relative;
+  animation: upDown 1s infinite ease-in-out;
 }
 
+
 .chevronDownForMore {
-  height: 150px;
+  height: 120px;
   width: 150px;
+}
+
+@keyframes upDown {
+  0% {
+    top: 0;
+    transition-timing-function: ease-in-out;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0;
+    transition-timing-function: ease-in-out;
+  }
 }
