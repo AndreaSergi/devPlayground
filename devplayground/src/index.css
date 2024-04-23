@@ -44,8 +44,32 @@ body{
 }
 
 .homeLogo{
-  width: 90px;
-  height: 70px;
+  width: 100px;
+  height: 80px;
+  margin-left: 0;
 }
+
+@media screen and (max-width: 820px){
+  .homeLogo{
+    width: 70px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 700px){
+
+}
+
+@media screen and (max-width: 560px){
+
+}
+
+@media screen and (max-width: 430px){
+    .homeLogo{
+      width: 50px;
+      height: 45px;
+    }
+}
+
 
 

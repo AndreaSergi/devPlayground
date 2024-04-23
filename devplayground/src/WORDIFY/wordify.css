@@ -5,12 +5,14 @@
 }
 .main-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   background-color: black;
-  margin-top: 25px;
   position: inherit;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 @font-face {
@@ -409,6 +411,22 @@ h1{
 
   /* --------------------- RESPONSIVE ---------------------- */
 
+  @media screen and (max-width: 820px){
+    .main-container{
+      height: 100vh;
+      align-items: space-between;
+      justify-content: space-between;
+      padding-top: 50px;
+      padding-bottom: 20px;
+      margin-top: 0;
+    }
+
+    .homeLogoWordify{
+      margin-left: 1%;
+      margin-top: 2%;
+    }
+  }
+
   @media screen and (max-width: 700px){
 
     .main-container{
@@ -460,6 +478,11 @@ h1{
         padding-top: 0;
     }
 
+    .homeLogoWordify{
+      margin-left: 1%;
+      margin-top: 2%;
+    }
+
     .main-container{
         width: 100vw;
         align-items: center;
@@ -468,6 +491,7 @@ h1{
         overflow-x: hidden;
         padding-top: 2.5vh;
         padding-bottom: 0;
+        margin-top: 0;
     }
 
 

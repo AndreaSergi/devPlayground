@@ -194,9 +194,9 @@
   }
 
   .playWordify{
-    width: 50vw;
-    height: 15vh;
-    font-size: 10vw;
+    width: 30vw;
+    height: 8vh;
+    font-size: 6vw;
   } 
 }
 
@@ -214,10 +214,16 @@
   }
 
   .playWordify{
-    width: 50vw;
-    height: 10vh;
-    font-size: 10vw;
+    width: 30vw;
+    height: 8vh;
+    font-size: 6vw;
+    border-radius: 15px;
   } 
+
+  .introImg{
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
 
 }
 
