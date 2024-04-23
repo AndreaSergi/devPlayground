@@ -29,7 +29,9 @@ export function Login() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+
+                fontFamily : "arial"
             }
         }>
             <div className='p-3 mb-2 bg-dark bg-gradient text-white' style={
@@ -42,8 +44,8 @@ export function Login() {
                     justifyContent: "center"
                 }
             }>
-                <div style={{ textAlign: "center", paddingBottom: "64px" }}>
-                    <h1>Accedi</h1>
+                <div style={{ textAlign: "center", paddingBottom: "64px" , fontFamily : "Arial" }}>
+                    <h1 style={{fontFamily : "arial"}}>Accedi</h1>
                 </div>
                 <Form style={
                     {

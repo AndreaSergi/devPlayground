@@ -3,9 +3,12 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import 'react-bootstrap/dist/react-bootstrap';
 import './Navbar.css'
 import { HomeLogo } from '../HOMEPAGE/HomeLogo';
+import { useNavigate } from 'react-router-dom';
 
 
 export function MobileNavbar() {
+  const nav = useNavigate();
+
   const [expanded, setExpanded] = useState(false);
   const logo = "<DevPlayground/>";
 
@@ -67,7 +70,7 @@ export function MobileNavbar() {
             {/* <Nav.Link href="#pricing">About</Nav.Link> */}
           </Nav>
           <Nav>
-            <Button variant="secondary">
+            <Button variant="secondary" onClick={()=>{nav("/login")}} >
               {/* Usa lo stato imageSrc per l'attributo src dell'immagine */}
               <img height={20} src={imageSrc} alt="Login" /> Login
             </Button>

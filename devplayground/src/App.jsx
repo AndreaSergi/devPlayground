@@ -12,12 +12,16 @@ import { TrisMenu } from "./tris/TrisMenu/TrisMenu";
 import { TrisBoardComputer } from "./tris/TrisBoard/TrisBoardComputer";
 import { TrisBoard } from "./tris/TrisBoard/TrisBoard";
 import { WordifyIntro } from "./WORDIFY/WordifyIntro";
+import {Login} from "./componentiLogin/Login/Login";
+import {Register} from "./componentiLogin/Register/Register";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="HomeWordify" element={<WordifyIntro />} />
         <Route path="HomeWordify/wordify" element={<Wordify />} />
         <Route path="pingpong" element={<HomePingPong />} />
