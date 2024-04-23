@@ -44,6 +44,7 @@ body{
 }
 
 .homeLogo{
+<<<<<<< HEAD
   width: 100px;
   height: 80px;
   margin-left: 0;
@@ -66,6 +67,10 @@ body{
       width: 70px;
       height: 65px;
     }
+=======
+  width: 90px;
+  height: 70px;
+>>>>>>> c0b6203368a8c014d1bbae7d9de2c24fa07a35f3
 }
 
 

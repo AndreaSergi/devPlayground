@@ -36,3 +36,10 @@ nav, .btn-secondary {
   border-color: #000;
   color: black;
 }
+
+.navbar-homeLogo {
+  
+  position: absolute;
+  top: 0px;
+  left: 24px;
+}

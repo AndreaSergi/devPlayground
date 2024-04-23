@@ -9,8 +9,6 @@ export function Video() {
     zIndex: "0px",
     width: "100vw",
     height: "88vh",
-    marginTop: "200px",
-    
   };
 
   // Crea una ref per il video
