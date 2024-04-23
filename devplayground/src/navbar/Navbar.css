@@ -9,6 +9,7 @@
 .sticky-top {
   background-color: black !important;
   position: relative;
+  height: 90px;
 }
 
 nav, .btn-secondary {
@@ -41,5 +42,4 @@ nav, .btn-secondary {
   
   position: absolute;
   top: 0px;
-  left: 24px;
 }

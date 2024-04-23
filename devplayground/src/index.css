@@ -45,8 +45,6 @@ body{
 
 .homeLogo{
   width: 100px;
-  height: 80px;
-  margin-left: 0;
 }
 
 @media screen and (max-width: 820px){
