@@ -39,7 +39,7 @@ export function Register() {
                 }
             }>
                 <div style={{ textAlign: "center", paddingBottom: "64px" }}>
-                    <h1>Registrati</h1>
+                    <h1 style={{fontFamily : "arial"}}>Registrati</h1>
                 </div>
                 <Form style={
                     {
