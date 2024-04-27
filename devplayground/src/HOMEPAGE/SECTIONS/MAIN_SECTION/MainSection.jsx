@@ -10,10 +10,10 @@ export function MainSection() {
           {/* <h1 className="title jersey-15-regular waveTextAnimated"> */}
 
           {/* Opzione 2 */}
-          {/* <h1 className="title gochi-hand-regular waveTextAnimated"> */}
+          <h1 className="title gochi-hand-regular waveTextAnimated">
 
           {/* Opzione 3 */}
-          <h1 className="title luckiest-guy-regular waveTextAnimated">
+          {/* <h1 className="title luckiest-guy-regular waveTextAnimated"> */}
           
             <span className="segno">&lt;</span>
             <span className="dev">d</span>
