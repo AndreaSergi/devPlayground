@@ -196,7 +196,8 @@
 }
 
 .site-header {
-  background-image: url("PROVAPROVISSIMA.png");
+  /* background-image: url("PROVAPROVISSIMA.png"); */
+  background-image: url("background_test.jpg");
   background-size: cover;
   background-position: bottom;
   min-height: 80vh;
