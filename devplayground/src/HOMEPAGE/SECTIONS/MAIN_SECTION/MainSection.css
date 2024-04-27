@@ -17,18 +17,18 @@
 } */
 
 /* Opzione 2 */
-.gochi-hand-regular {
+/* .gochi-hand-regular {
   font-family: "Gochi Hand", cursive;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 /* Opzione 3 */
-/* .luckiest-guy-regular {
+.luckiest-guy-regular {
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
-} */
+}
 
 .waveTextAnimated {
   margin-top: 0.6em;
@@ -180,10 +180,10 @@
   /* font-family: "Jersey 15", sans-serif; */
 
   /* Opzione 2 */
-  font-family: "Gochi Hand", cursive;
+  /* font-family: "Gochi Hand", cursive; */
 
   /* Opzione 3 */
-  /* font-family: "Luckiest Guy", cursive; */
+  font-family: "Luckiest Guy", cursive;
 }
 
 .segno {
