@@ -32,9 +32,9 @@
   display: flex;
   justify-content: center;
   align-items: center; 
-  filter: invert(1);
-  width: 30%;
-  
+  /* filter: invert(1); */
+  /* width: 30%; */
+  width: 20%;
 }
 
 

@@ -9,7 +9,8 @@ export function Footer() {
 
             <div className='footer-upper'>
 
-                <img className='footer-logo' width='3' src="src\Footer\footer_media\as.png" />
+                {/* <img className='footer-logo' width='3' src="src\Footer\footer_media\as.png" /> */}
+                <img className='footer-logo' width='3' src="src\Footer\footer_media\Sensa_Brush.png" />
 
                 <div className="footer-left">
                     {/* <BrowserRouter>
