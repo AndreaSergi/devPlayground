@@ -26,12 +26,10 @@ body{
     position: relative;
 }
 
-.parallax img {
-    position: absolute;
-}
 
 .bushesImg{
-    bottom: 1420px;
+    position: absolute;
+    bottom: 1990px;
 }
 
 .bushesContainer{
@@ -42,38 +40,46 @@ body{
 }
 
 .bushes, .mountains1, .mountains2, .mountains3{
+    position: absolute;
     width: 100%;
     bottom: 0;
     z-index: 5;
 }
 
 .bushes{
-    bottom: 100px;
+    position: absolute;
     z-index: 4;  
 }
 
 .mountains1{
+    position: absolute;
     bottom: 80px;
     z-index: 3;   
 }
 
 .mountains2{
+    position: absolute;
     bottom: 10px;
     z-index: 2;  
 }
 
 .mountains3{
+    position: absolute;
     bottom: -50px;
     z-index: 1;  
 }
 
 .sun{
+    position: absolute;
     top: 5%;
     width: 100%;
 }
 
 .stars{
+    position: absolute;
     top: -50px;
     left: 0;
     width: 100%;
+
 }
+

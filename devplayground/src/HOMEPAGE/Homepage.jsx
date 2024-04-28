@@ -10,7 +10,6 @@ export function Homepage() {
       {/* <MobileNavbar/> */}
       <MainSection />{/* 
       <GameDetails /> */}
-      <Footer/>
     </>
   );
 }
