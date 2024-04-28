@@ -132,14 +132,14 @@
     blink-caret 0.75s step-end infinite;
 }
 
-.typing-container {
+h1.typing-container {
   display: inline-block;
-  max-width: 43%;
+  max-width: fit-content;
 }
 
 /* Animazione Opzione 2: "Fade-in" */
 
-@-webkit-keyframes fade-in-fwd {
+/* @-webkit-keyframes fade-in-fwd {
   0% {
     -webkit-transform: translateZ(-80px);
     transform: translateZ(-80px);
@@ -167,7 +167,7 @@
 .fade-in-fwd {
   -webkit-animation: fade-in-fwd 5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in-fwd 5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
+} */
 
 .total-title {
   position: relative;
