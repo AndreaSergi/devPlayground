@@ -20,10 +20,10 @@ export function MainSection() {
 
 
           {/* Animazione Opzione 1: "Typing" */}
-          <h1 className="title luckiest-guy-regular typing typing-container">
+          {/* <h1 className="title luckiest-guy-regular typing typing-container"> */}
 
           {/* Animazione Opzione 2: "Fade-in" */}
-          {/* <h1 className="title luckiest-guy-regular typing typing-container"> */}
+          <h1 className="title luckiest-guy-regular fade-in-fwd">
 
 
             <span className="segno">&lt;</span>
