@@ -10,11 +10,11 @@
   } */
 
 /* Font: Opzione 1 */
-/* .jersey-15-regular {
+.jersey-15-regular {
   font-family: "Jersey 15", sans-serif;
   font-weight: 400;
   font-style: normal;
-} */
+}
 
 /* Font: Opzione 2 */
 /* .gochi-hand-regular {
@@ -23,12 +23,12 @@
   font-style: normal;
 } */
 
-/* Font: Opzione 3 */
+/* Font: Opzione 3
 .luckiest-guy-regular {
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 .waveTextAnimated {
   margin-top: 0.6em;
@@ -108,7 +108,8 @@
 } */
 
 /* Animazione Opzione 1: "Typing" */
-@keyframes typing {
+
+/* @keyframes typing {
   from {
     width: 0;
   }
@@ -135,11 +136,11 @@
 h1.typing-container {
   display: inline-block;
   max-width: fit-content;
-}
+} */
 
 /* Animazione Opzione 2: "Fade-in" */
 
-/* @-webkit-keyframes fade-in-fwd {
+@-webkit-keyframes fade-in-fwd {
   0% {
     -webkit-transform: translateZ(-80px);
     transform: translateZ(-80px);
@@ -167,7 +168,7 @@ h1.typing-container {
 .fade-in-fwd {
   -webkit-animation: fade-in-fwd 5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in-fwd 5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-} */
+}
 
 .total-title {
   position: relative;
@@ -226,7 +227,7 @@ h1.typing-container {
   }
 }
 
-/* Opzione 1 + 2 + 3 */
+/* Opzioni Font 1 + 2 + 3 */
 .title {
   margin-top: 10%;
   font-size: 90px;

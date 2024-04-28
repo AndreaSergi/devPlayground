@@ -11,10 +11,10 @@ export function Footer() {
 
                 {/* <img className='footer-logo' width='3' src="src\Footer\footer_media\as.png" /> */}
 
-                {/* Opzione 1 */}
+                {/* Logo - Opzione 1 */}
                 <img className='footer-logo' width='3' src="src\Footer\footer_media\opzione1_Kapsalon_Brush.png" />
 
-                {/* Opzione 2 */}
+                {/* Logo - Opzione 2 */}
                 {/* <img className='footer-logo' width='3' src="src\Footer\footer_media\opzione2_Sensa_Brush.png" /> */}
 
                 <div className="footer-left">
