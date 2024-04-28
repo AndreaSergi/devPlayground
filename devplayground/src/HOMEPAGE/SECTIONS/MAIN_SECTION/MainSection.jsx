@@ -6,6 +6,9 @@ export function MainSection() {
           {/*   <h1 id="animated" className="title modak-regular"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1>  */}
           {/* <h1 className='title modak-regular waveTextAnimated'> */}
 
+        
+          {/* 3 Opzioni Font + Animazione "Wave" */}
+
           {/* Opzione 1 */}
           {/* <h1 className="title jersey-15-regular waveTextAnimated"> */}
 
@@ -13,8 +16,16 @@ export function MainSection() {
           {/* <h1 className="title gochi-hand-regular waveTextAnimated"> */}
 
           {/* Opzione 3 */}
-          <h1 className="title luckiest-guy-regular waveTextAnimated">
-          
+          {/* <h1 className="title luckiest-guy-regular waveTextAnimated"> */}
+
+
+          {/* Animazione Opzione 1: "Typing" */}
+          <h1 className="title luckiest-guy-regular typing typing-container">
+
+          {/* Animazione Opzione 2: "Fade-in" */}
+          {/* <h1 className="title luckiest-guy-regular typing typing-container"> */}
+
+
             <span className="segno">&lt;</span>
             <span className="dev">d</span>
             <span className="dev">e</span>

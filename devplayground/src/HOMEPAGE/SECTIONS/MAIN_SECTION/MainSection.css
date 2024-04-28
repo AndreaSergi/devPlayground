@@ -9,21 +9,21 @@
     font-style: normal;
   } */
 
-/* Opzione 1 */
+/* Font: Opzione 1 */
 /* .jersey-15-regular {
   font-family: "Jersey 15", sans-serif;
   font-weight: 400;
   font-style: normal;
 } */
 
-/* Opzione 2 */
+/* Font: Opzione 2 */
 /* .gochi-hand-regular {
   font-family: "Gochi Hand", cursive;
   font-weight: 400;
   font-style: normal;
 } */
 
-/* Opzione 3 */
+/* Font: Opzione 3 */
 .luckiest-guy-regular {
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
@@ -36,13 +36,13 @@
   text-align: center;
 }
 
-.waveTextAnimated span {
+/* .waveTextAnimated span {
   display: inline-block;
   -webkit-animation: wave-text 3s ease-in-out infinite;
   animation: wave-text 3s ease-in-out infinite;
-}
+} */
 
-.waveTextAnimated span:nth-of-type(1) {
+/* .waveTextAnimated span:nth-of-type(1) {
   -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
@@ -105,7 +105,41 @@
 .waveTextAnimated span:nth-of-type(16) {
   -webkit-animation-delay: 3s;
   animation-delay: 3s;
+} */
+
+/* Animazione Opzione 1: "Typing" */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #02162f;
+  animation: typing 4s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+.typing-container {
+  display: inline-block;
+  max-width: 43%
+}
+
+/* Animazione Opzione 2: "Fade-in" */
+
+
+
 
 .total-title {
   position: relative;
