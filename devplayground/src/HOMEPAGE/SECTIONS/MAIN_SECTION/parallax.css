@@ -1,0 +1,79 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-bg-color: #02162e;
+    --secondary-bg-color: #614293;
+}
+
+body{
+    background-color: var(--primary-bg-color);
+    color: white;
+}
+
+.parallax-outer{
+    overflow-x: hidden;
+    background-color: var(--primary-bg-color);
+}
+
+.parallax{
+    height: 110vh;
+    width: 100%;
+    position: relative;
+}
+
+.parallax img {
+    position: absolute;
+}
+
+.bushesImg{
+    bottom: 1420px;
+}
+
+.bushesContainer{
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+    top: 100vh;
+}
+
+.bushes, .mountains1, .mountains2, .mountains3{
+    width: 100%;
+    bottom: 0;
+    z-index: 5;
+}
+
+.bushes{
+    bottom: 100px;
+    z-index: 4;  
+}
+
+.mountains1{
+    bottom: 80px;
+    z-index: 3;   
+}
+
+.mountains2{
+    bottom: 10px;
+    z-index: 2;  
+}
+
+.mountains3{
+    bottom: -50px;
+    z-index: 1;  
+}
+
+.sun{
+    top: 5%;
+    width: 100%;
+}
+
+.stars{
+    top: -50px;
+    left: 0;
+    width: 100%;
+}

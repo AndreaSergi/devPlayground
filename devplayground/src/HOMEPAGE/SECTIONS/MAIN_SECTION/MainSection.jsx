@@ -1,46 +1,102 @@
+import { startTransition, useEffect, useRef, useState } from 'react'
+import {gsap} from "gsap"
+import { ScrollTrigger} from "gsap/dist/ScrollTrigger"
+import '../MAIN_SECTION/parallax.css'
+import { GameDetails } from '../GameDetails/GameDetails'
+
 
 export function MainSection(){
+
+    const [background, setBackground] = useState(0)
+
+    const parallaxRef = useRef(null)
+    const starsRef = useRef(null)
+    const sunRef = useRef(null)
+    const mountains3Ref = useRef(null)
+    const mountains2Ref = useRef(null)
+    const mountains1Ref = useRef(null)
+    const bushesRef = useRef(null)
+
+    useEffect(() => {
+        let cxt = gsap.context(() => {
+            gsap.registerPlugin(ScrollTrigger);
+            var tl = gsap.timeline({
+                defaults: {duration: 1},
+                scrollTrigger: {
+                    trigger: parallaxRef.current,
+                    start: "top top",
+                    end: "1400 bottom",
+                    scrub: true,
+                    pin: true,
+                    onUpdate: (self) => {
+                        setBackground(Math.ceil(self.progress * 100 + 25))
+                    },
+                },
+            });
+
+            tl.to(
+                bushesRef.current,
+                {
+                    y: "-=500"
+                },
+                1.1
+            );
+            tl.to(
+                mountains1Ref.current,
+                {
+                    y: "-=130"
+                },
+                1
+            );
+            tl.to(
+                mountains2Ref.current,
+                {
+                    y: "-=90"
+                },
+                1
+            );
+            tl.to(
+                mountains3Ref.current,
+                {
+                    y: "-=20"
+                },
+                1
+            );
+            tl.to(
+                starsRef.current,
+                {
+                    top: 0
+                },
+                0.5
+            );
+            tl.to(
+                sunRef.current,
+                {
+                    y: "+=300"
+                },
+                0
+            );
+        })
+
+        return () => cxt.revert();
+    }, [])
 
 
 
     return (
-        <section className='appContainer'>
-
-            <header className="site-header">
-
-                <div className="site-header-mask">
-
-                   {/*   <h1 id="animated" className="title modak-regular"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1>  */}
-                   <h1 className='title modak-regular waveTextAnimated'>
-                        <span className="segno">&lt;</span>
-                        <span className="dev">d</span>
-                        <span className="dev">e</span>
-                        <span className="dev">v</span>
-                        <span>P</span>    
-                        <span>l</span>
-                        <span>a</span>
-                        <span>y</span>
-                        <span>g</span>
-                        <span>r</span>    
-                        <span>o</span>    
-                        <span>u</span>
-                        <span>n</span>
-                        <span>d</span>
-                        <span className="segno">/</span>
-                        <span className="segno">&gt;</span>    
-                    </h1>
-{/* 
-                    <h1 data-text="<devPlayground/>" className="total-title"> <span className="segno">&lt;</span><span className="dev">dev</span><span className="playground">Playground</span><span className="segno">/&gt;</span></h1> */}
-
-                    
-                
-            
+        <div className="parallax-outer">
+            <div ref={parallaxRef} className="parallax" style={{ background: `linear-gradient(#02162e, #c2b6c0 ${background}%, #482e44)` }}>
+                <img ref={starsRef} className="stars" src="./public/parallaxImg/stars.png" alt="" />
+                <img ref={sunRef} className="sun" src="./public/parallaxImg/sun.png" alt="" />
+                <img ref={mountains3Ref} className="mountains3" src="./public/parallaxImg/mountains3.png" alt="" />
+                <img ref={mountains2Ref} className="mountains2" src="./public/parallaxImg/mountains2.png" alt="" />
+                <img ref={mountains1Ref} className="mountains1" src="./public/parallaxImg/mountains1.png" alt="" />
+                <div ref={bushesRef} className='bushesContainer'>
+                <img  className="bushesImg" src="./public/parallaxImg/bushes.png" alt="" />
+                <GameDetails className="games"/>
                 </div>
-                
+            </div>
 
-            </header>
-
-        
-        </section>
+        </div>
     )
 }

@@ -7,9 +7,9 @@ import { Footer } from "../Footer/Footer";
 export function Homepage() {
   return (
     <>
-      <MobileNavbar/>
-      <MainSection />
-      <GameDetails />
+      {/* <MobileNavbar/> */}
+      <MainSection />{/* 
+      <GameDetails /> */}
       <Footer/>
     </>
   );
