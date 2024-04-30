@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
-import 'react-bootstrap/dist/react-bootstrap';
 import './Navbar.css'
 import { HomeLogo } from '../HOMEPAGE/HomeLogo';
 import { useNavigate } from 'react-router-dom';

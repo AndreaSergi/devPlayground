@@ -2,12 +2,12 @@
   height: 56px
 }
 
-.navbar {
+/* .navbar {
   border-bottom: 1px solid #8d8585;
-}
+} */
 
 .sticky-top {
-  background-color: black !important;
+  /* background-color: transparent !important; */
   position: relative;
   height: 90px;
 }

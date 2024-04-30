@@ -4,6 +4,7 @@ import { ScrollTrigger} from "gsap/dist/ScrollTrigger"
 import '../MAIN_SECTION/parallax.css'
 import { GameDetails } from '../GameDetails/GameDetails'
 import { Footer } from '../../../Footer/Footer'
+import { MobileNavbar } from '../../../navbar/Mobilenavbar'
 
 
 export function MainSection(){
@@ -86,6 +87,7 @@ export function MainSection(){
 
     return (
         <>
+        <MobileNavbar />
         <div className="parallax-outer">
             <div ref={parallaxRef} className="parallax" style={{ background: `linear-gradient(#02162e, #c2b6c0 ${background}%, #482e44)` }}>
                 <img ref={starsRef} className="stars" src="./public/parallaxImg/stars.png" alt="" />
