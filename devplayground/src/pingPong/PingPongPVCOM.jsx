@@ -281,8 +281,8 @@ function PingPongPVCOM() {
   }, [moltiplicatore]);
 
   return (
-    <div ref={dim}>
-      <div style={{position:"absolute" , top:"124px" , left :"16px"}}>
+    <div ref={dim} style={{backgroundColor:"black" , height:"100vh" , overflow:"hidden"}}>
+      <div style={{position:"absolute" , top:"130px" , left :"16px"}}>
         <HomeLogo/>
       </div>
       
