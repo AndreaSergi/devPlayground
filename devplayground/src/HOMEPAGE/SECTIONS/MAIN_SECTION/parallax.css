@@ -34,7 +34,7 @@
 }
 
 .parallax-outer {
-  height: 380vh;
+  height: 335vh;
   overflow-x: hidden;
   background-color: var(--primary-bg-color);
 }
@@ -47,7 +47,7 @@
 
 .bushesImg {
   position: absolute;
-  bottom: 2160px;
+  bottom: 1700px;
 }
 
 .bushesContainer {

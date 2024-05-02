@@ -1,12 +1,13 @@
-import { startTransition, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {gsap} from "gsap"
 import { ScrollTrigger} from "gsap/dist/ScrollTrigger"
 import '../MAIN_SECTION/parallax.css'
 import { GameDetails } from '../GameDetails/GameDetails'
 import { Footer } from '../../../Footer/Footer'
-import {MobileNavbar} from '../../../navbar/Mobilenavbar'
 import { ProvaNav } from './Provanav'
 import { ButtonUp } from './ButtonUp'
+import '../GameDetails/GameDetail/GameDetail.module.css'
+import '../GameDetails/GameDetails.module.css'
 
 
 export function MainSection(){
@@ -83,22 +84,6 @@ export function MainSection(){
                 },
                 0
             );
-          /*   tl.to(
-                (titleRef.current),
-                {
-                    y: "-=150",
-                    opacity: 0
-                },
-                0.2
-            );  */
-           /*  tl.to(
-                titleRef.current,
-                {
-                    opacity: "0",
-                    duration: 1
-                },
-                0.2
-            ); */
             tl.to(
                 gameDetailsRef.current,
                 {
@@ -119,9 +104,6 @@ export function MainSection(){
 
     return (
         <>
-        {/* <MobileNavbar/> */}
-        <ProvaNav/>
-        <ButtonUp/>
         <div className="parallax-outer">
             <div ref={parallaxRef} className="parallax" style={{ background: `linear-gradient(#02162e , #c2b6c0 ${background}% )` }}>
                 <img ref={starsRef} className="stars" src="./public/parallaxImg/stars.png" alt="" />
@@ -143,7 +125,7 @@ export function MainSection(){
                 <div className='gameDetailsContainer'>
                 <GameDetails ref={gameDetailsRef} className="games"/>
                 </div>
-                <Footer/>
+                
                 </div>
             </div>
         </div>

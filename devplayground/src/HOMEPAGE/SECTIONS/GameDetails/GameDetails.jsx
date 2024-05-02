@@ -9,7 +9,7 @@ export function GameDetails() {
   return (
     <div className={style.container}>
       <div className={style.chevronHMPG}>
-        <img className={style.chevronDownForMore} src={whiteChevron} alt="chevron" />
+      Available Games
       </div>
       <GameDetail
         img={PingPongGif}

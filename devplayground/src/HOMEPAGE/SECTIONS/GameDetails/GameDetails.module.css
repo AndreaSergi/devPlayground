@@ -8,7 +8,9 @@
   display: flex;
   justify-content: center;
   position: relative;
-  animation: upDown 1s infinite ease-in-out;
+  font-family: 'Madimi One';
+  /* text-transform: uppercase; */
+  font-size: 40px;
 }
 
 

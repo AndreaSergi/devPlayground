@@ -7,11 +7,11 @@
 body{
   display: flex;
   flex-direction: column;
- overflow-y: auto;
+  overflow-y: auto;
   overflow-x: hidden;
   width: 100vw;
   background-color: inherit;
-  background-color: transparent;
+  background-color: rgb(2 22 46)
 }
 
 
@@ -21,7 +21,7 @@ body{
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(4, 4, 4);
+  background: #000b17;
 
 }
 
