@@ -24,9 +24,6 @@ export function ProvaNav() {
             </div>
             {isLoggedIn ? (
                 <div className='dxNav'>
-                    {isAuthenticated && (
-                        <button className='buttonProvaNav ' onClick={() => nav('/area-riservata')}>Area riservata</button>
-                    )}
                     <button className='buttonProvaNav' onClick={handleLogout}>Logout</button>
                 </div>
             ) : (
