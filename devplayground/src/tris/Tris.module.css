@@ -39,9 +39,9 @@
   top: 24px;
 }
 
-.homeLogoTrixLight {
-  filter: invert(1);
-}
+/* .homeLogoTrixLight {
+  filter: invert(0);
+} */
 
 /* @media screen and (max-width: 600px) {
   .page {
