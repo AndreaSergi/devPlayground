@@ -6,6 +6,7 @@ import GetRegister from '../Register/register';
 import { useNavigate } from 'react-router-dom';
 
 export function Login() {
+    // const [user, setUser] = useState(null)
     const email = useRef(null);
     const pass = useRef(null);
     const nav = useNavigate();
@@ -13,14 +14,52 @@ export function Login() {
 
     const handleLogin = (event) => {
         event.preventDefault();
-        const isLogged = metodi.getData(metodi.checkData(email.current.value), email.current.value, pass.current.value);
-        if (isLogged) {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('isAuthenticated', 'true'); // Imposta isAuthenticated a true quando l'accesso ha successo
-            nav('/');
-        } else {
-            sessionStorage.setItem('isLogged', 'false');
-        }
+
+        //console.log(email.current.value);
+        //console.log(pass.current.value);
+        const passIn = pass.current.value
+        fetch(`http://localhost:3000/getUser/${email.current.value}`)
+            .then((response) => response.json())
+            .then((result) => {
+                const { user } = result;
+                if (!user[0]) {
+                    //non esiste
+                    console.log("non esiste");
+                    alert("Email o password errata")
+                } else {
+                    //esiste
+                    console.log("esiste");
+                    
+                    //console.log(pass.current.value);
+
+                    const { password , name } = user[0];
+                    console.log(password);
+                    if (password == passIn) {
+                        //pass corretta
+                        console.log("pass corretta");
+                        alert(`Bentornato, ${name}!`);
+                        localStorage.setItem('isLoggedIn', 'true');
+                        nav('/');
+                    } else {
+                        alert("Email o password errata")
+                        console.log("pass errata");
+                        //pass errata
+                    }
+                }
+            })
+            .catch((error) => console.error(error));
+
+        
+                //const isLogged = metodi.getData(metodi.checkData(email.current.value), email.current.value, pass.current.value);
+                //if (isLogged) {
+                    
+                    //localStorage.setItem('isAuthenticated', 'true'); // Imposta isAuthenticated a true quando l'accesso ha successo
+                    
+                //} else {
+                    //sessionStorage.setItem('isLogged', 'false');
+                //}
+                
+            
     };
 
     return (
@@ -43,6 +82,7 @@ export function Login() {
                             <h4>Password</h4>
                         </Form.Label>
                         <Form.Control type='password' placeholder='Password' ref={pass} />
+                        <Form.Text className='text-muted'></Form.Text>
                     </Form.Group>
                     <Form.Group className='mb-3' controlId='formBasicCheckbox'></Form.Group>
                     <Button variant='primary' type='submit' onClick={handleLogin}>

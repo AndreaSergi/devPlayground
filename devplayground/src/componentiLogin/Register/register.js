@@ -21,7 +21,7 @@ class GetRegister {
     setData = async (isRegistred, email, password) => {
 
         if (await isRegistred) {
-            alert("utente esistente");
+            //alert("utente esistente");
             return false;
         } else {
             let listUsers = localStorage.getItem("listUser"); //importa dal local storage la lista di utenti
@@ -41,7 +41,7 @@ class GetRegister {
 
             localStorage.setItem("listUser", listUsers); // sovrascrive il local storage con la lista aggiornata
 
-            alert("Benvenuto in DevPlayground");
+            //alert("Benvenuto in DevPlayground");
 
             return true;
         }
@@ -59,15 +59,15 @@ class GetRegister {
             });
 
             if (okUser) {
-                alert("Bentornato, " + email);
+                //alert("Bentornato, " + email);
                 return true;
             } else {
-                alert("email  o password errati");
+                //alert("email  o password errati");
                 return false;
             }
 
         } else {
-            alert("Utente non registrato");
+            //alert("Utente non registrato");
             return false;
         }
     }

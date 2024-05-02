@@ -12,9 +12,12 @@ export function Register() {
 
     const email = useRef(null);
     const pass = useRef(null);
+    const name = useRef(null);
+    const surname = useRef(null);
+    const eta = useRef(null);
     const [metodi, setMetodi] = useState(new GetRegister());
 
-    const nav=useNavigate();
+    const nav = useNavigate();
 
     return (
         <div className='p-3 mb-2 bg-black text-white' style={
@@ -39,7 +42,7 @@ export function Register() {
                 }
             }>
                 <div style={{ textAlign: "center", paddingBottom: "64px" }}>
-                    <h1 style={{fontFamily : "arial"}}>Registrati</h1>
+                    <h1 style={{ fontFamily: "arial" }}>Registrati</h1>
                 </div>
                 <Form style={
                     {
@@ -49,6 +52,25 @@ export function Register() {
                         justifyContent: "center",
                     }
                 }>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label> <h4>Nome</h4> </Form.Label>
+                        <Form.Control type="text" placeholder="Example: Mario" ref={name} />
+                        <Form.Text className="text-muted">
+                        </Form.Text>
+
+                    </Form.Group><Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label> <h4>Cognome</h4> </Form.Label>
+                        <Form.Control type="text" placeholder="Example: Rossi" ref={surname} />
+                        <Form.Text className="text-muted">
+                        </Form.Text>
+
+                    </Form.Group><Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label> <h4>Età</h4> </Form.Label>
+                        <Form.Control type="text" placeholder="..." ref={eta} />
+                        <Form.Text className="text-muted">
+                        </Form.Text>
+                    </Form.Group>
+
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label> <h4>Indirizzo e-mail</h4> </Form.Label>
                         <Form.Control type="email" placeholder="prova.example@devplayground.com" ref={email} />
@@ -65,14 +87,64 @@ export function Register() {
                     <Button variant="primary" type="submit" onClick={
                         (event) => {
                             event.preventDefault();
-                            //console.log("mail: " + email.current.value);
-                            //console.log("pass: " + pass.current.value);
-                            if (metodi.setData(metodi.checkData(email.current.value), email.current.value, pass.current.value)) {
-                                nav("/");   // il metodo setData ritorna un booleano : se ritorna true vuol dire che ha regitrato il nuovo
-                                            // utente, quindi viene reindirizzato alla home;
-                            }else{
-                                nav("/login"); //se ritorna false vuol dire che l'utente è già registrato e quindi viene reindirizzato al login.
-                            }
+                            const emailIn = email.current.value;
+                            const passIn = pass.current.value;
+                            const nameIn = name.current.value;
+                            const surnameIn = surname.current.value;
+                            const etaIn = parseInt(eta.current.value);
+
+                            console.log(emailIn , passIn , nameIn , surnameIn ,etaIn);
+
+                            fetch(`http://localhost:3000/getUser/${email.current.value}`)
+                                .then((response) => response.json())
+                                .then((result) => {
+                                    const { user } = result;
+
+                                    console.log(user[0]);
+
+                                    if (!user[0]) {
+                                        //non esiste
+
+                                        const myHeaders = new Headers();
+                                        myHeaders.append("Content-Type", "application/json");
+
+                                        const raw = JSON.stringify({
+                                            data: {
+                                                name: nameIn,
+                                                surname: surnameIn,
+                                                eta: etaIn,
+                                                email: emailIn,
+                                                password: passIn
+                                            }
+                                        });
+
+                                        const requestOptions = {
+                                            method: "POST",
+                                            headers: myHeaders,
+                                            body: raw,
+                                            redirect: "follow"
+                                        };
+
+                                        fetch("http://localhost:3000/pushData", requestOptions)
+                                            .then((response) => response.text())
+                                            .then((result) => console.log(result))
+                                            .catch((error) => console.error(error));
+
+
+                                        console.log("registrato");
+
+                                        alert("Registrazione avvenuta con successo!")
+
+                                        nav("/login");
+
+
+                                    } else {
+                                        //esiste
+                                        console.log("esiste");
+                                        alert("Utente già registrato");
+                                        nav("/login");
+                                    }
+                                })
                         }
                     }>
                         Registrati
