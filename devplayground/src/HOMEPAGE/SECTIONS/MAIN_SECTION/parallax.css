@@ -1,85 +1,187 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --primary-bg-color: #02162e;
-    --secondary-bg-color: #614293;
+:root {
+  --primary-bg-color: #02162e;
+  --secondary-bg-color: #614293;
 }
 
-body{
-    background-color: var(--primary-bg-color);
-    color: white;
+.jersey-15-regular {
+  font-family: "Jersey 15", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.parallax-outer{
-    overflow-x: hidden;
-    background-color: var(--primary-bg-color);
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.parallax{
-    height: 110vh;
-    width: 100%;
-    position: relative;
+.chewy-regular {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atomic-age-regular {
+  font-family: "Atomic Age", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.parallax-outer {
+  height: 380vh;
+  overflow-x: hidden;
+  background-color: var(--primary-bg-color);
+}
+
+.parallax {
+  height: 110vh;
+  width: 100%;
+  position: relative;
+}
+
+.bushesImg {
+  position: absolute;
+  bottom: 2160px;
+}
+
+.bushesContainer {
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+  top: 100vh;
+}
+
+.bushes,
+.mountains1,
+.mountains2,
+.mountains3 {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 5;
+}
+
+.bushes {
+  position: absolute;
+  z-index: 4;
+}
+
+.mountains1 {
+  position: absolute;
+  bottom: 80px;
+  z-index: 3;
+}
+
+.mountains2 {
+  position: absolute;
+  bottom: 10px;
+  z-index: 2;
+}
+
+.mountains3 {
+  position: absolute;
+  bottom: -50px;
+  z-index: 1;
+}
+
+.sun {
+  position: absolute;
+  top: 5%;
+  width: 100%;
+}
+
+.stars {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-fwd {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
-.bushesImg{
-    position: absolute;
-    bottom: 1990px;
+.fade-in-fwd {
+  -webkit-animation: fade-in-fwd 5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in-fwd 3s 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-.bushesContainer{
-    position: absolute;
-    width: 100%;
-    z-index: 4;
-    top: 100vh;
+
+#titleDevP {
+  position: absolute;
+  bottom: 2000px;
+  font-size: 80px;
+  color: white;
+  font-family: "Madimi One";
+  font-weight: 600;
+  top: 390px;
+  z-index: 3;
+  left: calc(50% - 338px);
 }
 
-.bushes, .mountains1, .mountains2, .mountains3{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    z-index: 5;
+.playgroundHome {
+  color: var(--primary-bg-color);
 }
 
-.bushes{
-    position: absolute;
-    z-index: 4;  
+.navProvaContainer{
+  background-color: #c2b6c0;
+  display: flex;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  height: 70px;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
 }
 
-.mountains1{
-    position: absolute;
-    bottom: 80px;
-    z-index: 3;   
+.logoProvaNav{
+  font-family: "Madimi One";
+  height: 65px;
+  width: 65px;
+  color: #02162e;
 }
 
-.mountains2{
-    position: absolute;
-    bottom: 10px;
-    z-index: 2;  
+.imgLogoNav{
+  height: 65px;
+  width: 65px;
 }
 
-.mountains3{
-    position: absolute;
-    bottom: -50px;
-    z-index: 1;  
+
+.dxNav{
+  display: flex;
+  gap: 10px;
 }
 
-.sun{
-    position: absolute;
-    top: 5%;
-    width: 100%;
+
+.buttonProvaNav{
+  color: white;
+  background-color: #02162e;
+  border-radius: 15px;
+  padding: 5px;
+  font-family: "Madimi One";
+  border: none;
 }
-
-.stars{
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-
-}
-

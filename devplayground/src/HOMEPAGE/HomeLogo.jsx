@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function HomeLogo({nomeClassePersonalizzata}){
     return(
         <Link className={`linkHomeLogo ${nomeClassePersonalizzata}`} to="/">
-        <img className="homeLogo" src="../logoDevPlayground.png" alt="" />
+        <img className='homeLogo' src="../public/LogoDP.png" alt="" />
         </Link>
     )
 }

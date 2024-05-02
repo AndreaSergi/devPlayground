@@ -1,15 +1,25 @@
 .navbar-mobile {
-  height: 56px
+  height: 56px;
+  background-color: transparent !important;
 }
 
 .navbar {
-  border-bottom: 1px solid #8d8585;
+ /*  border-bottom: 1px solid #8d8585; */
+ background-color: transparent !important;
+
 }
 
 .sticky-top {
-  background-color: black !important;
-  position: relative;
-  height: 90px;
+  background-color: #c2b6c0 !important;
+  display: flex;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  height: 70px;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
 }
 
 nav, .btn-secondary {
@@ -20,12 +30,12 @@ nav, .btn-secondary {
 
 .fixed-navbar {
   display: none !important;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   width: 100%;
   height: 56px;
   background-color: transparent !important; /* Sostituisci con il tuo colore preferito e l'opacità desiderata */
-  z-index: 1000; /* Assicurati che la navbar sia sopra gli altri elementi */
+  /* z-index: 1000 */; /* Assicurati che la navbar sia sopra gli altri elementi */
 }
 
 .fixed-navbar a {
@@ -43,3 +53,7 @@ nav, .btn-secondary {
   position: absolute;
   top: 0px;
 }
+
+
+
+

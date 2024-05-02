@@ -1,0 +1,32 @@
+.button-up{
+    display: none;
+    position: fixed;
+    right: 18px;
+    bottom: 60px;
+    background-color: lightgrey;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    outline: none;
+    z-index: 1000;
+
+}
+
+.button-up-arrow{
+    fill: black; /*Colore freccetta*/
+}
+
+.button-up:hover {
+    background-color: #73a0c7; /* Cambia l'opacità del colore di sfondo al passaggio del mouse */
+}
+
+.button-up.clicked {
+    border: none;/*Elimina bordo al click*/
+    outline: none;
+  }

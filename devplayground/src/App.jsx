@@ -13,7 +13,7 @@ import { TrisBoardComputer } from "./tris/TrisBoard/TrisBoardComputer";
 import { TrisBoard } from "./tris/TrisBoard/TrisBoard";
 import { WordifyIntro } from "./WORDIFY/WordifyIntro";
 import {Login} from "./componentiLogin/Login/Login";
-import {Register} from "./componentiLogin/Register/Register";
+import { Register } from "./componentiLogin/Register/Register";
 
 function App() {
   return (

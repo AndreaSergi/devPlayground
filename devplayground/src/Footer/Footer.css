@@ -1,5 +1,5 @@
 .footer {
-  background-color: #000000;
+  background-color: #000b17;
   /* sfondo dark */
   color: #fff;
   /* font color bianco */
@@ -11,9 +11,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #8d8585;
   position: relative;
-  
 }
 
 
@@ -64,19 +62,14 @@
 }
 
 .footer-bottom {
-  display: flex;
-  border-top: 1px solid #8d8585;
+  display: flex;/* 
+  border-top: 1px solid #8d8585; */
   justify-content: center;
   width: 100%;
   font-size: 16px;
   align-items: center;
   text-align: center;
-  
-}
-
-hr {
-  border-color: #fff;
-  margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .footer-links {
@@ -84,6 +77,10 @@ hr {
   color: #fff; 
   transition: 0.4s;
   width: 24px;  
+}
+
+.footerBushes{
+  width: 100%;
 }
 
 .footer-links:hover {
