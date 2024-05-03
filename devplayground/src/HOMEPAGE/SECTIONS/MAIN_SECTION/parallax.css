@@ -47,12 +47,13 @@
 
 .bushesImg {
   position: absolute;
-  bottom: 1700px;
+  bottom: 185vh;
+  width: 100%;
 }
 
 .bushesContainer {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   z-index: 4;
   top: 100vh;
 }
@@ -62,38 +63,35 @@
 .mountains2,
 .mountains3 {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   bottom: 0;
   z-index: 5;
 }
 
-.bushes {
-  position: absolute;
-  z-index: 4;
-}
 
 .mountains1 {
   position: absolute;
-  bottom: 80px;
+  bottom: 15vh;
   z-index: 3;
 }
 
 .mountains2 {
   position: absolute;
-  bottom: 10px;
+  bottom: 2vh;
   z-index: 2;
 }
 
 .mountains3 {
   position: absolute;
-  bottom: -50px;
+  bottom: -1vh;
   z-index: 1;
 }
 
 .sun {
   position: absolute;
-  top: 5%;
-  width: 100%;
+  top: 5vh;
+  width: 100vw;
+  height: auto;
 }
 
 .stars {
@@ -102,6 +100,7 @@
   left: 0;
   width: 100%;
   opacity: 0;
+  display: none;
 }
 
 @-webkit-keyframes fade-in-fwd {
@@ -131,12 +130,11 @@
 
 #titleDevP {
   position: absolute;
-  bottom: 2000px;
-  font-size: 80px;
+  font-size: 5em;
   color: white;
   font-family: "Madimi One";
   font-weight: 600;
-  top: 390px;
+  top: 40vh;
   z-index: 3;
   left: calc(50% - 338px);
 }
@@ -184,4 +182,126 @@
   padding: 5px;
   font-family: "Madimi One";
   border: none;
+}
+
+/* ---------MEDIA QUERIES------------ */
+
+@media screen and (max-width: 1700px){
+
+  .bushesImg {
+    bottom: 187vh;
+    width: 100%;
+  }
+  
+  .bushesContainer {
+    width: 100vw;
+    z-index: 4;
+    top: 1;
+  }
+
+  .sun{
+    top: 20vh;
+  }
+
+  #titleDevP {
+    top: 50vh;
+  }
+  
+
+}
+
+@media screen and (max-width: 1300px){
+
+  .bushesImg {
+    bottom: 135vh;
+    width: 100%;
+  }
+
+  .sun{
+    top: 40%;
+  }
+
+  #titleDevP {
+    font-size: 50px;
+    top: 59%;
+    left: calc(50% - 195px);
+  }
+}
+
+@media screen and (max-width:1024px) {
+
+  .parallax-outer{
+    height: 250vh;
+    overflow-y:scroll;
+  }
+  .sun{
+    top: 20vh;
+    width: 150%;
+    left: -25vw;
+  }
+
+  .mountains3{
+    width: 150%;
+    top: 25vh;
+  }
+  .mountains2{
+    width: 150%;
+    top: 25vh;
+  }
+  .mountains1{
+    width: 200%;
+    top: 5vh;
+  }
+
+  .bushesImg {
+    position: absolute;
+    top: -94vh;
+   /* bottom: 30vh; */
+    width: 200%;
+  }
+
+  #titleDevP{
+    top: 55vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .sun{
+    top: 30vh;
+    width: 150%;
+    left: -25vw;
+  }
+
+  .mountains3{
+    width: 150%;
+    top: 35vh;
+  }
+  .mountains2{
+    width: 150%;
+    top: 40vh;
+  }
+  .mountains1{
+    width: 200%;
+    top: 20vh;
+  }
+
+  .bushesImg {
+   bottom: 239vh;
+    width: 250%;
+  }
+
+  #titleDevP{
+    top: 55vh;
+  }
+}
+
+
+
+@media screen and(max-width: 500px) {
+  
+}
+
+@media screen and(max-width: 500px) {
+  
 }
