@@ -4,11 +4,11 @@ export function Video() {
   const styleVideo = {
     
     position: "absolute",
-    top: "0px",
+    top: "150px",
     left: "0px",
     zIndex: "0px",
     width: "100vw",
-    height: "88vh",
+    height: "80vh",
   };
 
   // Crea una ref per il video
